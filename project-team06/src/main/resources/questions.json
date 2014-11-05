@@ -1,0 +1,149 @@
+{
+    "questions": [
+        {
+            "body": "Is Rheumatoid Arthritis more common in men or women?", 
+            "type": "factoid", 
+            "id": "5118dd1305c10fae75000001"
+        }, 
+        {
+            "body": "Are there any DNMT3 proteins present in plants?", 
+            "type": "yesno", 
+            "id": "511a16f9df1ebcce7d000005"
+        }, 
+        {
+            "body": "What is the most prominent sequence consensus for the polyadenylation site?", 
+            "type": "list", 
+            "id": "5133b9455274a5fb0700000c"
+        }, 
+        {
+            "body": "What is the function of the mammalian gene Irg1?", 
+            "type": "summary", 
+            "id": "513832a75274a5fb07000012"
+        }, 
+        {
+            "body": "Is thrombophilia related to increased risk of miscarriage?", 
+            "type": "yesno", 
+            "id": "513cdc38bee46bd34c000007"
+        }, 
+        {
+            "body": "Which extra thyroid tissues have thyrotropin (TSH) receptors?", 
+            "type": "list", 
+            "id": "513f45abbee46bd34c000013"
+        }, 
+        {
+            "body": "What is the methyl donor of DNA (cytosine-5)-methyltransferases?", 
+            "type": "factoid", 
+            "id": "51404dd723fec90375000002"
+        }, 
+        {
+            "body": "Super-SILAC is a method used in quantitative proteomics. What is the super-SILAC mix?\n(SILAC: Stable Isotopic labelling by aminoacids in cell culture)", 
+            "type": "summary", 
+            "id": "51430930d24251bc0500000b"
+        }, 
+        {
+            "body": "Tumors of which three organs are classically associated with the multiple endocrine neoplasia type 1 syndrome?", 
+            "type": "list", 
+            "id": "51477de5d24251bc05000020"
+        }, 
+        {
+            "body": "What is the mechanism of action of anticoagulant medication Dabigatran?", 
+            "type": "summary", 
+            "id": "51485a4dd24251bc0500002a"
+        }, 
+        {
+            "body": "Is Mammaprint approved by the United States Food and Drug Administration?", 
+            "type": "yesno", 
+            "id": "51487821d24251bc0500002f"
+        }, 
+        {
+            "body": "Which acetylcholinesterase inhibitors are used for treatment of myasthenia gravis?", 
+            "type": "list", 
+            "id": "5149199dd24251bc05000040"
+        }, 
+        {
+            "body": "Which medication should be administered when managing patients with suspected acute opioid overdose?", 
+            "type": "factoid", 
+            "id": "5149f494d24251bc0500004c"
+        }, 
+        {
+            "body": "Does the Oncotype DX test work with paraffin embedded tissues?", 
+            "type": "yesno", 
+            "id": "514a0f0ad24251bc05000052"
+        }, 
+        {
+            "body": "Is depression associated with poor prognosis of brain tumor patients?", 
+            "type": "yesno", 
+            "id": "514cc8dcd24251bc05000066"
+        }, 
+        {
+            "body": "What is known about the reimbursement of Viagra", 
+            "type": "summary", 
+            "id": "5150b45ad24251bc0500006f"
+        }, 
+        {
+            "body": "Does HER2 under-expression lead to favorable response to trastuzumab?", 
+            "type": "yesno", 
+            "id": "51542eacd24251bc05000084"
+        }, 
+        {
+            "body": "Can Alzheimer's disease related miRNAs be detected in patients' blood?", 
+            "type": "yesno", 
+            "id": "5156beb4d24251bc05000089"
+        }, 
+        {
+            "body": "Which antiepileptic drug is most strongly associated with spina bifida? ", 
+            "type": "factoid", 
+            "id": "51588bb2d24251bc05000091"
+        }, 
+        {
+            "body": "Where in the cell do we find the protein Cep135?", 
+            "type": "factoid", 
+            "id": "51596a8ad24251bc0500009e"
+        }, 
+        {
+            "body": "In which isochores are Alu elements enriched?", 
+            "type": "list", 
+            "id": "515bd543298dcd4e51000001"
+        }, 
+        {
+            "body": "Which forms of cancer is the Tpl2 gene associated with?", 
+            "type": "list", 
+            "id": "515bf6d6298dcd4e51000004"
+        }, 
+        {
+            "body": "What is the INSURE procedure in premature babies.", 
+            "type": "summary", 
+            "id": "515db54c298dcd4e51000016"
+        }, 
+        {
+            "body": "Which species may be used for the biotechnological production of itaconic acid?", 
+            "type": "list", 
+            "id": "515ffc2b298dcd4e51000035"
+        }, 
+        {
+            "body": "What is the role of TRH in hypertension?", 
+            "type": "summary", 
+            "id": "51602609298dcd4e5100003a"
+        }, 
+        {
+            "body": "Which histone marks are deposited by Set7?", 
+            "type": "list", 
+            "id": "5160412d298dcd4e5100003c"
+        }, 
+        {
+            "body": "Are there any desmins present in plants?", 
+            "type": "yesno", 
+            "id": "5162e011298dcd4e51000049"
+        }, 
+        {
+            "body": "Is it possible to detect survivin protein expression in normal human adult tissues?", 
+            "type": "summary", 
+            "id": "516425ff298dcd4e51000051"
+        }, 
+        {
+            "body": "How do histone methyltransferases cause histone modification?", 
+            "type": "summary", 
+            "id": "51659356298dcd4e5100005a"
+        }
+    ]
+}
