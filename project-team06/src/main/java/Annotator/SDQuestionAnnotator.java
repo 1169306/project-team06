@@ -12,10 +12,12 @@ import edu.cmu.lti.oaqa.type.retrieval.AtomicQueryConcept;
 public class SDQuestionAnnotator extends JCasAnnotator_ImplBase{
 
 	@Override
+	/**
+	 * 
+	 */
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
 		//System.out.println("God Damn Pipeline");
 		FSIterator<Annotation> it= aJCas.getAnnotationIndex(Question.type).iterator();
-		
 		if(it.hasNext()){
 			Question question = (Question) it.next();
 			AtomicQueryConcept c = new AtomicQueryConcept(aJCas);

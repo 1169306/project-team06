@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <casConsumerDescription xmlns="http://uima.apache.org/resourceSpecifier">
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
-  <implementationName>Annotator.SDConsumer</implementationName>
+  <implementationName>Consumer.SDConsumer</implementationName>
   <processingResourceMetaData>
     <name>SDCasConsumerDescriptor</name>
     <description/>

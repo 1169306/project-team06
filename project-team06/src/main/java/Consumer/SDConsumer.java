@@ -1,4 +1,4 @@
-package Annotator;
+package Consumer;
 
 import static java.util.stream.Collectors.toList;
 
