@@ -90,23 +90,34 @@ public class SDConsumer extends CasConsumer_ImplBase {
 		}
 		
 		 HashSet<String> set = new HashSet<String>();
-		 int hit = 0;
-		 int miss = 0;	
+		 double hit = 0;
+		 double miss = 0;
+		 double totalRel;	
 		 for(int i = 0; i < gold.size(); i++){
 			Question q = gold.get(i);
 			if(qid.equal(q.getId())){
 				System.out.println("Metrics on question:" + questionText + "?");
 			    ArrayList<String> goldenConcepts = new ArrayList<String>();
 				goldenConcepts = q.getConcepts();
+				totalRel = goldenConcepts.size();
 				for(int j = 0; j < goldenConcepts.size(); j++){
 					set.put(goldenConcpets.get(j));	
 				}
-			
+				for(int z = 0; z < resultConcepts.size(); z++){
+					if(set.contains(resultConcepts.get(z))){
+						hit++;
+					}else{
+						miss++;	
+					}
+				}
+				break;	
 			}
-			//System.out.println(q.getConcepts());
-			//System.out.println(q.getDocuments());
-										
-		 } 	 		
+		 }
+		 double pre = hit / (hit + miss);
+		 double rec = hit / totalRel;
+		 System.out.println("Precision = ", pre); 
+		 System.out.println("Recall = ", rec);
+		 System.out.println("F-measure = ", 2 * pre * rec / (pre + rec));	
 	}
 
 }
