@@ -19,6 +19,16 @@ import org.apache.uima.util.ProgressImpl;
 
 //import util.FileOp;
 
+/**
+ * A simple collection reader that reads documents from a directory in the
+ * filesystem, which invokes json api to load sample data file. It can be
+ * configured with the following parameters:
+ * 
+ * <ul>
+ * <li><code>InputFile</code> - path to the sample json file</li>
+ * </ul>
+ * 
+ */
 public class FileCollectionReader extends CollectionReader_ImplBase {
 	/**
 	 * Name of configuration parameter that must be set to the path of a Input
@@ -42,6 +52,8 @@ public class FileCollectionReader extends CollectionReader_ImplBase {
 	private int mCurrentIndex;
 
 	/**
+	 * This initialize method invoke json api to load the sample input file.
+	 * 
 	 * @see org.apache.uima.collection.CollectionReader_ImplBase#initialize()
 	 */
 	public void initialize() throws ResourceInitializationException {
@@ -67,6 +79,9 @@ public class FileCollectionReader extends CollectionReader_ImplBase {
 	}
 
 	/**
+	 * The getNext method use an encapsulated JsonCollectionReaderHelper to add
+	 * the content of extracted questions into CAS.
+	 * 
 	 * @see org.apache.uima.collection.CollectionReader#getNext(org.apache.uima.cas.CAS)
 	 */
 	public void getNext(CAS aCAS) throws IOException, CollectionException {

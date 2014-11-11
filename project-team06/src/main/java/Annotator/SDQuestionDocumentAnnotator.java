@@ -20,6 +20,13 @@ import edu.cmu.lti.oaqa.bio.bioasq.services.PubMedSearchServiceResponse.Document
 import edu.cmu.lti.oaqa.type.retrieval.AtomicQueryConcept;
 //import edu.cmu.lti.oaqa.type.retrieval.Document;
 
+/**
+ * The SDQuestionConceptAnnotator uses PubMedSearchServiceResponse service to
+ * process the query content and return several features which corresponds to
+ * the data type provided by project archetype. Finally, store these information
+ * into Document-typed annotation.
+ *
+ */
 public class SDQuestionDocumentAnnotator extends JCasAnnotator_ImplBase {
 
 	  public GoPubMedService service;
