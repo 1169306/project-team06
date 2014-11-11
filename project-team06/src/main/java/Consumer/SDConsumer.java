@@ -2,14 +2,15 @@ package Consumer;
 
 import static java.util.stream.Collectors.toList;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.io.IOException;
 import java.io.Writer;
 import java.io.FileWriter;
 import java.io.File;
 
 import json.gson.TrainingSet;
-
 import json.gson.Question;
 import json.gson.TestSet;
 
@@ -137,5 +138,64 @@ public class SDConsumer extends CasConsumer_ImplBase {
 		 System.out.println("Recall = ", rec);
 		 System.out.println("F-measure = ", 2 * pre * rec / (pre + rec));	
 >>>>>>> 6a7aac75c8869657ac2e593a69e98c80a2b1244a
+	}
+	
+	/**
+	 * Return precision value.
+	 * 
+	 * @param trueValue
+	 * 				True dataset
+	 * @param retrValue
+	 * 				Retrieval dataset 
+	 * @return
+	 */
+	private <T> double precision(List<T> trueValue, List<T>retrValue) {
+		// If retrValue is empty, precision is zero
+		if (retrValue.size() == 0) {
+			return 0;
+		}
+		Set<T> trueSet = new HashSet<T>(trueValue);
+		Set<T> retrSet  = new HashSet<T>(retrValue);
+		// Retain only the elements in goldSet, which excludes all of the false value
+		retrSet.retainAll(trueSet);
+		int truePositive  = retrSet.size();
+		return ((double)truePositive)/((double)retrValue.size());
+	}
+	
+	/**
+	 * Return recall value.
+	 * @param trueValue
+	 * 				True dataset
+	 * @param retrValue
+	 * 				Retrieval dataset
+	 * @return
+	 */
+	private <T> double recall(List<T> trueValue, List<T> retrValue) {
+		// If retrValue is empty, recall is zero
+		if (trueValue.size() == 0){
+		      return 0;
+		}
+	    Set<T> trueSet = new HashSet<T>(trueValue);
+	    Set<T> retrSet  = new HashSet<T>(retrValue);
+	    // Retain only the elements in goldSet, which excludes all of the false value
+	    retrSet.retainAll(trueSet);
+	    int truePositive  = retrSet.size();
+	    return ((double)truePositive) / ((double)trueValue.size());    
+	}
+	
+	/**
+	 * Return f-measure value.
+	 * @param precision
+	 * 				Precision value
+	 * @param recall
+	 * 				Recall value
+	 * @return
+	 */
+	private double fMeasure(double precision, double recall) {
+		// If either precision or recall equals to zero, return zero
+		if ((precision == 0) || (recall == 0)) {
+		     return 0;
+		}
+		return (2 * precision * recall) / (precision + rec);       
 	}
 }
