@@ -226,4 +226,35 @@ public class SDConsumer extends CasConsumer_ImplBase {
 		}
 		return ap / posiCount;       
 	}
+	
+	/**
+	 * Return the average value of precision
+	 * @param apList
+	 * 			Input average precision list
+	 * @return
+	 */
+	private double meanAvrPrec(List<Double> apList) {
+		double map;
+		for (Double item : apList) {
+			map += item;
+		}
+		return map / (double)apList.size();
+	}
+	
+	/**
+	 * Return Geometric Mean Average Precision of the given average precision list
+	 * @param apList
+	 * 			Input average precision list
+	 * @return
+	 */
+	private double geomMAP(List<Double> apList) {
+		double epsilon = Math.pow(10,-15);
+		double gmap;
+		for (Double item : apList) {
+			gmap *= (item + epsilon); 
+		}
+		gmap = Math.pow(gmap, 1 / apList.size());
+		return gmap;
+	}
+	
 }
