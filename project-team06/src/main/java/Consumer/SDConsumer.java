@@ -2,12 +2,16 @@ package Consumer;
 
 import static java.util.stream.Collectors.toList;
 
+import java.util.List;
 import java.io.IOException;
 import java.io.Writer;
 import java.io.FileWriter;
 import java.io.File;
 
 import json.gson.TrainingSet;
+
+import json.gson.Question;
+import json.gson.TestSet;
 
 import org.apache.uima.cas.CAS;
 import org.apache.uima.cas.FSIterator;
@@ -23,17 +27,35 @@ import edu.cmu.lti.oaqa.type.retrieval.ConceptSearchResult;
 public class SDConsumer extends CasConsumer_ImplBase{
 
 	public static final String PATH = "Output";
+	public static final String Standard = "goldenstandard"; 
 	public String filePath;
+	public String standardPath;
 	private Writer fileWriter = null;
+	//private Evaluation evaluation;
+	private List<Question> gold;
 	
 	public void initialize() throws ResourceInitializationException {
 		filePath = (String) getConfigParameterValue(PATH);
-	    try {
+	    
+		if(filePath == null){
+			throw new ResourceInitializationException(
+				ResourceInitializationException.CONFIG_SETTING_ABSENT, 
+				new Object[] {"output file initialization fail"}
+			);	
+		}
+		
+		try {
 	        fileWriter = new FileWriter(new File(filePath));
 	    
 	      } catch (IOException e) {
 	        e.printStackTrace();
 	      }
+
+		//get gloden standard file
+		standardPath  = (String) getConfigParameterValue(Standard);	
+		gold = TestSet.load(getClass().getResourceAsStream(standardPath)).stream().collect(toList());;
+		gold.stream().filter(input->input.getBody() != null).forEach(input->input.setBody(input.getBody().trim().replaceAll("\\s+", " ")));	
+		//evaluation = new Evaluation(gold);
 	}
 	
 	public void processCas(CAS aCAS) throws ResourceProcessException {
@@ -62,10 +84,13 @@ public class SDConsumer extends CasConsumer_ImplBase{
 	      
 		 it = jcas.getJFSIndexRepository().getAllIndexedFS(
 		    		ConceptSearchResult.type);
-		 while(it.hasNext()){
-			 ConceptSearchResult re = (ConceptSearchResult)it.next();
-		 }
-		
+	
+		 for(int i = 0; i < gold.size(); i++){
+			Question q = gold.get(i);
+			System.out.println(q.getConcepts());
+			System.out.println(q.getDocuments());
+										
+		 } 	 		
 	}
 	
 	  public void destroy() {
