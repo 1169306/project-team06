@@ -191,11 +191,39 @@ public class SDConsumer extends CasConsumer_ImplBase {
 	 * 				Recall value
 	 * @return
 	 */
-	private double fMeasure(double precision, double recall) {
+	private double fMeas(double precision, double recall) {
 		// If either precision or recall equals to zero, return zero
 		if ((precision == 0) || (recall == 0)) {
 		     return 0;
 		}
 		return (2 * precision * recall) / (precision + rec);       
+	}
+	
+	/**
+	 * Return average precision
+	 * @param trueValue
+	 * 				True dataset
+	 * @param retrValue
+	 * 				Retrieval dataset
+	 * @return
+	 */
+	private <T> double avrPrec(List<T> trueValue, List<T> retrValue){
+		// number of positive item so far
+		int posiCount = 0;
+		double ap = 0.0;
+		// the size of the list containing the first r items.
+		int numItem = 0;
+		for (T item : retrValue) {   
+			if (trueValue.contains(item)) {
+		       posiCount += 1;
+		       ap += (posiCount / ((double)(numItem + 1)));
+		    }
+		    numItem = numItem + 1;
+		}
+		// posiCount doesn't increase or ap doesn't increase
+		if ((ap == 0) || (posiCount == 0)) {
+			return 0;
+		}
+		return ap / posiCount;       
 	}
 }
