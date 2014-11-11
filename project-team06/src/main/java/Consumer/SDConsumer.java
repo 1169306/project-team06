@@ -27,33 +27,38 @@ import edu.cmu.lti.oaqa.type.retrieval.ConceptSearchResult;
 public class SDConsumer extends CasConsumer_ImplBase {
 
 	public static final String PATH = "Output";
-	public static final String Standard = "goldenstandard"; 
+	public static final String Standard = "goldenstandard";
 	public String filePath;
 	public String standardPath;
 	private Writer fileWriter = null;
 	private List<Question> gold;
-	
+
 	public void initialize() throws ResourceInitializationException {
 		filePath = (String) getConfigParameterValue(PATH);
-	    
-		if(filePath == null){
-			throw new ResourceInitializationException(
-				ResourceInitializationException.CONFIG_SETTING_ABSENT, 
-				new Object[] {"output file initialization fail"}
-			);	
-		}
-		
-		try {
-	        fileWriter = new FileWriter(new File(filePath));
-	    
-	      } catch (IOException e) {
-	        e.printStackTrace();
-	      }
 
-		//get gloden standard file
-		standardPath  = (String) getConfigParameterValue(Standard);	
-		gold = TestSet.load(getClass().getResourceAsStream(standardPath)).stream().collect(toList());;
-		gold.stream().filter(input->input.getBody() != null).forEach(input->input.setBody(input.getBody().trim().replaceAll("\\s+", " ")));	
+		if (filePath == null) {
+			throw new ResourceInitializationException(
+					ResourceInitializationException.CONFIG_SETTING_ABSENT,
+					new Object[] { "output file initialization fail" });
+		}
+
+		try {
+			fileWriter = new FileWriter(new File(filePath));
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		// get gloden standard file
+		standardPath = (String) getConfigParameterValue(Standard);
+		gold = TestSet.load(getClass().getResourceAsStream(standardPath))
+				.stream().collect(toList());
+		;
+		gold.stream()
+				.filter(input -> input.getBody() != null)
+				.forEach(
+						input -> input.setBody(input.getBody().trim()
+								.replaceAll("\\s+", " ")));
 	}
 
 	public void processCas(CAS aCAS) throws ResourceProcessException {
@@ -115,5 +120,4 @@ public class SDConsumer extends CasConsumer_ImplBase {
 										
 		 } 	 		
 	}
-
 }
