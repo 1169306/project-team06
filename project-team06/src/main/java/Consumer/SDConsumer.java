@@ -256,5 +256,4 @@ public class SDConsumer extends CasConsumer_ImplBase {
 		gmap = Math.pow(gmap, 1 / apList.size());
 		return gmap;
 	}
-	
 }
