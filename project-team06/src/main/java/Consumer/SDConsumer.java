@@ -54,7 +54,6 @@ public class SDConsumer extends CasConsumer_ImplBase {
 		standardPath  = (String) getConfigParameterValue(Standard);	
 		gold = TestSet.load(getClass().getResourceAsStream(standardPath)).stream().collect(toList());;
 		gold.stream().filter(input->input.getBody() != null).forEach(input->input.setBody(input.getBody().trim().replaceAll("\\s+", " ")));	
-		//evaluation = new Evaluation(gold);
 	}
 
 	public void processCas(CAS aCAS) throws ResourceProcessException {
@@ -65,31 +64,54 @@ public class SDConsumer extends CasConsumer_ImplBase {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
+		
+		FSIterator<Annotation> it = aJCas.getAnnotationIndex(Question.type)
+                .iterator();
+		string qid;
+		while(it.hasNext()){
+			Question curQuestion = (Question)it.next();
+			qid = curQuestion.getId();					
+		}
+		
 		FSIterator<TOP> it = jcas.getJFSIndexRepository().getAllIndexedFS(
 				AtomicQueryConcept.type);
-		while (it.hasNext()) {
+		String questionText;
+		while (it.hasNext()){
 			AtomicQueryConcept con = (AtomicQueryConcept) it.next();
-			String text = con.getText();
-			System.out.println(text);
-			try {
-				fileWriter.append(text + "\n");
-
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-	     }
-	      
+			questionText = con.getText();
+	    }
+	   
+		 ArrayList<String> resultConcepts = new ArrayList<String>();   
 		 it = jcas.getJFSIndexRepository().getAllIndexedFS(
 		    		ConceptSearchResult.type);
-	
+		 while(it.hasNext()){
+			ConceptSearchResult result = (ConceptSearchResult)it.next();
+			resultConcepts.add(result.getText());		
+		}
+		
+		 HashSet<String> set = new HashSet<String>();
+		 int hit = 0;
+		 int miss = 0;	
 		 for(int i = 0; i < gold.size(); i++){
 			Question q = gold.get(i);
+<<<<<<< HEAD
 			System.out.println("-___________");
 			System.out.println(q.getId());
 			System.out.println(q.getConcepts());
 			System.out.println(q.getDocuments());
+=======
+			if(qid.equal(q.getId())){
+				System.out.println("Metrics on question:" + questionText + "?");
+			    ArrayList<String> goldenConcepts = new ArrayList<String>();
+				goldenConcepts = q.getConcepts();
+				for(int j = 0; j < goldenConcepts.size(); j++){
+					set.put(goldenConcpets.get(j));	
+				}
+			
+			}
+			//System.out.println(q.getConcepts());
+			//System.out.println(q.getDocuments());
+>>>>>>> 946de4e8a8da2831090c9a98a167785d02998d13
 										
 		 } 	 		
 	}
