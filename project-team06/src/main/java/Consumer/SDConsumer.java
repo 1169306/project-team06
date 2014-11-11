@@ -86,6 +86,8 @@ public class SDConsumer extends CasConsumer_ImplBase {
 	
 		 for(int i = 0; i < gold.size(); i++){
 			Question q = gold.get(i);
+			System.out.println("-___________");
+			System.out.println(q.getId());
 			System.out.println(q.getConcepts());
 			System.out.println(q.getDocuments());
 										
