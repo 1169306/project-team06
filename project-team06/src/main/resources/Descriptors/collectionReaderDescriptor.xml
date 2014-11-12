@@ -25,7 +25,7 @@
     </configurationParameterSettings>
     <typeSystemDescription>
       <imports>
-        <import location="/Users/victorzhao/git/project-team06/project-team06/src/main/resources/type/OAQATypes.xml"/>
+        <import location="../type/OAQATypes.xml"/>
       </imports>
     </typeSystemDescription>
     <typePriorities/>

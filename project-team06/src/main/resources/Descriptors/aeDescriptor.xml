@@ -4,16 +4,16 @@
   <primitive>false</primitive>  
   <delegateAnalysisEngineSpecifiers>
     <delegateAnalysisEngine key="SDQuestionAnnotatorDescriptor">
-      <import location="/Users/victorzhao/git/project-team06/project-team06/src/main/resources/Descriptors/SDQuestionAnnotatorDescriptor.xml"/>
+      <import location="SDQuestionAnnotatorDescriptor.xml"/>
     </delegateAnalysisEngine>
     <delegateAnalysisEngine key="SDQuestionConceptAnnotatorDescriptor">
-      <import location="/Users/victorzhao/git/project-team06/project-team06/src/main/resources/Descriptors/SDQuestionConceptAnnotatorDescriptor.xml"/>
+      <import location="SDQuestionConceptAnnotatorDescriptor.xml"/>
     </delegateAnalysisEngine>
   <delegateAnalysisEngine key="SDQuestionDocumentAnnotatorDescriptor">
-      <import location="/Users/victorzhao/git/project-team06/project-team06/src/main/resources/Descriptors/SDQuestionDocumentAnnotatorDescriptor.xml"/>
+      <import location="SDQuestionDocumentAnnotatorDescriptor.xml"/>
     </delegateAnalysisEngine>
     <delegateAnalysisEngine key="SDQuestionTripleDescriptor">
-      <import location="/Users/victorzhao/git/project-team06/project-team06/src/main/resources/Descriptors/SDQuestionTripleDescriptor.xml"/>
+      <import location="SDQuestionTripleDescriptor.xml"/>
     </delegateAnalysisEngine>
   </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
