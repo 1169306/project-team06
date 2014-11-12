@@ -2,6 +2,7 @@ package Consumer;
 
 import static java.util.stream.Collectors.toList;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -19,6 +20,7 @@ import org.apache.uima.cas.FSIterator;
 import org.apache.uima.collection.CasConsumer_ImplBase;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.cas.TOP;
+import org.apache.uima.jcas.tcas.Annotation;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceProcessException;
 
@@ -65,23 +67,24 @@ public class SDConsumer extends CasConsumer_ImplBase {
 	public void processCas(CAS aCAS) throws ResourceProcessException {
 
 		JCas jcas = null;
+		FSIterator<Annotation> ita  = null;
 		try {
 			jcas = aCAS.getJCas();
+			ita = jcas.getAnnotationIndex(edu.cmu.lti.oaqa.type.input.Question.type).iterator();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		FSIterator<Annotation> it = aJCas.getAnnotationIndex(Question.type)
-                .iterator();
-		string qid;
-		while(it.hasNext()){
-			Question curQuestion = (Question)it.next();
+		
+		String qid = "";
+		while(ita.hasNext()){
+			edu.cmu.lti.oaqa.type.input.Question curQuestion = (edu.cmu.lti.oaqa.type.input.Question)ita.next();
 			qid = curQuestion.getId();					
 		}
 		
 		FSIterator<TOP> it = jcas.getJFSIndexRepository().getAllIndexedFS(
 				AtomicQueryConcept.type);
-		String questionText;
+		String questionText = null;
 		while (it.hasNext()){
 			AtomicQueryConcept con = (AtomicQueryConcept) it.next();
 			questionText = con.getText();
@@ -95,23 +98,24 @@ public class SDConsumer extends CasConsumer_ImplBase {
 			resultConcepts.add(result.getText());		
 		}
 		
-		 HashSet<String> set = new HashSet<String>();
+		 HashSet<String> ss = new HashSet<String>();
 		 double hit = 0;
 		 double miss = 0;
-		 double totalRel;	
+		 double totalRel = 0;	
 		 for(int i = 0; i < gold.size(); i++){
 			Question q = gold.get(i);
 			
-			if(qid.equal(q.getId())){
+			if(qid.equals(q.getId())){
 				System.out.println("Metrics on question:" + questionText + "?");
 			    ArrayList<String> goldenConcepts = new ArrayList<String>();
-				goldenConcepts = q.getConcepts();
+				goldenConcepts = (ArrayList<String>) q.getConcepts();
 				totalRel = goldenConcepts.size();
 				for(int j = 0; j < goldenConcepts.size(); j++){
-					set.put(goldenConcpets.get(j));	
+					ss.add(goldenConcepts.get(j));
+				
 				}
 				for(int z = 0; z < resultConcepts.size(); z++){
-					if(set.contains(resultConcepts.get(z))){
+					if(ss.contains(resultConcepts.get(z))){
 						hit++;
 					}else{
 						miss++;	
@@ -120,13 +124,14 @@ public class SDConsumer extends CasConsumer_ImplBase {
 				break;	
 			}
 		 } 	 		
-		 }
+		 
 		 double pre = hit / (hit + miss);
 		 double rec = hit / totalRel;
-		 System.out.println("Precision = ", pre); 
-		 System.out.println("Recall = ", rec);
-		 System.out.println("F-measure = ", 2 * pre * rec / (pre + rec));	
+		 System.out.println("Precision = " +  pre); 
+		 System.out.println("Recall = " + rec);
+		 System.out.println("F-measure = " +  2 * pre * rec / (pre + rec));	
 	}
+
 	
 	/**
 	 * Return precision value.
@@ -184,7 +189,7 @@ public class SDConsumer extends CasConsumer_ImplBase {
 		if ((precision == 0) || (recall == 0)) {
 		     return 0;
 		}
-		return (2 * precision * recall) / (precision + rec);       
+		return (2 * precision * recall) / (precision + recall);       
 	}
 	
 	/**
@@ -222,7 +227,7 @@ public class SDConsumer extends CasConsumer_ImplBase {
 	 * @return
 	 */
 	private double meanAvrPrec(List<Double> apList) {
-		double map;
+		double map = 0;
 		for (Double item : apList) {
 			map += item;
 		}
@@ -237,7 +242,7 @@ public class SDConsumer extends CasConsumer_ImplBase {
 	 */
 	private double geomMAP(List<Double> apList) {
 		double epsilon = Math.pow(10,-15);
-		double gmap;
+		double gmap = 0;
 		for (Double item : apList) {
 			gmap *= (item + epsilon); 
 		}
