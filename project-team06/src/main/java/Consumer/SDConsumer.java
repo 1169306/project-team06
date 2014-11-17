@@ -95,7 +95,9 @@ public class SDConsumer extends CasConsumer_ImplBase {
 		    		ConceptSearchResult.type);
 		 while(it.hasNext()){
 			ConceptSearchResult result = (ConceptSearchResult)it.next();
-			resultConcepts.add(result.getText());		
+			String gc = result.getUri();
+			String[] gcarray = gc.split("&");
+			resultConcepts.add(gcarray[gcarray.length - 1]);		
 		}
 		
 		 HashSet<String> ss = new HashSet<String>();
@@ -104,23 +106,31 @@ public class SDConsumer extends CasConsumer_ImplBase {
 		 double totalRel = 0;	
 		 for(int i = 0; i < gold.size(); i++){
 			Question q = gold.get(i);
-			
+			//System.out.println(q.getId() + "  qid " + qid);
 			if(qid.equals(q.getId())){
 				System.out.println("Metrics on question:" + questionText + "?");
 			    ArrayList<String> goldenConcepts = new ArrayList<String>();
 				goldenConcepts = (ArrayList<String>) q.getConcepts();
 				totalRel = goldenConcepts.size();
+				//System.out.println("Golden start-------------------");
 				for(int j = 0; j < goldenConcepts.size(); j++){
-					ss.add(goldenConcepts.get(j));
-				
+					//System.out.println(goldenConcepts.get(j));
+					String gc = goldenConcepts.get(j);
+					String[] gcarray = gc.split("&");
+					//ss.add(goldenConcepts.get(j));
+					ss.add(gcarray[gcarray.length - 1]);
 				}
+				//System.out.println("Golden end-------------------");
+				//System.out.println("System start-------------------");
 				for(int z = 0; z < resultConcepts.size(); z++){
+					//System.out.println(resultConcepts.get(z));
 					if(ss.contains(resultConcepts.get(z))){
 						hit++;
 					}else{
 						miss++;	
 					}
 				}
+				//System.out.println("System end-------------------" + hit + "  " + miss);
 				break;	
 			}
 		 } 	 		
