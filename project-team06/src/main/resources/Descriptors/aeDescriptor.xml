@@ -14,13 +14,13 @@
       <import location="SDQuestionTripleDescriptor.xml"/>
     </delegateAnalysisEngine>
     <delegateAnalysisEngine key="SDNERAnnotatorDescriptor">
-      <import location="/home/amaliujia/git/project-team06/project-team06/src/main/resources/Descriptors/SDNERAnnotatorDescriptor.xml"/>
+      <import location="SDNERAnnotatorDescriptor.xml"/>
     </delegateAnalysisEngine>
   <delegateAnalysisEngine key="SDQuestionAnnotatorDescriptor">
-      <import location="/home/amaliujia/git/project-team06/project-team06/src/main/resources/Descriptors/SDQuestionAnnotatorDescriptor.xml"/>
+      <import location="SDQuestionAnnotatorDescriptor.xml"/>
     </delegateAnalysisEngine>
   <delegateAnalysisEngine key="StanfordNERAnnotatorDescriptor">
-      <import location="/home/amaliujia/git/project-team06/project-team06/src/main/resources/Descriptors/StanfordNERAnnotatorDescriptor.xml"/>
+      <import location="StanfordNERAnnotatorDescriptor.xml"/>
     </delegateAnalysisEngine>
   </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
