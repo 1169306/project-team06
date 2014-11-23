@@ -16,6 +16,8 @@ public class GoPubMedServiceExample {
 			IOException, ConfigurationException {
 		// String text = "Is Rheumatoid Arthritis more common in men or women?";
 		String text = "Are there any DNMT3 proteins present in plants";
+		
+		// Use pubmed.search.service = http://metal.lti.cs.cmu.edu:30001/gopubmed/pubmed/?user=amaiberg
 		GoPubMedService service = new GoPubMedService(args[0]);
 		OntologyServiceResponse.Result diseaseOntologyResult = service
 				.findDiseaseOntologyEntitiesPaged(text, 0);

@@ -138,6 +138,7 @@ public class SDConsumer extends CasConsumer_ImplBase {
 		 double pre = hit / (hit + miss);
 		 double rec = hit / totalRel;
 		 System.out.println("Precision = " +  pre); 
+		 // System.out.println("Replaced Precision = " + precision(goldenConcepts, resultConcepts));
 		 System.out.println("Recall = " + rec);
 		 System.out.println("F-measure = " +  2 * pre * rec / (pre + rec));	
 	}
