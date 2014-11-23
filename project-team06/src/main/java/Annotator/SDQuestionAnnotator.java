@@ -1,13 +1,18 @@
 package Annotator;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.cas.FSIterator;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 
+import util.Utils;
 import edu.cmu.lti.oaqa.type.input.Question;
 import edu.cmu.lti.oaqa.type.retrieval.AtomicQueryConcept;
+import edu.cmu.lti.oaqa.type.retrieval.ComplexQueryConcept;
 
 public class SDQuestionAnnotator extends JCasAnnotator_ImplBase {
 
@@ -30,6 +35,12 @@ public class SDQuestionAnnotator extends JCasAnnotator_ImplBase {
 			String text = question.getText().replace("?", "");
 			c.setText(text);
 			c.addToIndexes();
+			List<AtomicQueryConcept> a= new ArrayList<AtomicQueryConcept>();
+			a.add(c);
+
+			ComplexQueryConcept complexQuery = new ComplexQueryConcept(aJCas);
+			complexQuery.setOperatorArgs(Utils.fromCollectionToFSList(aJCas, a));
+			complexQuery.addToIndexes();	
 		}
 	}
 
