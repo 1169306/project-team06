@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
   <primitive>false</primitive>  
@@ -15,6 +16,9 @@
     <delegateAnalysisEngine key="SDQuestionTripleDescriptor">
       <import location="SDQuestionTripleDescriptor.xml"/>
     </delegateAnalysisEngine>
+  <delegateAnalysisEngine key="SDNERAnnotatorDescriptor">
+      <import location="/home/amaliujia/git/project-team06/project-team06/src/main/resources/Descriptors/SDNERAnnotatorDescriptor.xml"/>
+    </delegateAnalysisEngine>
   </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
     <name>aeDescriptor</name>
@@ -25,10 +29,11 @@
     <configurationParameterSettings/>
     <flowConstraints>
       <fixedFlow>
+        <node>SDNERAnnotatorDescriptor</node>
         <node>SDQuestionAnnotatorDescriptor</node>
-        <node>SDQuestionConceptAnnotatorDescriptor</node>
-      <node>SDQuestionDocumentAnnotatorDescriptor</node>
-        <node>SDQuestionTripleDescriptor</node>
+      <node>SDQuestionConceptAnnotatorDescriptor</node>
+        <node>SDQuestionDocumentAnnotatorDescriptor</node>
+      <node>SDQuestionTripleDescriptor</node>
       </fixedFlow>
     </flowConstraints>
     <fsIndexCollection/>

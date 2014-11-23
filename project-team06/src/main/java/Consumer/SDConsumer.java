@@ -75,7 +75,6 @@ public class SDConsumer extends CasConsumer_ImplBase {
 			e.printStackTrace();
 		}
 		
-		
 		String qid = "";
 		while(ita.hasNext()){
 			edu.cmu.lti.oaqa.type.input.Question curQuestion = (edu.cmu.lti.oaqa.type.input.Question)ita.next();
@@ -104,46 +103,45 @@ public class SDConsumer extends CasConsumer_ImplBase {
 		 double hit = 0;
 		 double miss = 0;
 		 double totalRel = 0;	
-		 for(int i = 0; i < gold.size(); i++){
+		 
+		double pre = 0;
+		double rec = 0;
+		for(int i = 0; i < gold.size(); i++){
 			Question q = gold.get(i);
-			//System.out.println(q.getId() + "  qid " + qid);
 			if(qid.equals(q.getId())){
 				System.out.println("Metrics on question:" + questionText + "?");
 			    ArrayList<String> goldenConcepts = new ArrayList<String>();
 				goldenConcepts = (ArrayList<String>) q.getConcepts();
 				totalRel = goldenConcepts.size();
-				//System.out.println("Golden start-------------------");
+				ArrayList<String> filer = new ArrayList<String>();
 				for(int j = 0; j < goldenConcepts.size(); j++){
-					//System.out.println(goldenConcepts.get(j));
 					String gc = goldenConcepts.get(j);
 					String[] gcarray = gc.split("&");
-					//ss.add(goldenConcepts.get(j));
 					ss.add(gcarray[gcarray.length - 1]);
+					//golden standard array
+					filer.add(gcarray[gcarray.length - 1]);
 				}
-				//System.out.println("Golden end-------------------");
-				//System.out.println("System start-------------------");
 				for(int z = 0; z < resultConcepts.size(); z++){
-					//System.out.println(resultConcepts.get(z));
 					if(ss.contains(resultConcepts.get(z))){
 						hit++;
 					}else{
 						miss++;	
 					}
 				}
-				//System.out.println("System end-------------------" + hit + "  " + miss);
+				//call precision function
+				pre = precision(resultConcepts, filer); 
 				break;	
 			}
 		 } 	 		
 		 
-		 double pre = hit / (hit + miss);
-		 double rec = hit / totalRel;
+		 //double pre = hit / (hit + miss);
+		 //double rec = hit / totalRel;
 		 System.out.println("Precision = " +  pre); 
 		 // System.out.println("Replaced Precision = " + precision(goldenConcepts, resultConcepts));
 		 System.out.println("Recall = " + rec);
 		 System.out.println("F-measure = " +  2 * pre * rec / (pre + rec));	
 	}
 
-	
 	/**
 	 * Return precision value.
 	 * 
@@ -163,7 +161,8 @@ public class SDConsumer extends CasConsumer_ImplBase {
 		// Retain only the elements in goldSet, which excludes all of the false value
 		retrSet.retainAll(trueSet);
 		int truePositive  = retrSet.size();
-		return ((double)truePositive)/((double)retrValue.size());
+		//return ((double)truePositive)/((double)retrValue.size());
+		return ((double)truePositive) / ((double)trueValue.size());
 	}
 	
 	/**
