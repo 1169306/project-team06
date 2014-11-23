@@ -1,13 +1,22 @@
 package Annotator;
 
+import java.util.Iterator;
+
 import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
+import org.apache.uima.cas.FSIterator;
 import org.apache.uima.jcas.JCas;
+import org.apache.uima.jcas.tcas.Annotation;
 import org.apache.uima.resource.ResourceInitializationException;
 
+import com.aliasi.chunk.Chunking;
 import com.aliasi.chunk.NBestChunker;
 import com.aliasi.util.AbstractExternalizable;
+import com.aliasi.util.ScoredObject;
+
+import edu.cmu.lti.oaqa.type.input.Question;
+
 
 public class SDNERAnnotator extends JCasAnnotator_ImplBase {
 
@@ -16,7 +25,7 @@ public class SDNERAnnotator extends JCasAnnotator_ImplBase {
 
   public void initialize(UimaContext aContext) throws ResourceInitializationException {
     super.initialize(aContext);
-
+    System.out.println("This is NER");
     // Load the LingPipe pre-trained model
     try {
       chunker = (NBestChunker) AbstractExternalizable.readResourceObject(
@@ -27,10 +36,11 @@ public class SDNERAnnotator extends JCasAnnotator_ImplBase {
     }
   }
 
-  @Override
-  public void process(JCas arg0) throws AnalysisEngineProcessException {
-    // TODO Auto-generated method stub
-    
+  public void process(JCas aJCas) throws AnalysisEngineProcessException {
+   	FSIterator<Annotation> iterator = aJCas.getAnnotationIndex(Question.type).iterator();
+
+	if(iterator.hasNext()){
+	} 
   }
 
 }
