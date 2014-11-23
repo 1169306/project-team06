@@ -4,20 +4,23 @@
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
   <primitive>false</primitive>  
   <delegateAnalysisEngineSpecifiers>
-    <delegateAnalysisEngine key="SDQuestionAnnotatorDescriptor">
-      <import location="SDQuestionAnnotatorDescriptor.xml"/>
-    </delegateAnalysisEngine>
     <delegateAnalysisEngine key="SDQuestionConceptAnnotatorDescriptor">
       <import location="SDQuestionConceptAnnotatorDescriptor.xml"/>
     </delegateAnalysisEngine>
-  <delegateAnalysisEngine key="SDQuestionDocumentAnnotatorDescriptor">
+    <delegateAnalysisEngine key="SDQuestionDocumentAnnotatorDescriptor">
       <import location="SDQuestionDocumentAnnotatorDescriptor.xml"/>
     </delegateAnalysisEngine>
-    <delegateAnalysisEngine key="SDQuestionTripleDescriptor">
+  <delegateAnalysisEngine key="SDQuestionTripleDescriptor">
       <import location="SDQuestionTripleDescriptor.xml"/>
     </delegateAnalysisEngine>
-  <delegateAnalysisEngine key="SDNERAnnotatorDescriptor">
+    <delegateAnalysisEngine key="SDNERAnnotatorDescriptor">
       <import location="/home/amaliujia/git/project-team06/project-team06/src/main/resources/Descriptors/SDNERAnnotatorDescriptor.xml"/>
+    </delegateAnalysisEngine>
+  <delegateAnalysisEngine key="SDQuestionAnnotatorDescriptor">
+      <import location="/home/amaliujia/git/project-team06/project-team06/src/main/resources/Descriptors/SDQuestionAnnotatorDescriptor.xml"/>
+    </delegateAnalysisEngine>
+  <delegateAnalysisEngine key="StanfordNERAnnotatorDescriptor">
+      <import location="/home/amaliujia/git/project-team06/project-team06/src/main/resources/Descriptors/StanfordNERAnnotatorDescriptor.xml"/>
     </delegateAnalysisEngine>
   </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
@@ -25,12 +28,12 @@
     <description/>
     <version>1.0</version>
     <vendor/>
-    <configurationParameters/>
+    <configurationParameters searchStrategy="language_fallback"/>
     <configurationParameterSettings/>
     <flowConstraints>
       <fixedFlow>
-        <node>SDNERAnnotatorDescriptor</node>
         <node>SDQuestionAnnotatorDescriptor</node>
+        <node>StanfordNERAnnotatorDescriptor</node>
       <node>SDQuestionConceptAnnotatorDescriptor</node>
         <node>SDQuestionDocumentAnnotatorDescriptor</node>
       <node>SDQuestionTripleDescriptor</node>

@@ -34,12 +34,12 @@ public class SDQuestionAnnotator extends JCasAnnotator_ImplBase {
 			AtomicQueryConcept c = new AtomicQueryConcept(aJCas);
 			String text = question.getText().replace("?", "");
 			c.setText(text);
-			c.addToIndexes();
-			List<AtomicQueryConcept> a= new ArrayList<AtomicQueryConcept>();
-			a.add(c);
+			//c.addToIndexes();
+			List<AtomicQueryConcept> args= new ArrayList<AtomicQueryConcept>();
+			args.add(c);
 
 			ComplexQueryConcept complexQuery = new ComplexQueryConcept(aJCas);
-			complexQuery.setOperatorArgs(Utils.fromCollectionToFSList(aJCas, a));
+			complexQuery.setOperatorArgs(Utils.fromCollectionToFSList(aJCas, args));
 			complexQuery.addToIndexes();	
 		}
 	}
