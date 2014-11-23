@@ -26,7 +26,7 @@ public class PosTagNamedEntityRecognizer {
     pipeline = new StanfordCoreNLP(props);
   }
 
-  public Map<Integer, Integer> getGeneSpans(String text) {
+  public Map<Integer, Integer> getNameSpans(String text) {
     Map<Integer, Integer> begin2end = new HashMap<Integer, Integer>();
     Annotation document = new Annotation(text);
     pipeline.annotate(document);
