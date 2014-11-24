@@ -710,6 +710,11 @@
           <description>The lexical string in the question.</description>
           <rangeTypeName>uima.cas.String</rangeTypeName>
         </featureDescription>
+      <featureDescription>
+          <name>Question</name>
+          <description/>
+          <rangeTypeName>edu.cmu.lti.oaqa.type.input.Question</rangeTypeName>
+        </featureDescription>
       </features>
     </typeDescription>
   <typeDescription>

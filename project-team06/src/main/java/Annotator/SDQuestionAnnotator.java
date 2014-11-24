@@ -1,6 +1,11 @@
 package Annotator;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 import org.apache.uima.UimaContext;
@@ -13,6 +18,7 @@ import org.apache.uima.resource.ResourceInitializationException;
 
 import com.aliasi.tokenizer.TokenizerFactory;
 
+import util.StanfordLemmatizer;
 import util.Utils;
 import edu.cmu.lti.oaqa.type.input.Question;
 import edu.cmu.lti.oaqa.type.retrieval.AtomicQueryConcept;
@@ -40,19 +46,48 @@ public class SDQuestionAnnotator extends JCasAnnotator_ImplBase {
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
 		FSIterator<Annotation> it = aJCas.getAnnotationIndex(Question.type)
 				.iterator();
-		if (it.hasNext()) {
+		while (it.hasNext()) {
 			Question question = (Question) it.next();
-			AtomicQueryConcept c = new AtomicQueryConcept(aJCas);
+			//System.out.println("My question: " + question);
 			String text = question.getText().replace("?", "");
-			c.setText(text);
-			c.addToIndexes();
-			List<AtomicQueryConcept> args= new ArrayList<AtomicQueryConcept>();
-			args.add(c);
-
-			ComplexQueryConcept complexQuery = new ComplexQueryConcept(aJCas);
-			complexQuery.setOperatorArgs(Utils.fromCollectionToFSList(aJCas, args));
-			complexQuery.addToIndexes();	
+			List<String> term = tokenize0(text);
+			BufferedReader br;
+			HashMap<String, Integer> stopWords = new HashMap<String, Integer>();
+		    try {
+		      br = new BufferedReader(new FileReader("src/main/resources/stopwords.txt"));
+		      String line = null;
+		      //System.out.println(line);
+		      while((line = br.readLine()) != null ){
+		        if(!stopWords.containsKey(line)){
+		          stopWords.put(line+" ", 1);
+		        }
+		      }
+		      br.close();
+		    } catch (IOException e) {
+		      e.printStackTrace();
+		    }
+		    
+		    Iterator<String> iter_term = term.iterator();
+		    while (iter_term.hasNext()) {
+		    	String aterm = iter_term.next();
+		        aterm = StanfordLemmatizer.stemText(aterm);
+		        System.out.println(aterm);
+		        if(!stopWords.containsKey(aterm)){
+					AtomicQueryConcept c = new AtomicQueryConcept(aJCas);
+		        	c.setText(aterm);
+		        	c.setQuestion(question);
+		        	c.addToIndexes();
+		        }   
+		    }	
 		}
 	}
+	 
+	
+	List<String> tokenize0(String query) {
+		    List<String> queryList = new ArrayList<String>();
 
+		    for (String s : query.split("\\s+"))
+		      queryList.add(s);
+		    return queryList;
+	}
 }

@@ -13,7 +13,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** A primitive query concept represented by a single text string
- * Updated by JCasGen Sat Oct 18 19:40:19 EDT 2014
+ * Updated by JCasGen Sun Nov 23 23:37:21 EST 2014
  * @generated */
 public class AtomicQueryConcept_Type extends QueryConcept_Type {
   /** @generated 
@@ -92,6 +92,30 @@ public class AtomicQueryConcept_Type extends QueryConcept_Type {
     ll_cas.ll_setStringValue(addr, casFeatCode_originalText, v);}
     
   
+ 
+  /** @generated */
+  final Feature casFeat_Question;
+  /** @generated */
+  final int     casFeatCode_Question;
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @return the feature value 
+   */ 
+  public int getQuestion(int addr) {
+        if (featOkTst && casFeat_Question == null)
+      jcas.throwFeatMissing("Question", "edu.cmu.lti.oaqa.type.retrieval.AtomicQueryConcept");
+    return ll_cas.ll_getRefValue(addr, casFeatCode_Question);
+  }
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @param v value to set 
+   */    
+  public void setQuestion(int addr, int v) {
+        if (featOkTst && casFeat_Question == null)
+      jcas.throwFeatMissing("Question", "edu.cmu.lti.oaqa.type.retrieval.AtomicQueryConcept");
+    ll_cas.ll_setRefValue(addr, casFeatCode_Question, v);}
+    
+  
 
 
 
@@ -111,6 +135,10 @@ public class AtomicQueryConcept_Type extends QueryConcept_Type {
  
     casFeat_originalText = jcas.getRequiredFeatureDE(casType, "originalText", "uima.cas.String", featOkTst);
     casFeatCode_originalText  = (null == casFeat_originalText) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_originalText).getCode();
+
+ 
+    casFeat_Question = jcas.getRequiredFeatureDE(casType, "Question", "edu.cmu.lti.oaqa.type.input.Question", featOkTst);
+    casFeatCode_Question  = (null == casFeat_Question) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_Question).getCode();
 
   }
 }
