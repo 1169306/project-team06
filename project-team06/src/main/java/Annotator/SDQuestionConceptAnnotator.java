@@ -25,6 +25,7 @@ import edu.cmu.lti.oaqa.type.input.Question;
 import edu.cmu.lti.oaqa.type.retrieval.AtomicQueryConcept;
 import edu.cmu.lti.oaqa.type.retrieval.ComplexQueryConcept;
 import edu.cmu.lti.oaqa.type.retrieval.ConceptSearchResult;
+import edu.cmu.lti.oaqa.type.retrieval.QueryOperator;
 
 /**
  * The SDQuestionConceptAnnotator uses OntologyServiceResponse service to
@@ -66,15 +67,16 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 			ComplexQueryConcept con = (ComplexQueryConcept) it.next();
 			FSList conceptFslist = con.getOperatorArgs();
 			ArrayList<AtomicQueryConcept> conceptArray = Utils.fromFSListToCollection(conceptFslist, AtomicQueryConcept.class);
+			QueryOperator operator = con.getOperator();
 			String queryText = "";
+			queryText = conceptArray.get(0).getText();
 			if(conceptArray.size() != 1){
-				int index = 0;
+				int index = 1;
 				while(index < conceptArray.size()){
+					queryText += operator;
 					queryText += conceptArray.get(index).getText();
 					index++;
 				}
-			}else{
-				queryText = conceptArray.get(0).getText();
 			}
 			
 			try {
