@@ -40,9 +40,10 @@ import edu.cmu.lti.oaqa.type.retrieval.QueryOperator;
 public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 	/** The GoPubMedService instance variable */
 	public GoPubMedService service;
-	
+
 	/**
-	 * The initialize method initialize the GoPubMedService instance using a preset profile.
+	 * The initialize method initialize the GoPubMedService instance using a
+	 * preset profile.
 	 * 
 	 * @see org.apache.uima.analysis_component.JCasAnnotator_ImplBase#initialize(UimaContext)
 	 */
@@ -69,40 +70,43 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 		while (it.hasNext()) {
 			ComplexQueryConcept con = (ComplexQueryConcept) it.next();
 			FSList conceptFslist = con.getOperatorArgs();
-			ArrayList<AtomicQueryConcept> conceptArray = Utils.fromFSListToCollection(conceptFslist, AtomicQueryConcept.class);
+			ArrayList<AtomicQueryConcept> conceptArray = Utils
+					.fromFSListToCollection(conceptFslist,
+							AtomicQueryConcept.class);
 			QueryOperator operator = con.getOperator();
 			String queryText = "";
 			queryText = conceptArray.get(0).getText();
-			if(conceptArray.size() != 1){
+			if (conceptArray.size() != 1) {
 				int index = 1;
-				while(index < conceptArray.size()){
-					queryText += " " + operator.getName() + " " + conceptArray.get(index).getText();
+				while (index < conceptArray.size()) {
+					queryText += " " + operator.getName() + " "
+							+ conceptArray.get(index).getText();
 					index++;
 				}
 			}
 			List<Finding> combinedFindings = new ArrayList<Finding>();
-			
+
 			try {
 				OntologyServiceResponse.Result result = service
-						.findMeshEntitiesPaged(queryText, 0);				
-				combinedFindings = Intersect(combinedFindings, result.getFindings());
-				/*int curRank = 0;
-				for (Finding finding : result.getFindings()) {
-					edu.cmu.lti.oaqa.type.kb.Concept concept = new edu.cmu.lti.oaqa.type.kb.Concept(
-							aJCas);
-					concept.setName(finding.getConcept().getLabel());
-					//System.out.println(finding.getConcept().getLabel());
-					concept.addToIndexes();
-
-					ConceptSearchResult result1 = new ConceptSearchResult(aJCas);
-					result1.setConcept(concept);
-					result1.setUri(finding.getConcept().getUri());
-					result1.setScore(finding.getScore());
-					result1.setText(finding.getConcept().getLabel());
-					result1.setRank(curRank++);
-					result1.setQueryString(queryText);
-					result1.addToIndexes();
-				}*/
+						.findMeshEntitiesPaged(queryText, 0);
+				combinedFindings = Intersect(combinedFindings,
+						result.getFindings());
+				/*
+				 * int curRank = 0; for (Finding finding : result.getFindings())
+				 * { edu.cmu.lti.oaqa.type.kb.Concept concept = new
+				 * edu.cmu.lti.oaqa.type.kb.Concept( aJCas);
+				 * concept.setName(finding.getConcept().getLabel());
+				 * //System.out.println(finding.getConcept().getLabel());
+				 * concept.addToIndexes();
+				 * 
+				 * ConceptSearchResult result1 = new ConceptSearchResult(aJCas);
+				 * result1.setConcept(concept);
+				 * result1.setUri(finding.getConcept().getUri());
+				 * result1.setScore(finding.getScore());
+				 * result1.setText(finding.getConcept().getLabel());
+				 * result1.setRank(curRank++);
+				 * result1.setQueryString(queryText); result1.addToIndexes(); }
+				 */
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -112,7 +116,7 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 				edu.cmu.lti.oaqa.type.kb.Concept concept = new edu.cmu.lti.oaqa.type.kb.Concept(
 						aJCas);
 				concept.setName(finding.getConcept().getLabel());
-				//System.out.println(finding.getConcept().getLabel());
+				// System.out.println(finding.getConcept().getLabel());
 				concept.addToIndexes();
 				ConceptSearchResult result1 = new ConceptSearchResult(aJCas);
 				result1.setConcept(concept);
@@ -126,42 +130,42 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 		}
 		System.out.println("Concept finished");
 	}
-	
+
 	List<Finding> Intersect(List<Finding> f1, List<Finding> f2) {
 		HashMap<Finding, Integer> f1Map = new HashMap<Finding, Integer>();
 		Iterator<Finding> iter_f1 = f1.iterator();
-		while(iter_f1.hasNext()){
+		while (iter_f1.hasNext()) {
 			Finding afinding = iter_f1.next();
 			f1Map.put(afinding, 0);
 		}
-		
+
 		Iterator<Finding> iter_f2 = f2.iterator();
 		List<Finding> f3 = new ArrayList<Finding>();
-		while(iter_f2.hasNext()){
-			Finding afinding  = iter_f2.next();
-			if(f1Map.containsKey(afinding)){
+		while (iter_f2.hasNext()) {
+			Finding afinding = iter_f2.next();
+			if (f1Map.containsKey(afinding)) {
 				f3.add(afinding);
 			}
 		}
-	    return f3;
+		return f3;
 	}
-	
+
 	List<Finding> Union(List<Finding> f1, List<Finding> f2) {
 		HashMap<Finding, Integer> f1Map = new HashMap<Finding, Integer>();
 		Iterator<Finding> iter_f1 = f1.iterator();
-		while(iter_f1.hasNext()){
+		while (iter_f1.hasNext()) {
 			Finding afinding = iter_f1.next();
 			f1Map.put(afinding, 0);
 		}
-		
+
 		Iterator<Finding> iter_f2 = f2.iterator();
-		while(iter_f2.hasNext()){
-			Finding afinding  = iter_f2.next();
-			if(f1Map.containsKey(afinding)){
+		while (iter_f2.hasNext()) {
+			Finding afinding = iter_f2.next();
+			if (f1Map.containsKey(afinding)) {
 				f1.add(afinding);
 			}
 		}
-	    return f1;
+		return f1;
 	}
 
 }

@@ -124,5 +124,6 @@ public class SnippetRetreivalHelper {
 		System.out.println(sec0);
 		Chunking chunking = SENTENCE_CHUNKER.chunk(sec0.toCharArray(), 0,
 				sec0.length());
+		
 	}
 }

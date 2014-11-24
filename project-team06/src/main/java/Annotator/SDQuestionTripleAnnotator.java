@@ -34,6 +34,7 @@ import edu.cmu.lti.oaqa.type.retrieval.QueryOperator;
 public class SDQuestionTripleAnnotator extends JCasAnnotator_ImplBase {
 	private GoPubMedService service;
 	private int mResultsPerPage = 30;
+
 	public void initialize(UimaContext aContext)
 			throws ResourceInitializationException {
 		super.initialize(aContext);
@@ -50,38 +51,42 @@ public class SDQuestionTripleAnnotator extends JCasAnnotator_ImplBase {
 		while (it.hasNext()) {
 			ComplexQueryConcept con = (ComplexQueryConcept) it.next();
 			FSList conceptFslist = con.getOperatorArgs();
-			ArrayList<AtomicQueryConcept> conceptArray = Utils.fromFSListToCollection(conceptFslist, AtomicQueryConcept.class);
+			ArrayList<AtomicQueryConcept> conceptArray = Utils
+					.fromFSListToCollection(conceptFslist,
+							AtomicQueryConcept.class);
 			QueryOperator operator = con.getOperator();
 			String queryText = "";
 			queryText = conceptArray.get(0).getText();
-			if(conceptArray.size() != 1){
+			if (conceptArray.size() != 1) {
 				int index = 1;
-				while(index < conceptArray.size()){
-					queryText += " " + operator.getName() + " " + conceptArray.get(index).getText();
+				while (index < conceptArray.size()) {
+					queryText += " " + operator.getName() + " "
+							+ conceptArray.get(index).getText();
 					index++;
 				}
 			}
 			List<LinkedLifeDataServiceResponse.Entity> combinedEntities = new ArrayList<LinkedLifeDataServiceResponse.Entity>();
 			try {
 				LinkedLifeDataServiceResponse.Result result = service
-						.findLinkedLifeDataEntitiesPaged(queryText, 0, mResultsPerPage);
-				combinedEntities = Intersect(combinedEntities, result.getEntities());
-				/*List<LinkedLifeDataServiceResponse.Entity> entities = result
-						.getEntities();
-				// System.out.println(entities.size());
-				for (int i = 0; i < entities.size(); i++) {
-					LinkedLifeDataServiceResponse.Entity en = entities.get(i);
-					LinkedLifeDataServiceResponse.Relation relation = en
-							.getRelations().get(0);
-					// System.out.println(relation.getSubj() + "  " +
-					// relation.getPred() + " " + relation.getObj());
-
-					Triple t = new Triple(aJCas);
-					t.setSubject(relation.getSubj());
-					t.setPredicate(relation.getPred());
-					t.setObject(relation.getObj());
-					t.addToIndexes();
-				}*/
+						.findLinkedLifeDataEntitiesPaged(queryText, 0,
+								mResultsPerPage);
+				combinedEntities = Intersect(combinedEntities,
+						result.getEntities());
+				/*
+				 * List<LinkedLifeDataServiceResponse.Entity> entities = result
+				 * .getEntities(); // System.out.println(entities.size()); for
+				 * (int i = 0; i < entities.size(); i++) {
+				 * LinkedLifeDataServiceResponse.Entity en = entities.get(i);
+				 * LinkedLifeDataServiceResponse.Relation relation = en
+				 * .getRelations().get(0); //
+				 * System.out.println(relation.getSubj() + "  " + //
+				 * relation.getPred() + " " + relation.getObj());
+				 * 
+				 * Triple t = new Triple(aJCas);
+				 * t.setSubject(relation.getSubj());
+				 * t.setPredicate(relation.getPred());
+				 * t.setObject(relation.getObj()); t.addToIndexes(); }
+				 */
 
 			} catch (IOException e) {
 
@@ -89,7 +94,8 @@ public class SDQuestionTripleAnnotator extends JCasAnnotator_ImplBase {
 			}
 			System.out.println("Triple Size: " + combinedEntities.size());
 			for (int i = 0; i < combinedEntities.size(); i++) {
-				LinkedLifeDataServiceResponse.Entity en = combinedEntities.get(i);
+				LinkedLifeDataServiceResponse.Entity en = combinedEntities
+						.get(i);
 				LinkedLifeDataServiceResponse.Relation relation = en
 						.getRelations().get(0);
 				// System.out.println(relation.getSubj() + "  " +
@@ -104,41 +110,46 @@ public class SDQuestionTripleAnnotator extends JCasAnnotator_ImplBase {
 		}
 		System.out.println("Triple finished");
 	}
-	List<LinkedLifeDataServiceResponse.Entity> Intersect(List<LinkedLifeDataServiceResponse.Entity> E1, List<LinkedLifeDataServiceResponse.Entity> E2) {
+
+	List<LinkedLifeDataServiceResponse.Entity> Intersect(
+			List<LinkedLifeDataServiceResponse.Entity> E1,
+			List<LinkedLifeDataServiceResponse.Entity> E2) {
 		HashMap<LinkedLifeDataServiceResponse.Entity, Integer> E1Map = new HashMap<LinkedLifeDataServiceResponse.Entity, Integer>();
 		Iterator<LinkedLifeDataServiceResponse.Entity> iter_E1 = E1.iterator();
-		while(iter_E1.hasNext()){
+		while (iter_E1.hasNext()) {
 			LinkedLifeDataServiceResponse.Entity aEntity = iter_E1.next();
 			E1Map.put(aEntity, 0);
 		}
-		
+
 		Iterator<LinkedLifeDataServiceResponse.Entity> iter_E2 = E2.iterator();
 		List<LinkedLifeDataServiceResponse.Entity> E3 = new ArrayList<LinkedLifeDataServiceResponse.Entity>();
-		while(iter_E2.hasNext()){
-			LinkedLifeDataServiceResponse.Entity aEntity  = iter_E2.next();
-			if(E1Map.containsKey(aEntity)){
+		while (iter_E2.hasNext()) {
+			LinkedLifeDataServiceResponse.Entity aEntity = iter_E2.next();
+			if (E1Map.containsKey(aEntity)) {
 				E3.add(aEntity);
 			}
 		}
-	    return E3;
+		return E3;
 	}
-	
-	List<LinkedLifeDataServiceResponse.Entity> Union(List<LinkedLifeDataServiceResponse.Entity> E1, List<LinkedLifeDataServiceResponse.Entity> E2) {
+
+	List<LinkedLifeDataServiceResponse.Entity> Union(
+			List<LinkedLifeDataServiceResponse.Entity> E1,
+			List<LinkedLifeDataServiceResponse.Entity> E2) {
 		HashMap<LinkedLifeDataServiceResponse.Entity, Integer> E1Map = new HashMap<LinkedLifeDataServiceResponse.Entity, Integer>();
 		Iterator<LinkedLifeDataServiceResponse.Entity> iter_E1 = E1.iterator();
-		while(iter_E1.hasNext()){
+		while (iter_E1.hasNext()) {
 			LinkedLifeDataServiceResponse.Entity aEntity = iter_E1.next();
 			E1Map.put(aEntity, 0);
 		}
-		
+
 		Iterator<LinkedLifeDataServiceResponse.Entity> iter_E2 = E2.iterator();
-		while(iter_E2.hasNext()){
-			LinkedLifeDataServiceResponse.Entity aEntity  = iter_E2.next();
-			if(E1Map.containsKey(aEntity)){
+		while (iter_E2.hasNext()) {
+			LinkedLifeDataServiceResponse.Entity aEntity = iter_E2.next();
+			if (E1Map.containsKey(aEntity)) {
 				E1.add(aEntity);
 			}
 		}
-	    return E1;
+		return E1;
 	}
 
 }

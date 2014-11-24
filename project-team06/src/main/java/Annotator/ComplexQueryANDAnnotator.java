@@ -17,26 +17,26 @@ import edu.cmu.lti.oaqa.type.retrieval.QueryOperator;
 
 public class ComplexQueryANDAnnotator extends JCasAnnotator_ImplBase {
 
-  @Override
-  public void process(JCas aJCas) throws AnalysisEngineProcessException {
-    // TODO Auto-generated method stub
-    ArrayList<AtomicQueryConcept> atomicList = new ArrayList<AtomicQueryConcept>();
-    FSIterator<TOP> atomicIter = aJCas.getJFSIndexRepository().getAllIndexedFS(AtomicQueryConcept.type);
+	@Override
+	public void process(JCas aJCas) throws AnalysisEngineProcessException {
+		// TODO Auto-generated method stub
+		ArrayList<AtomicQueryConcept> atomicList = new ArrayList<AtomicQueryConcept>();
+		FSIterator<TOP> atomicIter = aJCas.getJFSIndexRepository()
+				.getAllIndexedFS(AtomicQueryConcept.type);
 
-    //Iterator atomicIter = atomicIndex.iterator();
+		// Iterator atomicIter = atomicIndex.iterator();
 
-     while (atomicIter.hasNext()) {
-        AtomicQueryConcept atomic = (AtomicQueryConcept)atomicIter.next();
-    atomicList.add(atomic);
-   }
+		while (atomicIter.hasNext()) {
+			AtomicQueryConcept atomic = (AtomicQueryConcept) atomicIter.next();
+			atomicList.add(atomic);
+		}
 
-    ComplexQueryConcept complex = new ComplexQueryConcept(aJCas);
-    QueryOperator operator = new QueryOperator(aJCas);
-    operator.setName("AND");
-    complex.setOperator(operator);
-    complex.setOperatorArgs(Utils.fromCollectionToFSList(aJCas, atomicList));
-    complex.addToIndexes();
-  }
+		ComplexQueryConcept complex = new ComplexQueryConcept(aJCas);
+		QueryOperator operator = new QueryOperator(aJCas);
+		operator.setName("AND");
+		complex.setOperator(operator);
+		complex.setOperatorArgs(Utils.fromCollectionToFSList(aJCas, atomicList));
+		complex.addToIndexes();
+	}
 
 }
-

@@ -39,6 +39,7 @@ public class SDQuestionDocumentAnnotator extends JCasAnnotator_ImplBase {
 	private static final String urlPrefix = "http://www.ncbi.nlm.nih.gov/pubmed/";
 	private GoPubMedService service;
 	private int mResultsPerPage = 30;
+
 	public void initialize(UimaContext aContext)
 			throws ResourceInitializationException {
 		super.initialize(aContext);
@@ -64,13 +65,15 @@ public class SDQuestionDocumentAnnotator extends JCasAnnotator_ImplBase {
 			if (conceptArray.size() != 1) {
 				int index = 1;
 				while (index < conceptArray.size()) {
-					queryText += " " + operator.getName() + " " + conceptArray.get(index).getText();
+					queryText += " " + operator.getName() + " "
+							+ conceptArray.get(index).getText();
 					index++;
 				}
 			}
 			List<PubMedSearchServiceResponse.Document> combinedDocs = new ArrayList<PubMedSearchServiceResponse.Document>();
 			try {
-				PubMedSearchServiceResponse.Result result = service.findPubMedCitations(queryText, 0, mResultsPerPage);
+				PubMedSearchServiceResponse.Result result = service
+						.findPubMedCitations(queryText, 0, mResultsPerPage);
 				combinedDocs = Intersect(combinedDocs, result.getDocuments());
 				/*
 				 * List<PubMedSearchServiceResponse.Document> resultList =
@@ -130,7 +133,7 @@ public class SDQuestionDocumentAnnotator extends JCasAnnotator_ImplBase {
 		}
 		return D3;
 	}
-	
+
 	List<PubMedSearchServiceResponse.Document> Union(
 			List<PubMedSearchServiceResponse.Document> D1,
 			List<PubMedSearchServiceResponse.Document> D2) {
