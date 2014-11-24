@@ -33,8 +33,18 @@ public class SDConsumer extends CasConsumer_ImplBase {
 	public static final String Standard = "goldenstandard";
 	public String filePath;
 	public String standardPath;
+	private metrics metr = new metrics();
 	private Writer fileWriter = null;
+	
 	private List<Question> gold;
+	private List<Double[]> precision;
+	private List<Double[]> recall;
+	private List<Double[]> avrPre;
+	private double meanAvrPre;
+	private double geomMAP;
+	double pre;
+	double rec;
+	double fMeasure ;
 
 	public void initialize() throws ResourceInitializationException {
 		filePath = (String) getConfigParameterValue(PATH);
@@ -62,7 +72,9 @@ public class SDConsumer extends CasConsumer_ImplBase {
 				.forEach(
 						input -> input.setBody(input.getBody().trim()
 								.replaceAll("\\s+", " ")));
+		System.out.println("XXXXXXXXX");
 	}
+	
 
 	public void processCas(CAS aCAS) throws ResourceProcessException {
 		System.out.println("God Damn Pipeline - consumer");
@@ -100,19 +112,18 @@ public class SDConsumer extends CasConsumer_ImplBase {
 		}
 		
 		 HashSet<String> ss = new HashSet<String>();
-		 double hit = 0;
-		 double miss = 0;
-		 double totalRel = 0;	
+//		 double hit = 0;
+//		 double miss = 0;
+//		 double totalRel = 0;	
 		 
-		double pre = 0;
-		double rec = 0;
+
 		for(int i = 0; i < gold.size(); i++){
 			Question q = gold.get(i);
 			if(qid.equals(q.getId())){
 				System.out.println("Metrics on question:" + questionText + "?");
 			    ArrayList<String> goldenConcepts = new ArrayList<String>();
 				goldenConcepts = (ArrayList<String>) q.getConcepts();
-				totalRel = goldenConcepts.size();
+//				totalRel = goldenConcepts.size();
 				ArrayList<String> filer = new ArrayList<String>();
 				for(int j = 0; j < goldenConcepts.size(); j++){
 					String gc = goldenConcepts.get(j);
@@ -121,15 +132,17 @@ public class SDConsumer extends CasConsumer_ImplBase {
 					//golden standard array
 					filer.add(gcarray[gcarray.length - 1]);
 				}
-				for(int z = 0; z < resultConcepts.size(); z++){
-					if(ss.contains(resultConcepts.get(z))){
-						hit++;
-					}else{
-						miss++;	
-					}
-				}
+//				for(int z = 0; z < resultConcepts.size(); z++){
+//					if(ss.contains(resultConcepts.get(z))){
+//						hit++;
+//					}else{
+//						miss++;	
+//					}
+//				}
 				//call precision function
-				pre = precision(resultConcepts, filer); 
+				pre = metr.precision(resultConcepts, filer); 
+				rec = metr.recall(resultConcepts, filer);
+				fMeasure = metr.fMeas(pre, rec);
 				break;	
 			}
 		 } 	 		
@@ -139,124 +152,7 @@ public class SDConsumer extends CasConsumer_ImplBase {
 		 System.out.println("Precision = " +  pre); 
 		 // System.out.println("Replaced Precision = " + precision(goldenConcepts, resultConcepts));
 		 System.out.println("Recall = " + rec);
-		 System.out.println("F-measure = " +  2 * pre * rec / (pre + rec));	
+		 System.out.println("F-measure = " +  fMeasure);	
 	}
 
-	/**
-	 * Return precision value.
-	 * 
-	 * @param trueValue
-	 * 				True dataset
-	 * @param retrValue
-	 * 				Retrieval dataset 
-	 * @return
-	 */
-	private <T> double precision(List<T> trueValue, List<T>retrValue) {
-		// If retrValue is empty, precision is zero
-		if (retrValue.size() == 0) {
-			return 0;
-		}
-		Set<T> trueSet = new HashSet<T>(trueValue);
-		Set<T> retrSet  = new HashSet<T>(retrValue);
-		// Retain only the elements in goldSet, which excludes all of the false value
-		retrSet.retainAll(trueSet);
-		int truePositive  = retrSet.size();
-		//return ((double)truePositive)/((double)retrValue.size());
-		return ((double)truePositive) / ((double)trueValue.size());
-	}
-	
-	/**
-	 * Return recall value.
-	 * @param trueValue
-	 * 				True dataset
-	 * @param retrValue
-	 * 				Retrieval dataset
-	 * @return
-	 */
-	private <T> double recall(List<T> trueValue, List<T> retrValue) {
-		// If retrValue is empty, recall is zero
-		if (trueValue.size() == 0){
-		      return 0;
-		}
-	    Set<T> trueSet = new HashSet<T>(trueValue);
-	    Set<T> retrSet  = new HashSet<T>(retrValue);
-	    // Retain only the elements in goldSet, which excludes all of the false value
-	    retrSet.retainAll(trueSet);
-	    int truePositive  = retrSet.size();
-	    return ((double)truePositive) / ((double)trueValue.size());    
-	}
-	
-	/**
-	 * Return f-measure value.
-	 * @param precision
-	 * 				Precision value
-	 * @param recall
-	 * 				Recall value
-	 * @return
-	 */
-	private double fMeas(double precision, double recall) {
-		// If either precision or recall equals to zero, return zero
-		if ((precision == 0) || (recall == 0)) {
-		     return 0;
-		}
-		return (2 * precision * recall) / (precision + recall);       
-	}
-	
-	/**
-	 * Return average precision
-	 * @param trueValue
-	 * 				True dataset
-	 * @param retrValue
-	 * 				Retrieval dataset
-	 * @return
-	 */
-	private <T> double avrPrec(List<T> trueValue, List<T> retrValue){
-		// number of positive item so far
-		int posiCount = 0;
-		double ap = 0.0;
-		// the size of the list containing the first r items.
-		int numItem = 0;
-		for (T item : retrValue) {   
-			if (trueValue.contains(item)) {
-		       posiCount += 1;
-		       ap += (posiCount / ((double)(numItem + 1)));
-		    }
-		    numItem = numItem + 1;
-		}
-		// posiCount doesn't increase or ap doesn't increase
-		if ((ap == 0) || (posiCount == 0)) {
-			return 0;
-		}
-		return ap / posiCount;       
-	}
-	
-	/**
-	 * Return the average value of precision
-	 * @param apList
-	 * 			Input average precision list
-	 * @return
-	 */
-	private double meanAvrPrec(List<Double> apList) {
-		double map = 0;
-		for (Double item : apList) {
-			map += item;
-		}
-		return map / (double)apList.size();
-	}
-	
-	/**
-	 * Return Geometric Mean Average Precision of the given average precision list
-	 * @param apList
-	 * 			Input average precision list
-	 * @return
-	 */
-	private double geomMAP(List<Double> apList) {
-		double epsilon = Math.pow(10,-15);
-		double gmap = 0;
-		for (Double item : apList) {
-			gmap *= (item + epsilon); 
-		}
-		gmap = Math.pow(gmap, 1 / apList.size());
-		return gmap;
-	}
 }

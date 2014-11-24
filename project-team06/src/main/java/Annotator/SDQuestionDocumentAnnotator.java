@@ -1,5 +1,6 @@
 package Annotator;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.io.IOException;
 
@@ -10,15 +11,19 @@ import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.cas.FSIterator;
 import org.apache.uima.jcas.JCas;
+import org.apache.uima.jcas.cas.FSList;
 import org.apache.uima.jcas.cas.TOP;
 import org.apache.uima.resource.ResourceInitializationException;
 
+import util.Utils;
 import edu.cmu.lti.oaqa.bio.bioasq.services.GoPubMedService;
 import edu.cmu.lti.oaqa.bio.bioasq.services.OntologyServiceResponse;
 import edu.cmu.lti.oaqa.bio.bioasq.services.PubMedSearchServiceResponse;
 import edu.cmu.lti.oaqa.bio.bioasq.services.PubMedSearchServiceResponse.Document;
 import edu.cmu.lti.oaqa.type.retrieval.AtomicQueryConcept;
+import edu.cmu.lti.oaqa.type.retrieval.ComplexQueryConcept;
 //import edu.cmu.lti.oaqa.type.retrieval.Document;
+import edu.cmu.lti.oaqa.type.retrieval.QueryOperator;
 
 /**
  * The SDQuestionConceptAnnotator uses PubMedSearchServiceResponse service to
@@ -42,14 +47,26 @@ public class SDQuestionDocumentAnnotator extends JCasAnnotator_ImplBase {
 	
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
 	    FSIterator<TOP> it = aJCas.getJFSIndexRepository().getAllIndexedFS(
-	            AtomicQueryConcept.type);
+	            ComplexQueryConcept.type);
 	    String urlPrefix = "http://www.ncbi.nlm.nih.gov/pubmed/";
 	     while(it.hasNext()){
-	    	 AtomicQueryConcept con = (AtomicQueryConcept) it.next();
-	    	 String text = con.getText();
+	    	 ComplexQueryConcept con = (ComplexQueryConcept) it.next();
+	    	 FSList conceptFslist = con.getOperatorArgs();
+				ArrayList<AtomicQueryConcept> conceptArray = Utils.fromFSListToCollection(conceptFslist, AtomicQueryConcept.class);
+				QueryOperator operator = con.getOperator();
+				String queryText = "";
+				queryText = conceptArray.get(0).getText();
+				if(conceptArray.size() != 1){
+					int index = 1;
+					while(index < conceptArray.size()){
+						queryText += operator;
+						queryText += conceptArray.get(index).getText();
+						index++;
+					}
+				}
 	    	 
 	    	 try {
-				PubMedSearchServiceResponse.Result result = service.findPubMedCitations(text, 0);
+				PubMedSearchServiceResponse.Result result = service.findPubMedCitations(queryText, 0);
 				List<PubMedSearchServiceResponse.Document> resultList = result.getDocuments();
 				for(int i = 0; i < resultList.size(); i++){
 					PubMedSearchServiceResponse.Document doc = resultList.get(i);
