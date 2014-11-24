@@ -20,16 +20,19 @@ import com.aliasi.tokenizer.TokenizerFactory;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
+import org.apache.uima.UimaContext;
 import org.apache.uima.cas.FSIterator;
 import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.cas.TOP;
+import org.apache.uima.resource.ResourceInitializationException;
 
 import util.GenerateQueryString;
 import util.SnippetRetreivalHelper;
 import edu.cmu.lti.oaqa.type.retrieval.ComplexQueryConcept;
 import edu.cmu.lti.oaqa.type.retrieval.Document;
+import edu.cmu.lti.oaqa.type.retrieval.Passage;
 
 import com.google.gson.JsonObject;
 

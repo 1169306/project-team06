@@ -36,9 +36,9 @@ import edu.cmu.lti.oaqa.type.retrieval.QueryOperator;
  *
  */
 public class SDQuestionDocumentAnnotator extends JCasAnnotator_ImplBase {
-
-	public GoPubMedService service;
-
+	private static final String urlPrefix = "http://www.ncbi.nlm.nih.gov/pubmed/";
+	private GoPubMedService service;
+	private int mResultsPerPage = 30;
 	public void initialize(UimaContext aContext)
 			throws ResourceInitializationException {
 		super.initialize(aContext);
@@ -52,7 +52,6 @@ public class SDQuestionDocumentAnnotator extends JCasAnnotator_ImplBase {
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
 		FSIterator<TOP> it = aJCas.getJFSIndexRepository().getAllIndexedFS(
 				ComplexQueryConcept.type);
-		String urlPrefix = "http://www.ncbi.nlm.nih.gov/pubmed/";
 		while (it.hasNext()) {
 			ComplexQueryConcept con = (ComplexQueryConcept) it.next();
 			FSList conceptFslist = con.getOperatorArgs();
@@ -65,15 +64,14 @@ public class SDQuestionDocumentAnnotator extends JCasAnnotator_ImplBase {
 			if (conceptArray.size() != 1) {
 				int index = 1;
 				while (index < conceptArray.size()) {
-					queryText += operator;
-					queryText += conceptArray.get(index).getText();
+					queryText += " " + operator.getName() + " ";
 					index++;
 				}
 			}
 			List<PubMedSearchServiceResponse.Document> combinedDocs = new ArrayList<PubMedSearchServiceResponse.Document>();
 			try {
 				PubMedSearchServiceResponse.Result result = service
-						.findPubMedCitations(queryText, 0);
+						.findPubMedCitations(queryText, 0, mResultsPerPage);
 				combinedDocs = combine(combinedDocs, result.getDocuments());
 				/*
 				 * List<PubMedSearchServiceResponse.Document> resultList =
@@ -109,7 +107,7 @@ public class SDQuestionDocumentAnnotator extends JCasAnnotator_ImplBase {
 				retrievdedDoc.addToIndexes();
 			}
 		}
-
+		System.out.println("Document finished");
 	}
 
 	List<PubMedSearchServiceResponse.Document> combine(

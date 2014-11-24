@@ -57,8 +57,7 @@ public class SDQuestionTripleAnnotator extends JCasAnnotator_ImplBase {
 			if(conceptArray.size() != 1){
 				int index = 1;
 				while(index < conceptArray.size()){
-					queryText += operator;
-					queryText += conceptArray.get(index).getText();
+					queryText += " " + operator.getName() + " ";
 					index++;
 				}
 			}
@@ -102,7 +101,7 @@ public class SDQuestionTripleAnnotator extends JCasAnnotator_ImplBase {
 				t.addToIndexes();
 			}
 		}
-
+		System.out.println("Triple finished");
 	}
 	List<LinkedLifeDataServiceResponse.Entity> combine(List<LinkedLifeDataServiceResponse.Entity> E1, List<LinkedLifeDataServiceResponse.Entity> E2) {
 		HashMap<LinkedLifeDataServiceResponse.Entity, Integer> E1Map = new HashMap<LinkedLifeDataServiceResponse.Entity, Integer>();

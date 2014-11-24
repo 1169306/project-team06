@@ -76,8 +76,7 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 			if(conceptArray.size() != 1){
 				int index = 1;
 				while(index < conceptArray.size()){
-					queryText += operator;
-					queryText += conceptArray.get(index).getText();
+					queryText += " " + operator.getName() + " ";
 					index++;
 				}
 			}
@@ -125,6 +124,7 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 				result1.addToIndexes();
 			}
 		}
+		System.out.println("Concept finished");
 	}
 	
 	List<Finding> combine(List<Finding> f1, List<Finding> f2) {
