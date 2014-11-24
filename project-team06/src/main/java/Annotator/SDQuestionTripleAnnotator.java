@@ -32,8 +32,8 @@ import edu.cmu.lti.oaqa.type.retrieval.QueryOperator;
  *
  */
 public class SDQuestionTripleAnnotator extends JCasAnnotator_ImplBase {
-	public GoPubMedService service;
-
+	private GoPubMedService service;
+	private int mResultsPerPage = 30;
 	public void initialize(UimaContext aContext)
 			throws ResourceInitializationException {
 		super.initialize(aContext);
@@ -64,7 +64,7 @@ public class SDQuestionTripleAnnotator extends JCasAnnotator_ImplBase {
 			List<LinkedLifeDataServiceResponse.Entity> combinedEntities = new ArrayList<LinkedLifeDataServiceResponse.Entity>();
 			try {
 				LinkedLifeDataServiceResponse.Result result = service
-						.findLinkedLifeDataEntitiesPaged(queryText, 0, 1);
+						.findLinkedLifeDataEntitiesPaged(queryText, 0, mResultsPerPage);
 				combinedEntities = combine(combinedEntities, result.getEntities());
 				/*List<LinkedLifeDataServiceResponse.Entity> entities = result
 						.getEntities();
