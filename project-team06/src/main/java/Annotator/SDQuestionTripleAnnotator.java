@@ -39,7 +39,6 @@ public class SDQuestionTripleAnnotator extends JCasAnnotator_ImplBase {
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
 		FSIterator<TOP> it = aJCas.getJFSIndexRepository().getAllIndexedFS(
 				AtomicQueryConcept.type);
-		// System.out.println("-_____________-");
 		while (it.hasNext()) {
 			AtomicQueryConcept con = (AtomicQueryConcept) it.next();
 			String text = con.getText();

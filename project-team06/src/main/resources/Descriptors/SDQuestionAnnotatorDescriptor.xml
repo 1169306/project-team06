@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
-  <primitive>true</primitive>  <annotatorImplementationName>Annotator.</annotatorImplementationName>
+  <primitive>true</primitive>  <annotatorImplementationName>Annotator.SDQuestionAnnotator</annotatorImplementationName>
   <analysisEngineMetaData>
     <name>SDQuestionAnnotatorDescriptor</name>
     <description/>

@@ -65,7 +65,7 @@ public class SDConsumer extends CasConsumer_ImplBase {
 	}
 
 	public void processCas(CAS aCAS) throws ResourceProcessException {
-
+		System.out.println("God Damn Pipeline - consumer");
 		JCas jcas = null;
 		FSIterator<Annotation> ita  = null;
 		try {

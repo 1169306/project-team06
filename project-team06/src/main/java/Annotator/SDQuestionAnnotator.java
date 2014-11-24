@@ -26,7 +26,6 @@ public class SDQuestionAnnotator extends JCasAnnotator_ImplBase {
 	 * 
 	 */
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
-		// System.out.println("God Damn Pipeline");
 		FSIterator<Annotation> it = aJCas.getAnnotationIndex(Question.type)
 				.iterator();
 		if (it.hasNext()) {
@@ -34,7 +33,7 @@ public class SDQuestionAnnotator extends JCasAnnotator_ImplBase {
 			AtomicQueryConcept c = new AtomicQueryConcept(aJCas);
 			String text = question.getText().replace("?", "");
 			c.setText(text);
-			//c.addToIndexes();
+			c.addToIndexes();
 			List<AtomicQueryConcept> args= new ArrayList<AtomicQueryConcept>();
 			args.add(c);
 
