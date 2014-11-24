@@ -76,7 +76,7 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 			if(conceptArray.size() != 1){
 				int index = 1;
 				while(index < conceptArray.size()){
-					queryText += " " + operator.getName() + " ";
+					queryText += " " + operator.getName() + " " + conceptArray.get(index).getText();
 					index++;
 				}
 			}
