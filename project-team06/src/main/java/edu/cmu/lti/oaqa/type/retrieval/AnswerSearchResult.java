@@ -10,8 +10,8 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 /** A search result where the candidate answer is obtained as part of the search process and saved in the text field of the search result.
- * Updated by JCasGen Sat Oct 18 19:40:19 EDT 2014
- * XML source: /home/mog/dev/11791/project/project-team06-archetype/src/main/resources/type/OAQATypes.xml
+ * Updated by JCasGen Sun Nov 23 23:37:21 EST 2014
+ * XML source: /home/huatang/11791/project-team06/project-team06/src/main/resources/type/OAQATypes.xml
  * @generated */
 public class AnswerSearchResult extends SearchResult {
   /** @generated

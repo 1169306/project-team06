@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
   <name>OAQATypes</name>
   <description>Type system descriptor for the OAQA data model.</description>
@@ -479,6 +480,10 @@
           <string>QUOTEDPHRASE</string>
           <description/>
         </value>
+      <value>
+          <string>AND</string>
+          <description>This "AND"  is to ask all args must exists</description>
+        </value>
       </allowedValues>
     </typeDescription>
     <typeDescription>
@@ -709,6 +714,11 @@
           <name>originalText</name>
           <description>The lexical string in the question.</description>
           <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+      <featureDescription>
+          <name>Question</name>
+          <description/>
+          <rangeTypeName>edu.cmu.lti.oaqa.type.input.Question</rangeTypeName>
         </featureDescription>
       </features>
     </typeDescription>

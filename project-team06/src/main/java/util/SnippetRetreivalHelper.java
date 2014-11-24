@@ -9,6 +9,18 @@ import java.net.URL;
 
 // main.java.edu.cmu.lti.deiis.project.annotator.Chunking;
 
+import com.aliasi.chunk.Chunk;
+import com.aliasi.chunk.Chunking;
+import com.aliasi.sentences.MedlineSentenceModel;
+import com.aliasi.sentences.SentenceChunker;
+import com.aliasi.sentences.SentenceModel;
+import com.aliasi.spell.TfIdfDistance;
+import com.aliasi.tokenizer.IndoEuropeanTokenizerFactory;
+import com.aliasi.tokenizer.LowerCaseTokenizerFactory;
+import com.aliasi.tokenizer.PorterStemmerTokenizerFactory;
+import com.aliasi.tokenizer.StopTokenizerFactory;
+import com.aliasi.tokenizer.TokenizerFactory;
+
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -96,6 +108,11 @@ public class SnippetRetreivalHelper {
 	}
 
 	public static void main(String[] args) {
+		TokenizerFactory BASE_TKFACTORY = IndoEuropeanTokenizerFactory.INSTANCE;
+		SentenceModel SENTENCE_MODEL = new MedlineSentenceModel();
+		SentenceChunker SENTENCE_CHUNKER;
+		SENTENCE_CHUNKER = new SentenceChunker(BASE_TKFACTORY, SENTENCE_MODEL);
+		
 		// Test for PMID == 23193281
 		JsonObject jsonObj = getJsonFromPMID("23193281");
 		System.out.println(jsonObj.toString());
@@ -105,7 +122,7 @@ public class SnippetRetreivalHelper {
 		String sec0 = secArr.get(0).getAsString();
 		System.out.println("*********");
 		System.out.println(sec0);
-//		Chunking chunking = SENTENCE_CHUNKER.chunk(sec0.toCharArray(), 0,
-//				sec0.length());
+		Chunking chunking = SENTENCE_CHUNKER.chunk(sec0.toCharArray(), 0,
+				sec0.length());
 	}
 }

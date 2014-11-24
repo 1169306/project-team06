@@ -2,6 +2,7 @@ package Annotator;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
@@ -105,5 +106,14 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 
 		}
 	}
+	
+/*	List<Finding> combine(List<Finding> f1, List<Finding> f2) {
+	    
+		List<String> queryList = new ArrayList<String>();
+
+	    for (String s : query.split("\\s+"))
+	      queryList.add(s);
+	    return queryList;
+}*/
 
 }

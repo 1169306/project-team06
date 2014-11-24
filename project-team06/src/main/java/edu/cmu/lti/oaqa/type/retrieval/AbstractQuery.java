@@ -12,8 +12,8 @@ import org.apache.uima.jcas.cas.TOP;
 
 
 /** An abstract search query for the question that represents query concepts and query operators over those concepts.
- * Updated by JCasGen Sat Oct 18 19:40:19 EDT 2014
- * XML source: /home/mog/dev/11791/project/project-team06-archetype/src/main/resources/type/OAQATypes.xml
+ * Updated by JCasGen Sun Nov 23 23:37:21 EST 2014
+ * XML source: /home/huatang/11791/project-team06/project-team06/src/main/resources/type/OAQATypes.xml
  * @generated */
 public class AbstractQuery extends TOP {
   /** @generated

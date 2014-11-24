@@ -9,9 +9,12 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 
+import edu.cmu.lti.oaqa.type.input.Question;
+
+
 /** A primitive query concept represented by a single text string
- * Updated by JCasGen Sat Oct 18 19:40:19 EDT 2014
- * XML source: /home/mog/dev/11791/project/project-team06-archetype/src/main/resources/type/OAQATypes.xml
+ * Updated by JCasGen Sun Nov 23 23:37:21 EST 2014
+ * XML source: /home/huatang/11791/project-team06/project-team06/src/main/resources/type/OAQATypes.xml
  * @generated */
 public class AtomicQueryConcept extends QueryConcept {
   /** @generated
@@ -105,6 +108,28 @@ public class AtomicQueryConcept extends QueryConcept {
     if (AtomicQueryConcept_Type.featOkTst && ((AtomicQueryConcept_Type)jcasType).casFeat_originalText == null)
       jcasType.jcas.throwFeatMissing("originalText", "edu.cmu.lti.oaqa.type.retrieval.AtomicQueryConcept");
     jcasType.ll_cas.ll_setStringValue(addr, ((AtomicQueryConcept_Type)jcasType).casFeatCode_originalText, v);}    
+   
+    
+  //*--------------*
+  //* Feature: Question
+
+  /** getter for Question - gets 
+   * @generated
+   * @return value of the feature 
+   */
+  public Question getQuestion() {
+    if (AtomicQueryConcept_Type.featOkTst && ((AtomicQueryConcept_Type)jcasType).casFeat_Question == null)
+      jcasType.jcas.throwFeatMissing("Question", "edu.cmu.lti.oaqa.type.retrieval.AtomicQueryConcept");
+    return (Question)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((AtomicQueryConcept_Type)jcasType).casFeatCode_Question)));}
+    
+  /** setter for Question - sets  
+   * @generated
+   * @param v value to set into the feature 
+   */
+  public void setQuestion(Question v) {
+    if (AtomicQueryConcept_Type.featOkTst && ((AtomicQueryConcept_Type)jcasType).casFeat_Question == null)
+      jcasType.jcas.throwFeatMissing("Question", "edu.cmu.lti.oaqa.type.retrieval.AtomicQueryConcept");
+    jcasType.ll_cas.ll_setRefValue(addr, ((AtomicQueryConcept_Type)jcasType).casFeatCode_Question, jcasType.ll_cas.ll_getFSRef(v));}    
   }
 
     

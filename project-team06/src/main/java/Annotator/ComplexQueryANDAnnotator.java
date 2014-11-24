@@ -9,42 +9,34 @@ import org.apache.uima.cas.FSIndex;
 import org.apache.uima.cas.FSIterator;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.cas.TOP;
-import org.apache.uima.jcas.tcas.Annotation;
 
 import util.Utils;
 import edu.cmu.lti.oaqa.type.retrieval.AtomicQueryConcept;
 import edu.cmu.lti.oaqa.type.retrieval.ComplexQueryConcept;
 import edu.cmu.lti.oaqa.type.retrieval.QueryOperator;
 
-public class ComplexQueryAnnotator extends JCasAnnotator_ImplBase {
+public class ComplexQueryANDAnnotator extends JCasAnnotator_ImplBase {
 
   @Override
   public void process(JCas aJCas) throws AnalysisEngineProcessException {
+    // TODO Auto-generated method stub
     ArrayList<AtomicQueryConcept> atomicList = new ArrayList<AtomicQueryConcept>();
-    FSIterator<TOP> it = aJCas.getJFSIndexRepository().getAllIndexedFS(AtomicQueryConcept.type);
- 
-	String queryString = "";
-	String orignalString = "";	
-	//Iterator atomicIter = atomicIndex.iterator();   
-   
-	 while (it.hasNext()) {
-      AtomicQueryConcept atomic = (AtomicQueryConcept)it.next();
-    	String concept = atomic.getText();
-		  queryString += concept;
-		  queryString += " "; 
-		// atomicList.add(atomic);
-    }
+    FSIterator<TOP> atomicIter = aJCas.getJFSIndexRepository().getAllIndexedFS(AtomicQueryConcept.type);
 
-	AtomicQueryConcept aConcept = new AtomicQueryConcept(aJCas);
-	aConcept.setText(queryString);	
-	atomicList.add(aConcept);	
-	
+    //Iterator atomicIter = atomicIndex.iterator();
+
+     while (atomicIter.hasNext()) {
+        AtomicQueryConcept atomic = (AtomicQueryConcept)atomicIter.next();
+    atomicList.add(atomic);
+   }
+
     ComplexQueryConcept complex = new ComplexQueryConcept(aJCas);
     QueryOperator operator = new QueryOperator(aJCas);
-    operator.setName("REQUIRED");
+    operator.setName("AND");
     complex.setOperator(operator);
     complex.setOperatorArgs(Utils.fromCollectionToFSList(aJCas, atomicList));
     complex.addToIndexes();
   }
 
 }
+
