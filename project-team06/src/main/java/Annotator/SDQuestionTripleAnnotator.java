@@ -65,7 +65,7 @@ public class SDQuestionTripleAnnotator extends JCasAnnotator_ImplBase {
 			try {
 				LinkedLifeDataServiceResponse.Result result = service
 						.findLinkedLifeDataEntitiesPaged(queryText, 0, mResultsPerPage);
-				combinedEntities = combine(combinedEntities, result.getEntities());
+				combinedEntities = Intersect(combinedEntities, result.getEntities());
 				/*List<LinkedLifeDataServiceResponse.Entity> entities = result
 						.getEntities();
 				// System.out.println(entities.size());
@@ -87,6 +87,7 @@ public class SDQuestionTripleAnnotator extends JCasAnnotator_ImplBase {
 
 				e.printStackTrace();
 			}
+			System.out.println("Triple Size: " + combinedEntities.size());
 			for (int i = 0; i < combinedEntities.size(); i++) {
 				LinkedLifeDataServiceResponse.Entity en = combinedEntities.get(i);
 				LinkedLifeDataServiceResponse.Relation relation = en
@@ -103,7 +104,26 @@ public class SDQuestionTripleAnnotator extends JCasAnnotator_ImplBase {
 		}
 		System.out.println("Triple finished");
 	}
-	List<LinkedLifeDataServiceResponse.Entity> combine(List<LinkedLifeDataServiceResponse.Entity> E1, List<LinkedLifeDataServiceResponse.Entity> E2) {
+	List<LinkedLifeDataServiceResponse.Entity> Intersect(List<LinkedLifeDataServiceResponse.Entity> E1, List<LinkedLifeDataServiceResponse.Entity> E2) {
+		HashMap<LinkedLifeDataServiceResponse.Entity, Integer> E1Map = new HashMap<LinkedLifeDataServiceResponse.Entity, Integer>();
+		Iterator<LinkedLifeDataServiceResponse.Entity> iter_E1 = E1.iterator();
+		while(iter_E1.hasNext()){
+			LinkedLifeDataServiceResponse.Entity aEntity = iter_E1.next();
+			E1Map.put(aEntity, 0);
+		}
+		
+		Iterator<LinkedLifeDataServiceResponse.Entity> iter_E2 = E2.iterator();
+		List<LinkedLifeDataServiceResponse.Entity> E3 = new ArrayList<LinkedLifeDataServiceResponse.Entity>();
+		while(iter_E2.hasNext()){
+			LinkedLifeDataServiceResponse.Entity aEntity  = iter_E2.next();
+			if(E1Map.containsKey(aEntity)){
+				E3.add(aEntity);
+			}
+		}
+	    return E3;
+	}
+	
+	List<LinkedLifeDataServiceResponse.Entity> Union(List<LinkedLifeDataServiceResponse.Entity> E1, List<LinkedLifeDataServiceResponse.Entity> E2) {
 		HashMap<LinkedLifeDataServiceResponse.Entity, Integer> E1Map = new HashMap<LinkedLifeDataServiceResponse.Entity, Integer>();
 		Iterator<LinkedLifeDataServiceResponse.Entity> iter_E1 = E1.iterator();
 		while(iter_E1.hasNext()){
@@ -114,7 +134,7 @@ public class SDQuestionTripleAnnotator extends JCasAnnotator_ImplBase {
 		Iterator<LinkedLifeDataServiceResponse.Entity> iter_E2 = E2.iterator();
 		while(iter_E2.hasNext()){
 			LinkedLifeDataServiceResponse.Entity aEntity  = iter_E2.next();
-			if(!E1Map.containsKey(aEntity)){
+			if(E1Map.containsKey(aEntity)){
 				E1.add(aEntity);
 			}
 		}

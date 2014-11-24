@@ -71,7 +71,7 @@ public class SDQuestionDocumentAnnotator extends JCasAnnotator_ImplBase {
 			List<PubMedSearchServiceResponse.Document> combinedDocs = new ArrayList<PubMedSearchServiceResponse.Document>();
 			try {
 				PubMedSearchServiceResponse.Result result = service.findPubMedCitations(queryText, 0, mResultsPerPage);
-				combinedDocs = combine(combinedDocs, result.getDocuments());
+				combinedDocs = Intersect(combinedDocs, result.getDocuments());
 				/*
 				 * List<PubMedSearchServiceResponse.Document> resultList =
 				 * result.getDocuments(); for(int i = 0; i < resultList.size();
@@ -92,6 +92,7 @@ public class SDQuestionDocumentAnnotator extends JCasAnnotator_ImplBase {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			System.out.println("Docs Size: " + combinedDocs.size());
 			for (int i = 0; i < combinedDocs.size(); i++) {
 				PubMedSearchServiceResponse.Document doc = combinedDocs.get(i);
 				// System.out.println(doc.getPmid() + " " + doc.getTitle() + " "
@@ -109,7 +110,28 @@ public class SDQuestionDocumentAnnotator extends JCasAnnotator_ImplBase {
 		System.out.println("Document finished");
 	}
 
-	List<PubMedSearchServiceResponse.Document> combine(
+	List<PubMedSearchServiceResponse.Document> Intersect(
+			List<PubMedSearchServiceResponse.Document> D1,
+			List<PubMedSearchServiceResponse.Document> D2) {
+		HashMap<PubMedSearchServiceResponse.Document, Integer> D1Map = new HashMap<PubMedSearchServiceResponse.Document, Integer>();
+		Iterator<PubMedSearchServiceResponse.Document> iter_D1 = D1.iterator();
+		while (iter_D1.hasNext()) {
+			PubMedSearchServiceResponse.Document aDoc = iter_D1.next();
+			D1Map.put(aDoc, 0);
+		}
+
+		Iterator<PubMedSearchServiceResponse.Document> iter_D2 = D2.iterator();
+		List<PubMedSearchServiceResponse.Document> D3 = new ArrayList<PubMedSearchServiceResponse.Document>();
+		while (iter_D2.hasNext()) {
+			PubMedSearchServiceResponse.Document aDoc = iter_D2.next();
+			if (D1Map.containsKey(aDoc)) {
+				D3.add(aDoc);
+			}
+		}
+		return D3;
+	}
+	
+	List<PubMedSearchServiceResponse.Document> Union(
 			List<PubMedSearchServiceResponse.Document> D1,
 			List<PubMedSearchServiceResponse.Document> D2) {
 		HashMap<PubMedSearchServiceResponse.Document, Integer> D1Map = new HashMap<PubMedSearchServiceResponse.Document, Integer>();
@@ -122,11 +144,10 @@ public class SDQuestionDocumentAnnotator extends JCasAnnotator_ImplBase {
 		Iterator<PubMedSearchServiceResponse.Document> iter_D2 = D2.iterator();
 		while (iter_D2.hasNext()) {
 			PubMedSearchServiceResponse.Document aDoc = iter_D2.next();
-			if (!D1Map.containsKey(aDoc)) {
+			if (D1Map.containsKey(aDoc)) {
 				D1.add(aDoc);
 			}
 		}
 		return D1;
 	}
-
 }

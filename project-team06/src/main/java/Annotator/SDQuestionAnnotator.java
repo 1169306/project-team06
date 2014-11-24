@@ -74,9 +74,9 @@ public class SDQuestionAnnotator extends JCasAnnotator_ImplBase {
 		    while (iter_term.hasNext()) {
 		    	String aterm = iter_term.next();
 		        aterm = StanfordLemmatizer.stemText(aterm);
-		        System.out.println(aterm);
 		        if(!stopWords.containsKey(aterm)){
 					AtomicQueryConcept c = new AtomicQueryConcept(aJCas);
+					System.out.println(aterm);
 		        	c.setText(aterm);
 		        	c.setQuestion(question);
 		        	c.addToIndexes();

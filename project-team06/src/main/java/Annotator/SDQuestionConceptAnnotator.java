@@ -85,7 +85,7 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 			try {
 				OntologyServiceResponse.Result result = service
 						.findMeshEntitiesPaged(queryText, 0);				
-				combinedFindings = combine(combinedFindings, result.getFindings());
+				combinedFindings = Intersect(combinedFindings, result.getFindings());
 				/*int curRank = 0;
 				for (Finding finding : result.getFindings()) {
 					edu.cmu.lti.oaqa.type.kb.Concept concept = new edu.cmu.lti.oaqa.type.kb.Concept(
@@ -106,7 +106,7 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			
+			System.out.println("Concept Size: " + combinedFindings.size());
 			int curRank = 0;
 			for (Finding finding : combinedFindings) {
 				edu.cmu.lti.oaqa.type.kb.Concept concept = new edu.cmu.lti.oaqa.type.kb.Concept(
@@ -127,7 +127,26 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 		System.out.println("Concept finished");
 	}
 	
-	List<Finding> combine(List<Finding> f1, List<Finding> f2) {
+	List<Finding> Intersect(List<Finding> f1, List<Finding> f2) {
+		HashMap<Finding, Integer> f1Map = new HashMap<Finding, Integer>();
+		Iterator<Finding> iter_f1 = f1.iterator();
+		while(iter_f1.hasNext()){
+			Finding afinding = iter_f1.next();
+			f1Map.put(afinding, 0);
+		}
+		
+		Iterator<Finding> iter_f2 = f2.iterator();
+		List<Finding> f3 = new ArrayList<Finding>();
+		while(iter_f2.hasNext()){
+			Finding afinding  = iter_f2.next();
+			if(f1Map.containsKey(afinding)){
+				f3.add(afinding);
+			}
+		}
+	    return f3;
+	}
+	
+	List<Finding> Union(List<Finding> f1, List<Finding> f2) {
 		HashMap<Finding, Integer> f1Map = new HashMap<Finding, Integer>();
 		Iterator<Finding> iter_f1 = f1.iterator();
 		while(iter_f1.hasNext()){
@@ -138,7 +157,7 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 		Iterator<Finding> iter_f2 = f2.iterator();
 		while(iter_f2.hasNext()){
 			Finding afinding  = iter_f2.next();
-			if(!f1Map.containsKey(afinding)){
+			if(f1Map.containsKey(afinding)){
 				f1.add(afinding);
 			}
 		}
