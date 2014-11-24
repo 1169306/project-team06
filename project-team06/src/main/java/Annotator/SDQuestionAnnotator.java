@@ -23,15 +23,35 @@ import util.Utils;
 import edu.cmu.lti.oaqa.type.input.Question;
 import edu.cmu.lti.oaqa.type.retrieval.AtomicQueryConcept;
 import edu.cmu.lti.oaqa.type.retrieval.ComplexQueryConcept;
+import edu.stanford.nlp.io.EncodingPrintWriter.out;
 
 public class SDQuestionAnnotator extends JCasAnnotator_ImplBase {
 	
  	private TokenizerFactory aTokenizerFactory;
 
+	private HashMap<String, Integer> stopWords; 
+
 	public void initialize(UimaContext aContext) throws ResourceInitializationException {
    		 super.initialize(aContext);
-		
-		  
+   		 System.out.println("SDQuestionAnnotator");
+
+	     stopWords = new HashMap<String, Integer>();	
+		 
+            BufferedReader br;
+            
+		try {
+              br = new BufferedReader(new FileReader("src/main/resources/stopwords.txt"));
+              String line = null;
+              //System.out.println(line);
+              while((line = br.readLine()) != null ){
+                if(!stopWords.containsKey(line)){
+                  stopWords.put(line+" ", 1);
+                }
+              }
+              br.close();
+            } catch (IOException e) {
+              e.printStackTrace();
+            } 
   }
 
 	@Override
@@ -51,21 +71,6 @@ public class SDQuestionAnnotator extends JCasAnnotator_ImplBase {
 			//System.out.println("My question: " + question);
 			String text = question.getText().replace("?", "");
 			List<String> term = tokenize0(text);
-			BufferedReader br;
-			HashMap<String, Integer> stopWords = new HashMap<String, Integer>();
-		    try {
-		      br = new BufferedReader(new FileReader("src/main/resources/stopwords.txt"));
-		      String line = null;
-		      //System.out.println(line);
-		      while((line = br.readLine()) != null ){
-		        if(!stopWords.containsKey(line)){
-		          stopWords.put(line+" ", 1);
-		        }
-		      }
-		      br.close();
-		    } catch (IOException e) {
-		      e.printStackTrace();
-		    }
 		    
 		    Iterator<String> iter_term = term.iterator();
 		    while (iter_term.hasNext()) {
