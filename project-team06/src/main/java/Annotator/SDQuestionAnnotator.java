@@ -34,25 +34,23 @@ public class SDQuestionAnnotator extends JCasAnnotator_ImplBase {
 	public void initialize(UimaContext aContext) throws ResourceInitializationException {
    		 super.initialize(aContext);
    		 System.out.println("SDQuestionAnnotator");
-
-	     stopWords = new HashMap<String, Integer>();	
+	     
+		stopWords = new HashMap<String, Integer>();	
 		 
-            BufferedReader br;
-            
+		BufferedReader br;
 		try {
               br = new BufferedReader(new FileReader("src/main/resources/stopwords.txt"));
               String line = null;
-              //System.out.println(line);
-              while((line = br.readLine()) != null ){
+              while((line = br.readLine()) != null){
                 if(!stopWords.containsKey(line)){
-                  stopWords.put(line+" ", 1);
+                  stopWords.put(line, 1);
                 }
               }
               br.close();
-            } catch (IOException e) {
+            }catch (IOException e){
               e.printStackTrace();
-            } 
-  }
+           	} 
+  		}
 
 	@Override
 	/**
@@ -87,7 +85,6 @@ public class SDQuestionAnnotator extends JCasAnnotator_ImplBase {
 		}
 	}
 	 
-	
 	List<String> tokenize0(String query) {
 		    List<String> queryList = new ArrayList<String>();
 
