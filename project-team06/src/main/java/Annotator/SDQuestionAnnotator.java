@@ -15,6 +15,14 @@ import edu.cmu.lti.oaqa.type.retrieval.AtomicQueryConcept;
 import edu.cmu.lti.oaqa.type.retrieval.ComplexQueryConcept;
 
 public class SDQuestionAnnotator extends JCasAnnotator_ImplBase {
+	
+ 	private TokenizerFactory aTokenizerFactory;
+
+	public void initialize(UimaContext aContext) throws ResourceInitializationException {
+   		 super.initialize(aContext);
+		
+		  
+  }
 
 	@Override
 	/**
