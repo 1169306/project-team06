@@ -99,12 +99,15 @@ public class metrics {
 	 * 			Input average precision list
 	 * @return
 	 */
-	public double meanAvrPrec(List<Double> apList) {
-		double map = 0;
-		for (Double item : apList) {
-			map += item;
-		}
-		return map / (double)apList.size();
+	public <T> Double[] meanAvrPrec(List<Double[]> apList) {
+		  Double map[] = {0.0,0.0,0.0};
+		  Double length = new Double(apList.size());
+		  for (Double[] ap : apList){
+		    	for (int i = 0; i < ap.length; i++){
+		    		map[i] += ap[i] / length;
+		    	}
+		    }
+	    return map;
 	}
 	
 	/**
@@ -113,13 +116,17 @@ public class metrics {
 	 * 			Input average precision list
 	 * @return
 	 */
-	public double geomMAP(List<Double> apList) {
-		double epsilon = Math.pow(10,-15);
-		double gmap = 0;
-		for (Double item : apList) {
-			gmap *= (item + epsilon); 
-		}
-		gmap = Math.pow(gmap, 1 / apList.size());
-		return gmap;
+	public <T> Double[] geomMAP(List<Double[]> apList) {
+		  Double gmap[] = {1.0,1.0,1.0};
+		  Double epslon = 1e-3;
+		  Double length = new Double(apList.size());
+		  for (Double[] ap : apList){
+		    	for (int i = 0; i < ap.length; i++)
+		    		gmap[i] *= (ap[i] + epslon);
+		  }
+		  for (int i = 0; i < gmap.length; i++){
+		    	gmap[i] = Math.pow(gmap[i], 1./length);
+		    }
+		  return gmap;
 	}
 }
