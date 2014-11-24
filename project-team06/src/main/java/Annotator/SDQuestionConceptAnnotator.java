@@ -2,6 +2,8 @@ package Annotator;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 import org.apache.uima.UimaContext;
@@ -79,11 +81,13 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 					index++;
 				}
 			}
+			List<Finding> combinedFindings = new ArrayList<Finding>();
 			
 			try {
 				OntologyServiceResponse.Result result = service
-						.findMeshEntitiesPaged(queryText, 0);
-				int curRank = 0;
+						.findMeshEntitiesPaged(queryText, 0);				
+				combinedFindings = combine(combinedFindings, result.getFindings());
+				/*int curRank = 0;
 				for (Finding finding : result.getFindings()) {
 					edu.cmu.lti.oaqa.type.kb.Concept concept = new edu.cmu.lti.oaqa.type.kb.Concept(
 							aJCas);
@@ -99,21 +103,46 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 					result1.setRank(curRank++);
 					result1.setQueryString(queryText);
 					result1.addToIndexes();
-				}
+				}*/
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-
+			
+			int curRank = 0;
+			for (Finding finding : combinedFindings) {
+				edu.cmu.lti.oaqa.type.kb.Concept concept = new edu.cmu.lti.oaqa.type.kb.Concept(
+						aJCas);
+				concept.setName(finding.getConcept().getLabel());
+				//System.out.println(finding.getConcept().getLabel());
+				concept.addToIndexes();
+				ConceptSearchResult result1 = new ConceptSearchResult(aJCas);
+				result1.setConcept(concept);
+				result1.setUri(finding.getConcept().getUri());
+				result1.setScore(finding.getScore());
+				result1.setText(finding.getConcept().getLabel());
+				result1.setRank(curRank++);
+				result1.setQueryString(queryText);
+				result1.addToIndexes();
+			}
 		}
 	}
 	
-/*	List<Finding> combine(List<Finding> f1, List<Finding> f2) {
-	    
-		List<String> queryList = new ArrayList<String>();
-
-	    for (String s : query.split("\\s+"))
-	      queryList.add(s);
-	    return queryList;
-}*/
+	List<Finding> combine(List<Finding> f1, List<Finding> f2) {
+		HashMap<Finding, Integer> f1Map = new HashMap<Finding, Integer>();
+		Iterator<Finding> iter_f1 = f1.iterator();
+		while(iter_f1.hasNext()){
+			Finding afinding = iter_f1.next();
+			f1Map.put(afinding, 0);
+		}
+		
+		Iterator<Finding> iter_f2 = f2.iterator();
+		while(iter_f2.hasNext()){
+			Finding afinding  = iter_f2.next();
+			if(!f1Map.containsKey(afinding)){
+				f1.add(afinding);
+			}
+		}
+	    return f1;
+	}
 
 }
