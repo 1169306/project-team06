@@ -37,10 +37,7 @@ public class SDNERAnnotator extends JCasAnnotator_ImplBase {
   }
 
   public void process(JCas aJCas) throws AnalysisEngineProcessException {
-   	FSIterator<Annotation> iterator = aJCas.getAnnotationIndex(Question.type).iterator();
-
-	if(iterator.hasNext()){
-	} 
+ 
   }
 
 }

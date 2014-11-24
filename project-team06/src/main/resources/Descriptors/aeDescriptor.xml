@@ -13,10 +13,7 @@
   <delegateAnalysisEngine key="SDQuestionTripleDescriptor">
       <import location="SDQuestionTripleDescriptor.xml"/>
     </delegateAnalysisEngine>
-    <delegateAnalysisEngine key="SDNERAnnotatorDescriptor">
-      <import location="SDNERAnnotatorDescriptor.xml"/>
-    </delegateAnalysisEngine>
-  <delegateAnalysisEngine key="SDQuestionAnnotatorDescriptor">
+    <delegateAnalysisEngine key="SDQuestionAnnotatorDescriptor">
       <import location="SDQuestionAnnotatorDescriptor.xml"/>
     </delegateAnalysisEngine>
   </delegateAnalysisEngineSpecifiers>
