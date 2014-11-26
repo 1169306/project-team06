@@ -70,8 +70,8 @@ public class SDQuestionTripleAnnotator extends JCasAnnotator_ImplBase {
 				LinkedLifeDataServiceResponse.Result result = service
 						.findLinkedLifeDataEntitiesPaged(queryText, 0,
 								mResultsPerPage);
-				combinedEntities = Intersect(combinedEntities,
-						result.getEntities());
+				//combinedEntities = Intersect(combinedEntities, result.getEntities());
+				combinedEntities = Union(combinedEntities, result.getEntities());
 				/*
 				 * List<LinkedLifeDataServiceResponse.Entity> entities = result
 				 * .getEntities(); // System.out.println(entities.size()); for
