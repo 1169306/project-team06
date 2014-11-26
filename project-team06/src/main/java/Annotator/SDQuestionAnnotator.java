@@ -41,9 +41,10 @@ public class SDQuestionAnnotator extends JCasAnnotator_ImplBase {
 		try {
               br = new BufferedReader(new FileReader("src/main/resources/stopwords.txt"));
               String line = null;
+             
               while((line = br.readLine()) != null){
                 if(!stopWords.containsKey(line)){
-                  stopWords.put(line, 1);
+                  stopWords.put(line, 1);;
                 }
               }
               br.close();
@@ -74,12 +75,13 @@ public class SDQuestionAnnotator extends JCasAnnotator_ImplBase {
 		    while (iter_term.hasNext()) {
 		    	String aterm = iter_term.next();
 		        aterm = StanfordLemmatizer.stemText(aterm);
+		        
 		        if(!stopWords.containsKey(aterm)){
-					AtomicQueryConcept c = new AtomicQueryConcept(aJCas);
-					System.out.println(aterm);
-		        	c.setText(aterm);
-		        	c.setQuestion(question);
-		        	c.addToIndexes();
+		            AtomicQueryConcept c = new AtomicQueryConcept(aJCas);
+		           System.out.println(aterm);
+		           c.setText(aterm);
+		           c.setQuestion(question);
+		           c.addToIndexes();
 		        }   
 		    }	
 		}

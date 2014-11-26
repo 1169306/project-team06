@@ -50,7 +50,7 @@ public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
 	
 	@Override
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
-		FSIterator<TOP> docIter = aJCas.getJFSIndexRepository()
+	/*	FSIterator<TOP> docIter = aJCas.getJFSIndexRepository()
 				.getAllIndexedFS(Document.type);
 		FSIterator<TOP> queryIter = aJCas.getJFSIndexRepository()
 				.getAllIndexedFS(ComplexQueryConcept.type);
@@ -126,7 +126,7 @@ public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
 
 	}
 
-
+*/
 	}
 
 }
