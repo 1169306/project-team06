@@ -74,7 +74,8 @@ public class SDQuestionDocumentAnnotator extends JCasAnnotator_ImplBase {
 			try {
 				PubMedSearchServiceResponse.Result result = service
 						.findPubMedCitations(queryText, 0, mResultsPerPage);
-				combinedDocs = Intersect(combinedDocs, result.getDocuments());
+				//combinedDocs = Intersect(combinedDocs, result.getDocuments());
+				combinedDocs = Union(combinedDocs, result.getDocuments());
 				/*
 				 * List<PubMedSearchServiceResponse.Document> resultList =
 				 * result.getDocuments(); for(int i = 0; i < resultList.size();

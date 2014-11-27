@@ -89,8 +89,8 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 			try {
 				OntologyServiceResponse.Result result = service
 						.findMeshEntitiesPaged(queryText, 0);
-				combinedFindings = Intersect(combinedFindings,
-						result.getFindings());
+				//combinedFindings = Intersect(combinedFindings, result.getFindings());
+				combinedFindings = Union(combinedFindings, result.getFindings());
 				/*
 				 * int curRank = 0; for (Finding finding : result.getFindings())
 				 * { edu.cmu.lti.oaqa.type.kb.Concept concept = new
