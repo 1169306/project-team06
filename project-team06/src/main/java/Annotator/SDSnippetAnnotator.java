@@ -69,14 +69,25 @@ public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
 
 			// store query sentence
 			String query = doc.getQueryString();
-			System.out.println(query);
+			// System.out.println("query is" + query);
 			String[] queryArray = query.split("\\s+");
+			// System.out.println("QueryArray is" + queryArray);
+			// Test for printing out queryArray
+//			for (String str : queryArray) {
+//				System.out.println(str);
+//			}
 			// storing query vector
 			Map<String, Integer> queryVector = new HashMap<String, Integer>();
 			// store
 			for (String str : queryArray) {
-				if (queryVector.get(str) != 0) {
-					queryVector.put(str, queryVector.get(str) + 1);
+				// System.out.println("queryVector = " + queryVector);
+				// System.out.println("***************");
+				if (queryVector.get(str) != null) {
+					if (queryVector.get(str) != 0) {
+						queryVector.put(str, queryVector.get(str) + 1);
+					} else {
+						queryVector.put(str, 1);
+					}
 				} else {
 					queryVector.put(str, 1);
 				}
@@ -89,7 +100,7 @@ public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
 				JsonArray secArr = jsonObj.getAsJsonArray("sections");
 				String pmid = doc.getDocId();
 				String sec0 = secArr.get(0).getAsString();
-
+				System.out.println(sec0);
 				// split the whole article into each sentence
 				// replace ? ! with . to divide into different sentence
 				String stopArticle = sec0.replace("!", ".").replace("?", ".");
@@ -108,10 +119,15 @@ public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
 							.replace("-", " ").replace(";", "").split("\\+");
 					// store the vector of each sentence in passage
 					Map<String, Integer> docVector = new HashMap<String, Integer>();
+					System.out.println("******************");
 					// store the vector
 					for (String str : words) {
-						if (docVector.get(str) != 0) {
-							docVector.put(str, docVector.get(str) + 1);
+						if (docVector.get(str) != null) {
+							if (docVector.get(str) != 0) {
+								docVector.put(str, docVector.get(str) + 1);
+							} else {
+								docVector.put(str, 1);
+							}
 						} else {
 							docVector.put(str, 1);
 						}
@@ -126,6 +142,7 @@ public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
 					}
 				}
 				// calculate the start and the stop position of each passage
+				System.out.println("maxId is" + maxId);
 				int start = stopArticle.indexOf(sentence[maxId]);
 				int end = sentence[maxId].length() + 1;
 
@@ -181,4 +198,5 @@ public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
 		vLen = Math.sqrt(vLen);
 		return vLen;
 	}
+
 }
