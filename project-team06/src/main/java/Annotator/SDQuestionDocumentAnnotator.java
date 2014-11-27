@@ -61,12 +61,15 @@ public class SDQuestionDocumentAnnotator extends JCasAnnotator_ImplBase {
 							AtomicQueryConcept.class);
 			QueryOperator operator = con.getOperator();
 			String queryText = "";
+			String queryString = "";
 			queryText = conceptArray.get(0).getText();
+			queryString = conceptArray.get(0).getText();
 			if (conceptArray.size() != 1) {
 				int index = 1;
 				while (index < conceptArray.size()) {
 					queryText += " " + operator.getName() + " "
 							+ conceptArray.get(index).getText();
+					queryString +=" " + conceptArray.get(index).getText();
 					index++;
 				}
 			}
@@ -97,10 +100,10 @@ public class SDQuestionDocumentAnnotator extends JCasAnnotator_ImplBase {
 				e.printStackTrace();
 			}
 			
-			for(Document adoc : combinedDocs){
+			/*for(Document adoc : combinedDocs){
 		         System.out.println(" > " + adoc.getPmid() + " "
 		         + adoc.getTitle());			
-			}
+			}*/
 			
 			System.out.println("Docs Size: " + combinedDocs.size());
 			for (int i = 0; i < combinedDocs.size(); i++) {
@@ -114,6 +117,7 @@ public class SDQuestionDocumentAnnotator extends JCasAnnotator_ImplBase {
 				retrievdedDoc.setRank(i);
 				retrievdedDoc.setDocId(doc.getPmid());
 				retrievdedDoc.setTitle(doc.getTitle());
+				retrievdedDoc.setQueryString(queryString);
 				retrievdedDoc.addToIndexes();
 			}
 		}

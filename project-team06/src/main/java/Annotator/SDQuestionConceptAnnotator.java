@@ -122,10 +122,10 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 				e.printStackTrace();
 			}
 			
-			for(Finding finding : combinedFindings){
+			/*for(Finding finding : combinedFindings){
 		         System.out.println(" > " + finding.getConcept().getLabel() + " "
 		         + finding.getConcept().getUri()+"\t Score"+finding.getScore());			
-			}
+			}*/
 			//System.out.println("Concept Size: " + combinedFindings.size());
 			int counter = 0;
 			int curRank = 0;

@@ -94,10 +94,10 @@ public class SDQuestionTripleAnnotator extends JCasAnnotator_ImplBase {
 				e.printStackTrace();
 			}
 			
-			for(Entity aentity : combinedEntities){
+			/*for(Entity aentity : combinedEntities){
 		         System.out.println(" > " + aentity.getRelations().get(0).getSubj() + " "
 		         + aentity.getRelations().get(0).getPred()+" "+aentity.getRelations().get(0).getObj());			
-			}
+			}*/
 			
 			System.out.println("Triple Size: " + combinedEntities.size());
 			for (int i = 0; i < combinedEntities.size(); i++) {
