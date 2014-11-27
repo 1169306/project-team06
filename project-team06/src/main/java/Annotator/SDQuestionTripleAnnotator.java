@@ -18,6 +18,7 @@ import org.apache.uima.resource.ResourceInitializationException;
 import util.Utils;
 import edu.cmu.lti.oaqa.bio.bioasq.services.GoPubMedService;
 import edu.cmu.lti.oaqa.bio.bioasq.services.LinkedLifeDataServiceResponse;
+import edu.cmu.lti.oaqa.bio.bioasq.services.LinkedLifeDataServiceResponse.Entity;
 import edu.cmu.lti.oaqa.bio.bioasq.services.OntologyServiceResponse.Finding;
 import edu.cmu.lti.oaqa.type.kb.Triple;
 import edu.cmu.lti.oaqa.type.retrieval.AtomicQueryConcept;
@@ -92,6 +93,12 @@ public class SDQuestionTripleAnnotator extends JCasAnnotator_ImplBase {
 
 				e.printStackTrace();
 			}
+			
+			for(Entity aentity : combinedEntities){
+		         System.out.println(" > " + aentity.getRelations().get(0).getSubj() + " "
+		         + aentity.getRelations().get(0).getPred()+" "+aentity.getRelations().get(0).getObj());			
+			}
+			
 			System.out.println("Triple Size: " + combinedEntities.size());
 			for (int i = 0; i < combinedEntities.size(); i++) {
 				LinkedLifeDataServiceResponse.Entity en = combinedEntities
@@ -118,7 +125,7 @@ public class SDQuestionTripleAnnotator extends JCasAnnotator_ImplBase {
 		Iterator<LinkedLifeDataServiceResponse.Entity> iter_E1 = E1.iterator();
 		while (iter_E1.hasNext()) {
 			LinkedLifeDataServiceResponse.Entity aEntity = iter_E1.next();
-			E1Map.put(aEntity, 0);
+			E1Map.put(aEntity, 1);
 		}
 
 		Iterator<LinkedLifeDataServiceResponse.Entity> iter_E2 = E2.iterator();
@@ -139,13 +146,13 @@ public class SDQuestionTripleAnnotator extends JCasAnnotator_ImplBase {
 		Iterator<LinkedLifeDataServiceResponse.Entity> iter_E1 = E1.iterator();
 		while (iter_E1.hasNext()) {
 			LinkedLifeDataServiceResponse.Entity aEntity = iter_E1.next();
-			E1Map.put(aEntity, 0);
+			E1Map.put(aEntity, 1);
 		}
 
 		Iterator<LinkedLifeDataServiceResponse.Entity> iter_E2 = E2.iterator();
 		while (iter_E2.hasNext()) {
 			LinkedLifeDataServiceResponse.Entity aEntity = iter_E2.next();
-			if (E1Map.containsKey(aEntity)) {
+			if (!E1Map.containsKey(aEntity)) {
 				E1.add(aEntity);
 			}
 		}

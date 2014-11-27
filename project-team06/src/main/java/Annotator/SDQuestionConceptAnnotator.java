@@ -90,8 +90,18 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 			try {
 				OntologyServiceResponse.Result result = service
 						.findMeshEntitiesPaged(queryText, 0);
+				/*for(Finding finding : result.getFindings()){
+			         System.out.println(" > " + finding.getConcept().getLabel() + " "
+			         + finding.getConcept().getUri()+"\t Score"+finding.getScore());
+					
+				}*/
 				//combinedFindings = Intersect(combinedFindings, result.getFindings());
 				combinedFindings = Union(combinedFindings, result.getFindings());
+				
+				/*for(Finding finding : combinedFindings){
+			         System.out.println(" > " + finding.getConcept().getLabel() + " "
+			         + finding.getConcept().getUri()+"\t Score"+finding.getScore());			
+				}*/
 				/*
 				 * int curRank = 0; for (Finding finding : result.getFindings())
 				 * { edu.cmu.lti.oaqa.type.kb.Concept concept = new
@@ -111,12 +121,18 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+			
+			for(Finding finding : combinedFindings){
+		         System.out.println(" > " + finding.getConcept().getLabel() + " "
+		         + finding.getConcept().getUri()+"\t Score"+finding.getScore());			
+			}
 			//System.out.println("Concept Size: " + combinedFindings.size());
 			int counter = 0;
 			int curRank = 0;
 			for (Finding finding : combinedFindings) {
 				edu.cmu.lti.oaqa.type.kb.Concept concept = new edu.cmu.lti.oaqa.type.kb.Concept(
 						aJCas);
+				System.out.println(finding);
 				concept.setName(finding.getConcept().getLabel());
 				concept.addToIndexes();
 //				System.out.println("!!!!!!!");
@@ -140,7 +156,7 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 		Iterator<Finding> iter_f1 = f1.iterator();
 		while (iter_f1.hasNext()) {
 			Finding afinding = iter_f1.next();
-			f1Map.put(afinding, 0);
+			f1Map.put(afinding, 1);
 		}
 
 		Iterator<Finding> iter_f2 = f2.iterator();
@@ -159,13 +175,13 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 		Iterator<Finding> iter_f1 = f1.iterator();
 		while (iter_f1.hasNext()) {
 			Finding afinding = iter_f1.next();
-			f1Map.put(afinding, 0);
+			f1Map.put(afinding, 1);
 		}
 
 		Iterator<Finding> iter_f2 = f2.iterator();
 		while (iter_f2.hasNext()) {
 			Finding afinding = iter_f2.next();
-			if (f1Map.containsKey(afinding)) {
+			if (!f1Map.containsKey(afinding)) {
 				f1.add(afinding);
 			}
 		}
