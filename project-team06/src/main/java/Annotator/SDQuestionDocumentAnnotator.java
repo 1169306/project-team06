@@ -96,6 +96,12 @@ public class SDQuestionDocumentAnnotator extends JCasAnnotator_ImplBase {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
+			for(Document adoc : combinedDocs){
+		         System.out.println(" > " + adoc.getPmid() + " "
+		         + adoc.getTitle());			
+			}
+			
 			System.out.println("Docs Size: " + combinedDocs.size());
 			for (int i = 0; i < combinedDocs.size(); i++) {
 				PubMedSearchServiceResponse.Document doc = combinedDocs.get(i);
@@ -121,7 +127,7 @@ public class SDQuestionDocumentAnnotator extends JCasAnnotator_ImplBase {
 		Iterator<PubMedSearchServiceResponse.Document> iter_D1 = D1.iterator();
 		while (iter_D1.hasNext()) {
 			PubMedSearchServiceResponse.Document aDoc = iter_D1.next();
-			D1Map.put(aDoc, 0);
+			D1Map.put(aDoc, 1);
 		}
 
 		Iterator<PubMedSearchServiceResponse.Document> iter_D2 = D2.iterator();
@@ -142,13 +148,13 @@ public class SDQuestionDocumentAnnotator extends JCasAnnotator_ImplBase {
 		Iterator<PubMedSearchServiceResponse.Document> iter_D1 = D1.iterator();
 		while (iter_D1.hasNext()) {
 			PubMedSearchServiceResponse.Document aDoc = iter_D1.next();
-			D1Map.put(aDoc, 0);
+			D1Map.put(aDoc, 1);
 		}
 
 		Iterator<PubMedSearchServiceResponse.Document> iter_D2 = D2.iterator();
 		while (iter_D2.hasNext()) {
 			PubMedSearchServiceResponse.Document aDoc = iter_D2.next();
-			if (D1Map.containsKey(aDoc)) {
+			if (!D1Map.containsKey(aDoc)) {
 				D1.add(aDoc);
 			}
 		}
