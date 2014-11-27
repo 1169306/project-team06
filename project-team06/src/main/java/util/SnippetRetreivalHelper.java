@@ -114,7 +114,7 @@ public class SnippetRetreivalHelper {
 		SENTENCE_CHUNKER = new SentenceChunker(BASE_TKFACTORY, SENTENCE_MODEL);
 		
 		// Test for PMID == 23193281
-		JsonObject jsonObj = getJsonFromPMID("23193281");
+		JsonObject jsonObj = getJsonFromPMID("23193285");
 		System.out.println(jsonObj.toString());
 		// Test for extract different part from JSON
 		JsonArray secArr = jsonObj.getAsJsonArray("sections");
