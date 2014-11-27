@@ -64,9 +64,11 @@ public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
     // .getAllIndexedFS(ComplexQueryConcept.type);
     while (docIter.hasNext()) {
       Document doc = (Document) docIter.next();
+      System.out.println(doc.getDocId());
       JsonObject jsonObj = SnippetRetreivalHelper.getJsonFromPMID(doc
           .getDocId());
       String url = doc.getUri();
+      // System.out.println(jsonObj);
 
       // store query sentence
       String query = doc.getQueryString();
