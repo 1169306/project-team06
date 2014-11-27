@@ -17,27 +17,27 @@ import com.aliasi.util.ScoredObject;
 
 import edu.cmu.lti.oaqa.type.input.Question;
 
-
 public class SDNERAnnotator extends JCasAnnotator_ImplBase {
 
 	private NBestChunker chunker;
 	private static final String chunkerModel = "ModelFile";
 
-  public void initialize(UimaContext aContext) throws ResourceInitializationException {
-    super.initialize(aContext);
-    System.out.println("This is NER");
-    // Load the LingPipe pre-trained model
-    try {
-      chunker = (NBestChunker) AbstractExternalizable.readResourceObject(
-              SDNERAnnotator.class,
-              (String) aContext.getConfigParameterValue(chunkerModel));
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-  }
+	public void initialize(UimaContext aContext)
+			throws ResourceInitializationException {
+		super.initialize(aContext);
+		System.out.println("This is NER");
+		// Load the LingPipe pre-trained model
+		try {
+			chunker = (NBestChunker) AbstractExternalizable.readResourceObject(
+					SDNERAnnotator.class,
+					(String) aContext.getConfigParameterValue(chunkerModel));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
-  public void process(JCas aJCas) throws AnalysisEngineProcessException {
- 
-  }
+	public void process(JCas aJCas) throws AnalysisEngineProcessException {
+
+	}
 
 }

@@ -122,7 +122,8 @@ public class SnippetRetreivalHelper {
 		String sec0 = secArr.get(0).getAsString();
 		System.out.println("*********");
 		System.out.println(sec0);
-		Chunking chunking = SENTENCE_CHUNKER.chunk(sec0.toCharArray(), 0,
-				sec0.length());
+		// Chunking chunking = SENTENCE_CHUNKER.chunk(sec0.toCharArray(), 0,
+		// 		sec0.length());
+		
 	}
 }

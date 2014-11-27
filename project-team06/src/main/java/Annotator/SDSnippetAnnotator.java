@@ -1,10 +1,14 @@
 package Annotator;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.Map.Entry;
 
 import com.aliasi.chunk.Chunk;
 import com.aliasi.chunk.Chunking;
@@ -20,6 +24,8 @@ import com.aliasi.tokenizer.TokenizerFactory;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
+import edu.cmu.lti.oaqa.type.answer.CandidateAnswerVariant;
+
 import org.apache.uima.UimaContext;
 import org.apache.uima.cas.FSIterator;
 import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
@@ -30,15 +36,17 @@ import org.apache.uima.resource.ResourceInitializationException;
 
 import util.GenerateQueryString;
 import util.SnippetRetreivalHelper;
+import util.TypeFactory;
 import edu.cmu.lti.oaqa.type.retrieval.ComplexQueryConcept;
 import edu.cmu.lti.oaqa.type.retrieval.Document;
 import edu.cmu.lti.oaqa.type.retrieval.Passage;
 
 import com.google.gson.JsonObject;
+import java.io.IOException;
 
 public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
 	private SentenceChunker SENTENCE_CHUNKER;
-	
+
 	public void initialize(UimaContext aContext)
 			throws ResourceInitializationException {
 		super.initialize(aContext);
@@ -47,86 +55,133 @@ public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
 		SENTENCE_CHUNKER = new SentenceChunker(BASE_TKFACTORY, SENTENCE_MODEL);
 
 	}
-	
+
 	@Override
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
 	/*	FSIterator<TOP> docIter = aJCas.getJFSIndexRepository()
 				.getAllIndexedFS(Document.type);
-		FSIterator<TOP> queryIter = aJCas.getJFSIndexRepository()
-				.getAllIndexedFS(ComplexQueryConcept.type);
+		// FSIterator<TOP> queryIter = aJCas.getJFSIndexRepository()
+		// .getAllIndexedFS(ComplexQueryConcept.type);
 		while (docIter.hasNext()) {
 			Document doc = (Document) docIter.next();
 			JsonObject jsonObj = SnippetRetreivalHelper.getJsonFromPMID(doc
 					.getDocId());
+			String url = doc.getUri();
 
-			if (jsonObj != null) {
-				// Without Operator's query information
-				// String queryWOOp = query.getWholeQueryWithoutOp();
-				while (queryIter.hasNext()) {
-					// Get queryContentString from the GenerateQueryString helper class
-					String queryContentString = GenerateQueryString.complexQueryToString((ComplexQueryConcept)queryIter.next());
+			// store query sentence
+			String query = doc.getQueryString();
+			String[] queryArray = query.split("\\s+");
+			// storing query vector
+			Map<String, Integer> queryVector = new HashMap<String, Integer>();
+			// store
+			for (String str : queryArray) {
+				if (queryVector.get(str) != 0) {
+					queryVector.put(str, queryVector.get(str) + 1);
+				} else {
+					queryVector.put(str, 1);
 				}
-				
-				
+
+			}
+			/******* Snippet *******/
+			if (jsonObj != null) {
 				// Json Array information in section
 				JsonArray secArr = jsonObj.getAsJsonArray("sections");
 				String pmid = doc.getDocId();
 				String sec0 = secArr.get(0).getAsString();
 
-				Chunking chunking = SENTENCE_CHUNKER.chunk(sec0.toCharArray(),
-						0, sec0.length());
-				
-				// snetences list
-				List<Chunk> sentences = new ArrayList<Chunk>(
-						chunking.chunkSet());
+				// split the whole article into each sentence
+				// replace ? ! with . to divide into different sentence
+				String stopArticle = sec0.replace("!", ".").replace("?", ".");
+				String[] sentence = stopArticle.split(".");
+				Map<Integer, Map<String, Integer>> vec = new HashMap<Integer, Map<String, Integer>>();
+				Map<Integer, Double> similarityMap = new HashMap<Integer, Double>();
+				// store the id of the sentence with max
+				int maxId = 0;
+				// max similarity
+				double simi = 0.0;
+				// calculate each vector of each sentence and store into map
+				for (int i = 0; i < sentence.length; i++) {
+					String[] words = sentence[i].replace(",", "")
+							.replace(":", "").replace("'s", "")
+							.replace("\"", "").replace("--", " ")
+							.replace("-", " ").replace(";", "").split("\\+");
+					// store the vector of each sentence in passage
+					Map<String, Integer> docVector = new HashMap<String, Integer>();
+					// store the vector
+					for (String str : words) {
+						if (docVector.get(str) != 0) {
+							docVector.put(str, docVector.get(str) + 1);
+						} else {
+							docVector.put(str, 1);
+						}
+					}
+					double similarity = computeCosineSimilarity(queryVector,
+							docVector);
+					similarityMap.put(i, similarity);
 
-				TfIdfDistance tfIdf = new TfIdfDistance(REFINED_TKFACTORY);
-				tfIdf.handle(queryWOOp);
-
-				for (int i = 0; i < sentences.size(); ++i) {
-					Chunk sentence = sentences.get(i);
-					int start = sentence.start();
-					int end = sentence.end();
-					tfIdf.handle(sec0.substring(start, end));
+					if (similarity > simi) {
+						simi = similarity;
+						maxId = i;
+					}
 				}
+				// calculate the start and the stop position of each passage
+				int start = stopArticle.indexOf(sentence[maxId]);
+				int end = sentence[maxId].length() + 1;
 
-				List<RawSentence> rawSentences = new ArrayList<RawSentence>();
+				Passage passage = TypeFactory.createPassage(aJCas, url,
+						doc.getScore(), sentence[maxId], doc.getRank(), query,
+						"", new ArrayList<CandidateAnswerVariant>(),
+						doc.getTitle(), doc.getDocId(), start, end,
+						"sections.0", "sections.0", "");
 
-				for (int i = 0; i < sentences.size(); ++i) {
-					int start = sentences.get(i).start();
-					int end = sentences.get(i).end();
-
-					RawSentence rawSent = new RawSentence();
-					rawSent.startIdx = start;
-					rawSent.endIdx = end;
-					double sim = tfIdf.proximity(queryWOOp,
-							sec0.substring(start, end));
-					rawSent.score = sim;
-					rawSentences.add(rawSent);
-				}
-
-				Collections.sort(rawSentences, new SenSimComparator());
-
-				int threshold = Math.min(5, sentences.size());
-				for (int i = 0; i < threshold; ++i) {
-					Passage snippet = new Passage(aJCas);
-					int startIdx = rawSentences.get(i).startIdx;
-					int endIdx = rawSentences.get(i).endIdx;
-					snippet.setDocId(pmid);
-					snippet.setUri(doc.getUri());
-					snippet.setText(sec0.substring(startIdx, endIdx));
-					snippet.setBeginSection("sections.0");
-					snippet.setEndSection("sections.0");
-					snippet.setOffsetInBeginSection(startIdx);
-					snippet.setOffsetInEndSection(endIdx);
-					snippet.addToIndexes();
-				}
+				passage.addToIndexes();
 			}
 		}
-
 	}
 
+<<<<<<< HEAD
 */
+=======
+	/**
+	 * This method is used to calculate the cosine_similarity for two input
+	 * vector, which are Query Vector and Doc Vector, respectively.
+	 * 
+	 * @param queryVector
+	 *            Query Vector
+	 * 
+	 * @param docVector
+	 *            Document Vector
+	 * 
+	 * @return cosine_similarity
+	 */
+	private double computeCosineSimilarity(Map<String, Integer> queryVector,
+			Map<String, Integer> docVector) {
+		double cosine_similarity = 0.0;
+
+		// TODO :: compute cosine similarity between two sentences
+		double qVLen, dVLen = 0;
+		qVLen = computeVectorLength(queryVector);
+		dVLen = computeVectorLength(docVector);
+		Set<Entry<String, Integer>> entrySetQV = queryVector.entrySet();
+		for (Entry<String, Integer> entryQV : entrySetQV) {
+			String commonString = entryQV.getKey();
+			if (docVector.containsKey(commonString)) {
+				cosine_similarity += entryQV.getValue()
+						* docVector.get(commonString);
+			}
+		}
+		cosine_similarity = cosine_similarity / (qVLen * dVLen);
+
+		return (double) Math.round(cosine_similarity * 10000) / 10000;
+>>>>>>> 3b72d963be4d03939ffdd663cb68b24c3865c188
 	}
 
+	private double computeVectorLength(Map<String, Integer> vector) {
+		double vLen = 0;
+		for (Integer freq : vector.values()) {
+			vLen = freq * freq + vLen;
+		}
+		vLen = Math.sqrt(vLen);
+		return vLen;
+	}
 }
