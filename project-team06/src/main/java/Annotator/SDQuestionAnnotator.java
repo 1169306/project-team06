@@ -45,7 +45,7 @@ public class SDQuestionAnnotator extends JCasAnnotator_ImplBase {
              
               while((line = br.readLine()) != null){
                 if(!stopWords.containsKey(line)){
-                  stopWords.put(line, 1);;
+                  stopWords.put(line + " ", 1);;
                 }
               }
               br.close();
@@ -79,7 +79,7 @@ public class SDQuestionAnnotator extends JCasAnnotator_ImplBase {
 		        if(!stopWords.containsKey(aterm)){
 		            AtomicQueryConcept c = new AtomicQueryConcept(aJCas);
 		           System.out.println(aterm);
-		           c.setText(aterm);
+		           c.setText(aterm.trim());
 		           c.setQuestion(question);
 		           c.addToIndexes();
 		        }   

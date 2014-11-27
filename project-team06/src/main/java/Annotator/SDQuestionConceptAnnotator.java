@@ -84,6 +84,7 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 					index++;
 				}
 			}
+			System.out.println(queryText);
 			List<Finding> combinedFindings = new ArrayList<Finding>();
 
 			try {
@@ -110,7 +111,8 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			System.out.println("Concept Size: " + combinedFindings.size());
+			//System.out.println("Concept Size: " + combinedFindings.size());
+			int counter = 0;
 			int curRank = 0;
 			for (Finding finding : combinedFindings) {
 				edu.cmu.lti.oaqa.type.kb.Concept concept = new edu.cmu.lti.oaqa.type.kb.Concept(
@@ -126,7 +128,9 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 				result1.setRank(curRank++);
 				result1.setQueryString(queryText);
 				result1.addToIndexes();
+				counter++;
 			}
+			System.out.println("counter is :" + counter);
 		}
 		System.out.println("Concept finished");
 	}
