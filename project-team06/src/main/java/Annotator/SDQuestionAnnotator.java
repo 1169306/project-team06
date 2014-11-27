@@ -40,7 +40,6 @@ public class SDQuestionAnnotator extends JCasAnnotator_ImplBase {
 
 		BufferedReader br;
 		try {
-<<<<<<< HEAD
               br = new BufferedReader(new FileReader("src/main/resources/stopwords.txt"));
               String line = null;
              
@@ -54,21 +53,6 @@ public class SDQuestionAnnotator extends JCasAnnotator_ImplBase {
               e.printStackTrace();
            	} 
   		}
-=======
-			br = new BufferedReader(new FileReader(
-					"src/main/resources/stopwords.txt"));
-			String line = null;
-			while ((line = br.readLine()) != null) {
-				if (!stopWords.containsKey(line)) {
-					stopWords.put(line + " ", 1);
-				}
-			}
-			br.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
->>>>>>> 3b72d963be4d03939ffdd663cb68b24c3865c188
 
 	@Override
 	/**
@@ -87,8 +71,6 @@ public class SDQuestionAnnotator extends JCasAnnotator_ImplBase {
 			// System.out.println("My question: " + question);
 			String text = question.getText().replace("?", "");
 			List<String> term = tokenize0(text);
-<<<<<<< HEAD
-		    
 		    Iterator<String> iter_term = term.iterator();
 		    while (iter_term.hasNext()) {
 		    	String aterm = iter_term.next();
@@ -102,21 +84,6 @@ public class SDQuestionAnnotator extends JCasAnnotator_ImplBase {
 		           c.addToIndexes();
 		        }   
 		    }	
-=======
-
-			Iterator<String> iter_term = term.iterator();
-			while (iter_term.hasNext()) {
-				String aterm = iter_term.next();
-				aterm = StanfordLemmatizer.stemText(aterm);
-				if (!stopWords.containsKey(aterm)) {
-					AtomicQueryConcept c = new AtomicQueryConcept(aJCas);
-					System.out.println(aterm);
-					c.setText(aterm.trim());
-					c.setQuestion(question);
-					c.addToIndexes();
-				}
-			}
->>>>>>> 3b72d963be4d03939ffdd663cb68b24c3865c188
 		}
 	}
 
