@@ -40,7 +40,7 @@ import edu.cmu.lti.oaqa.type.retrieval.QueryOperator;
 public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 	/** The GoPubMedService instance variable */
 	public GoPubMedService service;
-
+	private int mResultsPerPage = 30;
 	/**
 	 * The initialize method initialize the GoPubMedService instance using a
 	 * preset profile.
@@ -68,6 +68,7 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 		FSIterator<TOP> it = aJCas.getJFSIndexRepository().getAllIndexedFS(
 				ComplexQueryConcept.type);
 		while (it.hasNext()) {
+
 			ComplexQueryConcept con = (ComplexQueryConcept) it.next();
 			FSList conceptFslist = con.getOperatorArgs();
 			ArrayList<AtomicQueryConcept> conceptArray = Utils
@@ -89,15 +90,18 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 
 			try {
 				OntologyServiceResponse.Result result = service
-						.findMeshEntitiesPaged(queryText, 0);
+						.findMeshEntitiesPaged(queryText, 0, mResultsPerPage);
 				/*for(Finding finding : result.getFindings()){
 			         System.out.println(" > " + finding.getConcept().getLabel() + " "
 			         + finding.getConcept().getUri()+"\t Score"+finding.getScore());
 					
 				}*/
 				//combinedFindings = Intersect(combinedFindings, result.getFindings());
-				combinedFindings = Union(combinedFindings, result.getFindings());
-				
+				for(Finding finding: result.getFindings()){
+				//	if(finding.getScore() > 0.2){
+						combinedFindings = Union1(combinedFindings, finding);
+					//}
+				}				
 				/*for(Finding finding : combinedFindings){
 			         System.out.println(" > " + finding.getConcept().getLabel() + " "
 			         + finding.getConcept().getUri()+"\t Score"+finding.getScore());			
@@ -184,6 +188,19 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 			if (!f1Map.containsKey(afinding)) {
 				f1.add(afinding);
 			}
+		}
+		return f1;
+	}
+	
+	List<Finding> Union1(List<Finding> f1, Finding f2) {
+		HashMap<Finding, Integer> f1Map = new HashMap<Finding, Integer>();
+		Iterator<Finding> iter_f1 = f1.iterator();
+		while (iter_f1.hasNext()) {
+			Finding afinding = iter_f1.next();
+			f1Map.put(afinding, 1);
+		}
+		if (!f1Map.containsKey(f2)) {
+			f1.add(f2);
 		}
 		return f1;
 	}
