@@ -104,8 +104,9 @@ public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
 				System.out.println(sec0);
 				// split the whole article into each sentence
 				// replace ? ! with . to divide into different sentence
-				String stopArticle = sec0.replace("!", ".").replace("?", ".");
-				String[] sentence = stopArticle.split(".");
+				String stopArticle = sec0.replace("!", ".").replace("?", ".").replace("\n", " ");
+				System.out.println("The stopArticle is : " + stopArticle);
+				String[] sentence = stopArticle.split("\\.");
 				Map<Integer, Map<String, Integer>> vec = new HashMap<Integer, Map<String, Integer>>();
 				Map<Integer, Double> similarityMap = new HashMap<Integer, Double>();
 				// store the id of the sentence with max
@@ -121,7 +122,10 @@ public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
 							.replace("-", " ").replace(";", "").split("\\s+");
 					// store the vector of each sentence in passage
 					Map<String, Integer> docVector = new HashMap<String, Integer>();
-					System.out.println("******************");
+					System.out.println("VVVVVVVVVVVVV");
+					System.out.println("The stopArticle is : " + stopArticle);
+					System.out.println("The query is:" + query);
+					System.out.println("The " + i + "'s sentence is:" + sentence[i]);
 					// store the vector
 					for (String str : words) {
 						if (docVector.get(str) != null) {
