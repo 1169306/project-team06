@@ -74,9 +74,9 @@ public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
 			String[] queryArray = query.split("\\s+");
 			// System.out.println("QueryArray is" + queryArray);
 			// Test for printing out queryArray
-//			for (String str : queryArray) {
-//				System.out.println(str);
-//			}
+			// for (String str : queryArray) {
+			// System.out.println(str);
+			// }
 			// storing query vector
 			Map<String, Integer> queryVector = new HashMap<String, Integer>();
 			// store
@@ -126,6 +126,7 @@ public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
 					System.out.println("The stopArticle is : " + stopArticle);
 					System.out.println("The query is:" + query);
 					System.out.println("The " + i + "'s sentence is:" + sentence[i]);
+
 					// store the vector
 					for (String str : words) {
 						if (docVector.get(str) != null) {
@@ -160,7 +161,6 @@ public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
 						"sections.0", "sections.0", "");
 
 				passage.addToIndexes();
-				
 			}
 		}
 	}
