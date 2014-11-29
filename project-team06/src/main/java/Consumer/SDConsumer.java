@@ -5,6 +5,7 @@ import static java.util.stream.Collectors.toList;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -29,6 +30,8 @@ import org.apache.uima.jcas.tcas.Annotation;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceProcessException;
 import org.apache.uima.util.ProcessTrace;
+
+
 
 //import edu.cmu.lti.oaqa.type.retrieval.AtomicQueryConcept;
 import edu.cmu.lti.oaqa.type.retrieval.ConceptSearchResult;
@@ -132,7 +135,12 @@ public class SDConsumer extends CasConsumer_ImplBase {
 	    while(conceptIter.hasNext()){
 	      ConceptSearchResult cpt = (ConceptSearchResult) conceptIter.next();
 		  String uri = cpt.getUri();
-		  String[] uriArray = uri.split("&");
+		  String[] uriArray = uri.split("term=");
+//		  System.out.println("The length of Array:" + uriArray.length);
+//		  for (int i = 0; i < uriArray.length; i++) {
+//			  System.out.println(uriArray[i]);
+//		  }
+//		  System.out.println("@@@@@@@Final :" + uriArray[uriArray.length - 1]);
 	      conceptMap.put(cpt.getRank(),uriArray[uriArray.length - 1]);
 	    }
 	    //doc
@@ -142,6 +150,7 @@ public class SDConsumer extends CasConsumer_ImplBase {
 	      Document doc  = (Document) docIter.next();       
 		  String uri = doc.getUri();
 		  String[] uriArray = uri.split("&");
+//		  System.out.println("@@@@@@@Final :" + uriArray[uriArray.length - 1]);
 	      docMap.put(doc.getRank(),uriArray[uriArray.length - 1]);
 	    }  
 	    //triple
@@ -158,6 +167,7 @@ public class SDConsumer extends CasConsumer_ImplBase {
 	    List<String> docList = new ArrayList<String>(docMap.values());
 	    List<Triple> tripleList = new ArrayList<Triple>(triMap.values());
 	    List<String> goldConceptList = new ArrayList<String>();
+	    List<String> goldConceptList2 = new ArrayList<String>();
 	    List<String> goldDocList = new ArrayList<String>();
 	    List<Triple> goldTripleList = new ArrayList<Triple>();
 	    
@@ -165,7 +175,13 @@ public class SDConsumer extends CasConsumer_ImplBase {
 	    String queryId = curQuestion.getId();
 	    //  System.out.println(goldSet.containsKey(queryId));
 	      if (goldSet.containsKey(queryId)){
-	    	goldConceptList =  goldSet.get(queryId).getConcepts();
+	    	goldConceptList2 =  goldSet.get(queryId).getConcepts();
+	    	Iterator<String> gcItr = goldConceptList2.iterator(); 
+	    	while (gcItr.hasNext()) {
+	    		String goldConceptItem = gcItr.next();
+	  		    String[] gcArray = goldConceptItem.split("term=");
+	    		goldConceptList.add(gcArray[gcArray.length - 1]);	    		
+	    	}
 	    	goldDocList = goldSet.get(queryId).getDocuments();
 	      	List<Triple> tempTriples = goldSet.get(queryId).getTriples();
 	      	if (tempTriples != null){
