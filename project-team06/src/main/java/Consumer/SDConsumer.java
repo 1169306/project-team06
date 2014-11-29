@@ -132,6 +132,7 @@ public class SDConsumer extends CasConsumer_ImplBase {
 	    while(conceptIter.hasNext()){
 	      ConceptSearchResult cpt = (ConceptSearchResult) conceptIter.next();
 		  String uri = cpt.getUri();
+		  System.out.println("uri: " + uri);
 		  String[] uriArray = uri.split("&");
 	      conceptMap.put(cpt.getRank(),uriArray[uriArray.length - 1]);
 	    }

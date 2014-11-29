@@ -98,9 +98,9 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 				}*/
 				//combinedFindings = Intersect(combinedFindings, result.getFindings());
 				for(Finding finding: result.getFindings()){
-				//	if(finding.getScore() > 0.2){
+					if(finding.getScore() > 0.1){
 						combinedFindings = Union1(combinedFindings, finding);
-					//}
+					}
 				}				
 				/*for(Finding finding : combinedFindings){
 			         System.out.println(" > " + finding.getConcept().getLabel() + " "
