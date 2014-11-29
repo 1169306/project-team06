@@ -59,6 +59,7 @@ public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
 
 	@Override
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
+		System.out.println("Hi~Snippet!");
 		FSIterator<TOP> docIter = aJCas.getJFSIndexRepository()
 				.getAllIndexedFS(Document.type);
 		// FSIterator<TOP> queryIter = aJCas.getJFSIndexRepository()
@@ -73,9 +74,9 @@ public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
 			String[] queryArray = query.split("\\s+");
 			// System.out.println("QueryArray is" + queryArray);
 			// Test for printing out queryArray
-//			for (String str : queryArray) {
-//				System.out.println(str);
-//			}
+			// for (String str : queryArray) {
+			// System.out.println(str);
+			// }
 			// storing query vector
 			Map<String, Integer> queryVector = new HashMap<String, Integer>();
 			// store
@@ -112,14 +113,18 @@ public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
 				// max similarity
 				double simi = 0.0;
 				// calculate each vector of each sentence and store into map
+				System.out.println("*** Length of sentence:" + sentence.length);
 				for (int i = 0; i < sentence.length; i++) {
 					String[] words = sentence[i].replace(",", "")
 							.replace(":", "").replace("'s", "")
 							.replace("\"", "").replace("--", " ")
-							.replace("-", " ").replace(";", "").split("\\+");
+							.replace("-", " ").replace(";", "").split("\\s+");
 					// store the vector of each sentence in passage
 					Map<String, Integer> docVector = new HashMap<String, Integer>();
-					System.out.println("******************");
+					System.out.println("VVVVVVVVVVVVV");
+					System.out.println("The query is:" + query);
+					System.out.println("The " + i + "'s sentence is:"
+							+ sentence[i]);
 					// store the vector
 					for (String str : words) {
 						if (docVector.get(str) != null) {
@@ -134,6 +139,7 @@ public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
 					}
 					double similarity = computeCosineSimilarity(queryVector,
 							docVector);
+					System.out.println("@@@@@@ Similarity is:" + similarity);
 					similarityMap.put(i, similarity);
 
 					if (similarity > simi) {
@@ -153,6 +159,7 @@ public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
 						"sections.0", "sections.0", "");
 
 				passage.addToIndexes();
+
 			}
 		}
 	}
