@@ -34,7 +34,7 @@ import com.google.gson.JsonArray;
  */
 public class SnippetRetreivalHelper {
 	// The prefix for the retrieval web link
-	private static final String PREFIX_LINK = "http://metal.lti.cs.cmu.edu:30002/pmc/";
+	private static final String PREFIX_LINK = "http://localhost:30002/pmc/";
 
 	/**
 	 * Given a Reader instance to the method that returns the String instance
@@ -77,7 +77,7 @@ public class SnippetRetreivalHelper {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("ReadJsonFromUrl");
+		// System.out.println("ReadJsonFromUrl");
 		BufferedReader rd = new BufferedReader(new InputStreamReader(is));
 		String jsonStr = readAllContent(rd);
 		// eliminate leading and trailing spaces in the json text
@@ -105,7 +105,7 @@ public class SnippetRetreivalHelper {
 	 */
 	public static JsonObject getJsonFromPMID(String pmid) {
 		String url = PREFIX_LINK + pmid;
-		System.out.println("getJsonFromPMID");
+		// System.out.println("getJsonFromPMID");
 		return readJsonFromUrl(url);
 	}
 
