@@ -113,6 +113,7 @@ public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
 				// max similarity
 				double simi = 0.0;
 				// calculate each vector of each sentence and store into map
+				System.out.println("*** Length of sentence:" + sentence.length);
 				for (int i = 0; i < sentence.length; i++) {
 					String[] words = sentence[i].replace(",", "")
 							.replace(":", "").replace("'s", "")
@@ -135,6 +136,7 @@ public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
 					}
 					double similarity = computeCosineSimilarity(queryVector,
 							docVector);
+					System.out.println("@@@@@@ Similarity is:" + similarity);
 					similarityMap.put(i, similarity);
 
 					if (similarity > simi) {
@@ -154,6 +156,7 @@ public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
 						"sections.0", "sections.0", "");
 
 				passage.addToIndexes();
+				
 			}
 		}
 	}
