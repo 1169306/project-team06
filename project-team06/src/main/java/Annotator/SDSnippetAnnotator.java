@@ -59,6 +59,7 @@ public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
 
 	@Override
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
+		System.out.println("Hi~Snippet!");
 		FSIterator<TOP> docIter = aJCas.getJFSIndexRepository()
 				.getAllIndexedFS(Document.type);
 		// FSIterator<TOP> queryIter = aJCas.getJFSIndexRepository()
@@ -116,7 +117,7 @@ public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
 					String[] words = sentence[i].replace(",", "")
 							.replace(":", "").replace("'s", "")
 							.replace("\"", "").replace("--", " ")
-							.replace("-", " ").replace(";", "").split("\\+");
+							.replace("-", " ").replace(";", "").split("\\s+");
 					// store the vector of each sentence in passage
 					Map<String, Integer> docVector = new HashMap<String, Integer>();
 					System.out.println("******************");
