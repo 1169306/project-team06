@@ -159,7 +159,6 @@ public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
 						"sections.0", "sections.0", "");
 
 				passage.addToIndexes();
-
 			}
 		}
 	}

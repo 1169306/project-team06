@@ -134,8 +134,8 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 						aJCas);
 				System.out.println(finding);
 				concept.setName(finding.getConcept().getLabel());
-				// System.out.println(finding.getConcept().getLabel());
 				concept.addToIndexes();
+//				System.out.println("!!!!!!!");
 				ConceptSearchResult result1 = new ConceptSearchResult(aJCas);
 				result1.setConcept(concept);
 				result1.setUri(finding.getConcept().getUri());

@@ -50,6 +50,7 @@ public class SDConsumer extends CasConsumer_ImplBase {
 	private List<Double[]> precList;
 	private List<Double[]> recList;
 	private List<Double[]> fMeasureList;
+//	private String queryString = "";
 
 	public void initialize() throws ResourceInitializationException {
 		filePath = (String) getConfigParameterValue(PATH);
@@ -138,7 +139,7 @@ public class SDConsumer extends CasConsumer_ImplBase {
 	    FSIterator<TOP> docIter = jcas.getJFSIndexRepository().getAllIndexedFS(Document.type);
 	    Map<Integer,String> docMap = new TreeMap<Integer,String>();  
 	    while(docIter.hasNext()){
-	      Document doc  = (Document) docIter.next(); 
+	      Document doc  = (Document) docIter.next();       
 		  String uri = doc.getUri();
 		  String[] uriArray = uri.split("&");
 	      docMap.put(doc.getRank(),uriArray[uriArray.length - 1]);
@@ -195,7 +196,6 @@ public class SDConsumer extends CasConsumer_ImplBase {
 	    avrPrecArray[1] = metr.avrPrec(goldDocList, docList);
 	    avrPrecArray[2] = metr.avrPrec(goldTripleList, tripleList);
 	    avrPrecList.add(avrPrecArray);
-	   
 	   
 //		for(int i = 0; i < gold.size(); i++){
 //			Question q = gold.get(i);
@@ -269,7 +269,7 @@ public class SDConsumer extends CasConsumer_ImplBase {
       for (int j = 0; j < gmap.length; j++)
   		System.out.print(j+1 + ":  " + gmap[j] +  "\t");
       System.out.println();
-           
+      
     }
     
 }
