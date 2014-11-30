@@ -27,6 +27,9 @@
   <delegateAnalysisEngine key="OriginalQueryDescriptor">
       <import location="OriginalQueryDescriptor.xml"/>
     </delegateAnalysisEngine>
+  <delegateAnalysisEngine key="ComplexQueryORAnnotatorDescriptor">
+      <import location="ComplexQueryORAnnotatorDescriptor.xml"/>
+    </delegateAnalysisEngine>
   </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
     <name>aeDescriptor</name>
@@ -43,6 +46,7 @@
         <node>SDQuestionConceptAnnotatorDescriptor</node>
       <node>SDQuestionDocumentAnnotatorDescriptor</node>
         <node>SDQuestionTripleDescriptor</node>
+      <node>SDSnippetAnnotatorDescriptor</node>
       </fixedFlow>
     </flowConstraints>
     <fsIndexCollection/>
