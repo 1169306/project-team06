@@ -37,9 +37,7 @@
     <configurationParameterSettings/>
     <flowConstraints>
       <fixedFlow>
-        <node>SDQuestionAnnotatorDescriptor</node>
-        <node>ComplexQueryAnnotatorDescriptor</node>
-      <node>ComplexQueryANDAnnotatorDescriptor</node>
+        <node>OriginalQueryDescriptor</node>
         <node>SDQuestionConceptAnnotatorDescriptor</node>
       <node>SDQuestionDocumentAnnotatorDescriptor</node>
         <node>SDQuestionTripleDescriptor</node>
