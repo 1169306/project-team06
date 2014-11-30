@@ -213,18 +213,19 @@ public class SDConsumer extends CasConsumer_ImplBase {
       for (int i = 0; i < length; i++){
       	System.out.println("  Query" + i + ":");
       	 Double output[] = new Double[3];
-      	System.out.print("  precision:");
+      	System.out.print("  precision:    ");
       	output = precList.get(i);
       	for (int j = 0; j < output.length; j++)
-      		System.out.print(j+1 + ":  " + output[j] +  "\t");
-      	System.out.print("\n  recall:");
+      		System.out.print(j+1 + ":  " + output[j] +  "    ");
+      	System.out.print("\n  recall:    ");
       	output =  recList.get(i);
       	for (int j = 0; j < output.length; j++)
-      		System.out.print(j+1 + ":  " + output[j] +  "\t");
-      	System.out.print("\n  fmeasure:" );
+      		System.out.print(j+1 + ":  " + output[j] +  "    ");
+      	System.out.print("\n  fmeasure:    " );
       	output = fMeasureList.get(i);
       	for (int j = 0; j < output.length; j++)
-      		System.out.print(j+1 + ":  " + output[j] +  "\t");
+      		System.out.print(j+1 + ":  " + output[j] +  "    ");
+      	System.out.println();
       }
 	  /******* print MAP and GMAP *******/
       System.out.print("\nMAP:");
