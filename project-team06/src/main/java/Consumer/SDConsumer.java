@@ -30,10 +30,7 @@ import org.apache.uima.jcas.tcas.Annotation;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceProcessException;
 import org.apache.uima.util.ProcessTrace;
-
-
-
-//import edu.cmu.lti.oaqa.type.retrieval.AtomicQueryConcept;
+import util.metrics;
 import edu.cmu.lti.oaqa.type.retrieval.ConceptSearchResult;
 import edu.cmu.lti.oaqa.type.retrieval.Document;
 import edu.cmu.lti.oaqa.type.retrieval.TripleSearchResult;
@@ -53,25 +50,22 @@ public class SDConsumer extends CasConsumer_ImplBase {
 	private List<Double[]> precList;
 	private List<Double[]> recList;
 	private List<Double[]> fMeasureList;
-//	private String queryString = "";
 
 	public void initialize() throws ResourceInitializationException {
 		filePath = (String) getConfigParameterValue(PATH);
-
 		if (filePath == null) {
 			throw new ResourceInitializationException(
 					ResourceInitializationException.CONFIG_SETTING_ABSENT,
 					new Object[] { "output file initialization fail" });
 		}
-
 		try {
 			fileWriter = new FileWriter(new File(filePath));
 
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
-		// get gloden standard file
+		
+		/******* Get Gold Standard file *******/
 		standardPath = (String) getConfigParameterValue(Standard);
 		gold = TestSet.load(getClass().getResourceAsStream(standardPath))
 				.stream().collect(toList());
@@ -92,7 +86,14 @@ public class SDConsumer extends CasConsumer_ImplBase {
 		fMeasureList = new ArrayList<Double[]>();;
 	}
 	
-
+	/**
+	 * This method is used to calculate the precision, recall, f-measure, and average precision of
+	 * Concept, doc and triple, and store the value in a list for each query
+	 * 
+	 * @param CAS
+	 * 
+	 * @return void
+	 */
 	public void processCas(CAS aCAS) throws ResourceProcessException {
 		System.out.println("God Damn Pipeline - consumer");
 		JCas jcas = null;
@@ -106,60 +107,29 @@ public class SDConsumer extends CasConsumer_ImplBase {
 		
 		edu.cmu.lti.oaqa.type.input.Question curQuestion = (edu.cmu.lti.oaqa.type.input.Question)ita.next();				
 		
-//		String qid = "";
-//		while(ita.hasNext()){
-//			edu.cmu.lti.oaqa.type.input.Question curQuestion = (edu.cmu.lti.oaqa.type.input.Question)ita.next();
-//			qid = curQuestion.getId();					
-//		}	
-//		FSIterator<TOP> it = jcas.getJFSIndexRepository().getAllIndexedFS(
-//				AtomicQueryConcept.type);
-//		String questionText = null;
-//		while (it.hasNext()){
-//			AtomicQueryConcept con = (AtomicQueryConcept) it.next();
-//			questionText = con.getText();
-//	    }
-//	   
-//		 ArrayList<String> resultConcepts = new ArrayList<String>();   
-//		 it = jcas.getJFSIndexRepository().getAllIndexedFS(
-//		    		ConceptSearchResult.type);
-//		 while(it.hasNext()){
-//			ConceptSearchResult result = (ConceptSearchResult)it.next();
-//			String gc = result.getUri();
-//			String[] gcarray = gc.split("&");
-//			resultConcepts.add(gcarray[gcarray.length - 1]);		
-//		}	
-		
-		// Concept
+		/******* Get Concept *******/
 	    FSIterator<TOP> conceptIter = jcas.getJFSIndexRepository().getAllIndexedFS(ConceptSearchResult.type);
 	    Map<Integer,String> conceptMap = new TreeMap<Integer,String>();  
 	    while(conceptIter.hasNext()){
 	      ConceptSearchResult cpt = (ConceptSearchResult) conceptIter.next();
 		  String uri = cpt.getUri();
-//		  System.out.println("uri: " + uri);
 		  String[] uriArray = uri.split("term=");
-//		  System.out.println("The length of Array:" + uriArray.length);
-//		  for (int i = 0; i < uriArray.length; i++) {
-//			  System.out.println(uriArray[i]);
-//		  }
-//		  System.out.println("@@@@@@@Final :" + uriArray[uriArray.length - 1]);
 	      conceptMap.put(cpt.getRank(),uriArray[uriArray.length - 1]);
 	    }
-	    //doc
+		/******* Get Doc *******/
 	    FSIterator<TOP> docIter = jcas.getJFSIndexRepository().getAllIndexedFS(Document.type);
 	    Map<Integer,String> docMap = new TreeMap<Integer,String>();  
 	    while(docIter.hasNext()){
 	      Document doc  = (Document) docIter.next();       
 		  String uri = doc.getUri();
 		  String[] uriArray = uri.split("&");
-//		  System.out.println("@@@@@@@Final :" + uriArray[uriArray.length - 1]);
 	      docMap.put(doc.getRank(),uriArray[uriArray.length - 1]);
 	    }  
-	    //triple
+		/******* Get Triple *******/
 	    FSIterator<TOP> tripleIter = jcas.getJFSIndexRepository().getAllIndexedFS(TripleSearchResult.type);
 	    Map<Integer,Triple> triMap = new TreeMap<Integer,Triple>();  
 	    while(tripleIter.hasNext()){
 	      TripleSearchResult trp = (TripleSearchResult) tripleIter.next();
-	      // It conflict with gson.Triple
 	      edu.cmu.lti.oaqa.type.kb.Triple temp = trp.getTriple();
 	      triMap.put(trp.getRank(),new Triple(temp.getSubject(), temp.getPredicate(), temp.getObject())); 
 	    }
@@ -172,7 +142,7 @@ public class SDConsumer extends CasConsumer_ImplBase {
 	    List<String> goldDocList = new ArrayList<String>();
 	    List<Triple> goldTripleList = new ArrayList<Triple>();
 	    
-	    //gold standard
+		/******* Get Gold Standard *******/
 	    String queryId = curQuestion.getId();
 	    //  System.out.println(goldSet.containsKey(queryId));
 	      if (goldSet.containsKey(queryId)){
@@ -192,7 +162,7 @@ public class SDConsumer extends CasConsumer_ImplBase {
 	      	}
 	      }
 	    
-	      //add precision, recall, fmeasure, and avrprec
+		/******* Add precision, recall, fmeasure, and avrprec *******/
 	    Double[] precArray =new Double[3];
 	    Double[] recArray =new Double[3];
 	    Double[] fMeasureArray =new Double[3];
@@ -212,73 +182,52 @@ public class SDConsumer extends CasConsumer_ImplBase {
 	    avrPrecArray[0] = metr.avrPrec(goldConceptList, conceptList);
 	    avrPrecArray[1] = metr.avrPrec(goldDocList, docList);
 	    avrPrecArray[2] = metr.avrPrec(goldTripleList, tripleList);
-	    avrPrecList.add(avrPrecArray);
-	   
-//		for(int i = 0; i < gold.size(); i++){
-//			Question q = gold.get(i);
-//			if(qid.equals(q.getId())){
-//				System.out.println("Metrics on question:" + questionText + "?");
-//			    ArrayList<String> goldenConcepts = new ArrayList<String>();
-//				goldenConcepts = (ArrayList<String>) q.getConcepts();
-////				totalRel = goldenConcepts.size();
-//				ArrayList<String> filer = new ArrayList<String>();
-//				for(int j = 0; j < goldenConcepts.size(); j++){
-//					String gc = goldenConcepts.get(j);
-//					String[] gcarray = gc.split("&");
-////					ss.add(gcarray[gcarray.length - 1]);
-//					//golden standard array
-//					filer.add(gcarray[gcarray.length - 1]);
-//				}
-//				prec = metr.precision(filer,resultConcepts); 
-//				rec = metr.recall(filer,resultConcepts);
-//				fMeasure = metr.fMeas(prec, rec);
-////				break;	
-//			}
-//		 } 	 		 
-//		 //double pre = hit / (hit + miss);
-//		 //double rec = hit / totalRel;
-//		 System.out.println("Precision = " +  prec); 
-//		 // System.out.println("Replaced Precision = " + precision(goldenConcepts, resultConcepts));
-//		 System.out.println("Recall = " + rec);
-//		 System.out.println("F-measure = " +  fMeasure);	
-	    
-	
+	    avrPrecList.add(avrPrecArray);	    	
 	}
+	
     @Override
 	public void destroy() {
 		 
     }
     
+	/**
+	 * This method is used to calculate the total MAP and GMAP, using the average precision
+	 * in the linked list, and print the result
+	 * 
+	 * @return void
+	 */
     @Override
     public void collectionProcessComplete(ProcessTrace arg0) throws ResourceProcessException,
             IOException {
       super.collectionProcessComplete(arg0);
       int length = avrPrecList.size();
+	  /******* Initialize and calculate the MAP/GMAP for concept, doc and triple *******/
       Double map[] = new Double[3];
-      Double gmap[] = new Double[3];
-      
+      Double gmap[] = new Double[3]; 
       map = metr.meanAvrPrec(avrPrecList);
       gmap = metr.geomMAP( avrPrecList);
       
+	  /******* print the precision, recall and f-measure *******/
       System.out.println("Final:");
       System.out.println("1:concept;   2:doc;  3:triple");
       for (int i = 0; i < length; i++){
       	System.out.println("  Query" + i + ":");
       	 Double output[] = new Double[3];
-      	System.out.print("  precision:");
+      	System.out.print("  precision:    ");
       	output = precList.get(i);
       	for (int j = 0; j < output.length; j++)
-      		System.out.print(j+1 + ":  " + output[j] +  "\t");
-      	System.out.print("\n  recall:");
+      		System.out.print(j+1 + ":  " + output[j] +  "    ");
+      	System.out.print("\n  recall:    ");
       	output =  recList.get(i);
       	for (int j = 0; j < output.length; j++)
-      		System.out.print(j+1 + ":  " + output[j] +  "\t");
-      	System.out.print("\n  fmeasure:" );
+      		System.out.print(j+1 + ":  " + output[j] +  "    ");
+      	System.out.print("\n  fmeasure:    " );
       	output = fMeasureList.get(i);
       	for (int j = 0; j < output.length; j++)
-      		System.out.print(j+1 + ":  " + output[j] +  "\t");
+      		System.out.print(j+1 + ":  " + output[j] +  "    ");
+      	System.out.println();
       }
-      
+	  /******* print MAP and GMAP *******/
       System.out.print("\nMAP:");
       for (int j = 0; j < map.length; j++)
   		System.out.print(j+1 + ":  " + map[j] +  "\t");
