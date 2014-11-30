@@ -8,10 +8,13 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
+import json.gson.QuestionType;
+
 import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.cas.FSIterator;
+import org.apache.uima.cas.Type;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 import org.apache.uima.resource.ResourceInitializationException;
@@ -24,6 +27,7 @@ import edu.cmu.lti.oaqa.type.input.Question;
 import edu.cmu.lti.oaqa.type.retrieval.AtomicQueryConcept;
 import edu.cmu.lti.oaqa.type.retrieval.ComplexQueryConcept;
 import edu.stanford.nlp.io.EncodingPrintWriter.out;
+import edu.cmu.lti.oaqa.type.input.*;
 
 public class SDQuestionAnnotator extends JCasAnnotator_ImplBase {
 
@@ -66,24 +70,39 @@ public class SDQuestionAnnotator extends JCasAnnotator_ImplBase {
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
 		FSIterator<Annotation> it = aJCas.getAnnotationIndex(Question.type)
 				.iterator();
+//		Question question = null;
+//		if (it.hasNext()) {
+//			question = (Question) it.next();
+//		}
 		while (it.hasNext()) {
 			Question question = (Question) it.next();
 			// System.out.println("My question: " + question);
-			String text = question.getText().replace("?", "");
-			List<String> term = tokenize0(text);
-		    Iterator<String> iter_term = term.iterator();
-		    while (iter_term.hasNext()) {
-		    	String aterm = iter_term.next();
-		        aterm = StanfordLemmatizer.stemText(aterm);
-		        
-		        if(!stopWords.containsKey(aterm)){
-		            AtomicQueryConcept c = new AtomicQueryConcept(aJCas);
-		           System.out.println(aterm);
-		           c.setText(aterm.trim());
-		           c.setQuestion(question);
-		           c.addToIndexes();
-		        }   
-		    }	
+//			System.out.println("hi" + question.getQuestionType());
+//			String type = question.getQuestionType();
+//			System.out.println("###########QuestionAnnotator: " + question.getQuestionType());
+//			if(question.getQuestionType() == "LIST"){
+//				System.out.println("@@@@@@@@@@@@@@@@@@@QuestionAnnotator: " + question.getQuestionType());
+				String text = question.getText().replace("?", "");
+				List<String> term = tokenize0(text);
+			    Iterator<String> iter_term = term.iterator();
+			    while (iter_term.hasNext()) {
+			    	String aterm = iter_term.next();
+			        aterm = StanfordLemmatizer.stemText(aterm);
+			        
+			        if(!stopWords.containsKey(aterm)){
+			            AtomicQueryConcept c = new AtomicQueryConcept(aJCas);
+			           System.out.println(aterm);
+			           c.setText(aterm.trim());
+			           c.setQuestion(question);
+			           c.addToIndexes();
+			        }   
+			    }
+//			} else {
+//	           AtomicQueryConcept c = new AtomicQueryConcept(aJCas);
+//	           c.setText(null);
+//	           c.setQuestion(question);
+//	           c.addToIndexes();
+//			}
 		}
 	}
 
