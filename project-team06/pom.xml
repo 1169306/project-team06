@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>edu.cmu.lti.11791.f14.hw3</groupId>
 	<artifactId>project-team06</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>DEIIS-project</name>
 	<build>
 		<extensions>
@@ -28,8 +28,8 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>1.6</source>
+					<target>1.6</target>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -179,7 +179,7 @@
 	<scm>
 		<connection>scm:git:git@github.com:1169306/project-team06.git</connection>
 		<developerConnection>scm:git:git@github.com:1169306/project-team06.git</developerConnection>
-		<tag>HEAD</tag>
+		<tag>project-team06-0.0.1</tag>
 	</scm>
 	<repositories>
 		<repository>
