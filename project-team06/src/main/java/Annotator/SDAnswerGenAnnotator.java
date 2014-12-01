@@ -100,16 +100,30 @@ public class SDAnswerGenAnnotator extends JCasAnnotator_ImplBase {
 		}
 		Iterator<Entry<Double, String>> treMapItr = ansMap.entrySet().iterator();
 		int rank = 0;
-		while(treMapItr.hasNext()) {
+//		while(treMapItr.hasNext()) {
+//			Entry<Double, String> simiAns = treMapItr.next();
+//			Answer ans = new Answer(aJCas);
+//			ans.setText(simiAns.getValue());
+//	        ans.setRank(rank++);
+//	        ans.addToIndexes();
+//	        System.out.println("Answer" + ans.getRank() + ans.getText());
+//	        if (rank >= 5)
+//	        	break;
+//		}
+		while(treMapItr.hasNext()){	
 			Entry<Double, String> simiAns = treMapItr.next();
-			Answer ans = new Answer(aJCas);
-			ans.setText(simiAns.getValue());
-	        ans.setRank(rank++);
-	        ans.addToIndexes();
-	        System.out.println("Answer" + ans.getRank() + ans.getText());
-	        if (rank >= 5)
-	        	break;
+			if(simiAns.getKey() > 0.1){
+				Answer ans = new Answer(aJCas);
+				ans.setText("YES");
+				ans.setRank(1);
+				ans.addToIndexes();
+				return;
+			}
 		}
+		Answer ans = new Answer(aJCas);
+		ans.setText("NO");
+		ans.setRank(1);
+		ans.addToIndexes();
 	}
 
 }

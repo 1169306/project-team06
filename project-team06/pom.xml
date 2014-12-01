@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>edu.cmu.lti.11791.f14.project</groupId>
 	<artifactId>project-team693-06</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>DEIIS-project</name>
 	<build>
 		<extensions>
@@ -174,7 +174,7 @@
 	<scm>
 		<connection>scm:git:git@github.com:victorzhao1990/project-team06.git</connection>
 		<developerConnection>scm:git:git@github.com:victorzhao1990/project-team06.git</developerConnection>
-		<tag>project-team693-06-0.0.3</tag>
+		<tag>project-team693-06-0.0.1</tag>
 	</scm>
 	<repositories>
 		<repository>

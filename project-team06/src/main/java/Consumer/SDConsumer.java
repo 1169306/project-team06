@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.Writer;
 import java.io.FileWriter;
@@ -44,7 +45,7 @@ public class SDConsumer extends CasConsumer_ImplBase {
 	public String filePath;
 	public String standardPath;
 	private metrics metr = new metrics();
-	private Writer fileWriter = null;
+	private static BufferedWriter writer = null;
 	
 	private List<TestQuestion> gold;
 	HashMap<String, TestQuestion> goldSet;
@@ -62,7 +63,7 @@ public class SDConsumer extends CasConsumer_ImplBase {
 					new Object[] { "output file initialization fail" });
 		}
 		try {
-			fileWriter = new FileWriter(new File(filePath));
+			writer = new BufferedWriter(new FileWriter(new File(filePath)));;
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -87,7 +88,15 @@ public class SDConsumer extends CasConsumer_ImplBase {
 		precList = new ArrayList<Double[]>();
 		recList = new ArrayList<Double[]>();
 		fMeasureList = new ArrayList<Double[]>();
-	    ansList = new ArrayList<Answer>();  
+	    ansList = new ArrayList<Answer>(); 
+	    
+	    //print start of json file
+	    try {
+			writer.write("\"questions\": [\n");
+		} catch (IOException e) {
+			System.out.println("writer header wrong!");
+			e.printStackTrace();
+		}
 	}
 	
 	/**
@@ -111,7 +120,13 @@ public class SDConsumer extends CasConsumer_ImplBase {
 		
 		edu.cmu.lti.oaqa.type.input.Question curQuestion = (edu.cmu.lti.oaqa.type.input.Question)ita.next();				
 		
+		/******* Get Question *******/
+		String body = jcas.getDocumentText();
+		
 		/******* Get Concept *******/
+		//save concepts
+		ArrayList<String> concepts = new ArrayList<String>();
+		
 	    FSIterator<TOP> conceptIter = jcas.getJFSIndexRepository().getAllIndexedFS(ConceptSearchResult.type);
 	    Map<Integer,String> conceptMap = new TreeMap<Integer,String>();  
 	    while(conceptIter.hasNext()){
@@ -119,8 +134,12 @@ public class SDConsumer extends CasConsumer_ImplBase {
 		  String uri = cpt.getUri();
 		  String[] uriArray = uri.split("term=");
 	      conceptMap.put(cpt.getRank(),uriArray[uriArray.length - 1]);
+	      concepts.add(uri);
 	    }
 		/******* Get Doc *******/
+	    //save documents
+	    ArrayList<String> docs = new ArrayList<String>();
+	    
 	    FSIterator<TOP> docIter = jcas.getJFSIndexRepository().getAllIndexedFS(Document.type);
 	    Map<Integer,String> docMap = new TreeMap<Integer,String>();  
 	    while(docIter.hasNext()){
@@ -128,6 +147,7 @@ public class SDConsumer extends CasConsumer_ImplBase {
 		  String uri = doc.getUri();
 		  String[] uriArray = uri.split("&");
 	      docMap.put(doc.getRank(),uriArray[uriArray.length - 1]);
+	      docs.add(uri);
 	    }  
 		/******* Get Triple *******/
 	    FSIterator<TOP> tripleIter = jcas.getJFSIndexRepository().getAllIndexedFS(TripleSearchResult.type);
@@ -138,12 +158,22 @@ public class SDConsumer extends CasConsumer_ImplBase {
 	      triMap.put(trp.getRank(),new Triple(temp.getSubject(), temp.getPredicate(), temp.getObject())); 
 	    }
 		/******* Get Answer *******/
+	    //save answer
+	    String answer = "";
+	    
 	    FSIterator<TOP> ansIter = jcas.getJFSIndexRepository().getAllIndexedFS(Answer.type);
 
 	    while(ansIter.hasNext()){
-	      Answer ans = (Answer) ansIter.next();
-	      ansList.add(ans);
+	    	Answer ans = (Answer) ansIter.next();
+	    	answer = ans.getText();
 	    }
+	    
+//	    while(ansIter.hasNext()){
+//	      Answer ans = (Answer) ansIter.next();
+//	      ansList.add(ans);
+//	    }
+	    
+	    printResult(body, answer, concepts, docs);
 	    
 	    List<String> conceptList = new ArrayList<String>(conceptMap.values());
 	    List<String> docList = new ArrayList<String>(docMap.values());
@@ -198,7 +228,14 @@ public class SDConsumer extends CasConsumer_ImplBase {
 	
     @Override
 	public void destroy() {
-		 
+    	
+    	
+		try{
+			writer.write("]}\n");
+			writer.close();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
     }
     
 	/**
@@ -253,4 +290,69 @@ public class SDConsumer extends CasConsumer_ImplBase {
       }
     }
     
+    public void printResult(String question, String answer, List<String> concepts, List<String> docs){
+    	  	writer.write("\t{\n");  
+    	    
+    	  	writer.write("\t\t\"body\": \"" + question + "\",\n");
+    	    
+    	    // print concepts
+    	    writer.write("\t\t\"concepts\": [");
+    	    for(int i = 0; i < concepts.size(); i++){
+    	    	writer.write("\n\t\t\t\"" + concepts.get(i) + "\"");
+    	    	if(i < concepts.size() - 1){
+    	    		writer.write(",\n");
+    	    	}
+    	    }
+    	    
+//    	    while (conceptIt.hasNext()) {
+//    	      ConceptSearchResult concept = (ConceptSearchResult) conceptIt.next();
+//    	      writer.printf("\n\t\t\t\"%s\"", concept.getUri());
+//    	      if (conceptIt.hasNext())
+//    	        writer.printf(",");
+//    	    }
+//    	    writer.printf("\n\t\t],\n");
+//    	    // documents
+//    	    writer.printf("\t\t\"documents\": [");
+//    	    FSIterator docIt = jcas.getJFSIndexRepository().getAllIndexedFS(Document.type);
+//    	    while (docIt.hasNext()) {
+//    	      Document doc = (Document) docIt.next();
+//    	      writer.printf("\n\t\t\t\"%s\"", doc.getTitle());
+//    	      if (conceptIt.hasNext())
+//    	        writer.printf(",");
+//    	    }
+//    	    writer.printf("\n\t\t],\n");
+//    	    // triples
+//    	    writer.printf("\t\t\"triples\": [");
+//    	    FSIterator tripleIt = jcas.getJFSIndexRepository().getAllIndexedFS(TripleSearchResult.type);
+//    	    while (tripleIt.hasNext()) {
+//    	      TripleSearchResult triple = (TripleSearchResult) tripleIt.next();
+//    	      writer.printf(
+//    	              "\n\t\t\t{\n\t\t\t\t\"o\": \"%s\"\n\t\t\t\t\"p\": \"%s\"\n\t\t\t\t\"s\": \"%s\"\n\t\t\t}",
+//    	              triple.getTriple().getObject(), triple.getTriple().getPredicate(), triple.getTriple()
+//    	                      .getSubject());
+//    	      if (conceptIt.hasNext())
+//    	        writer.printf(",");
+//    	    }
+//    	    writer.printf("\n\t\t],\n");
+//    	    // question id
+//    	    writer.printf("\t\t\"id\": \"" + question.getId() + "\",\n");
+//    	    // the end of the question
+//    	    writer.printf("\t},\n");
+//    	    // snippets
+//    	    writer.printf("\t\t\"triples\": [");
+//    	    FSIterator snippetIt = jcas.getJFSIndexRepository().getAllIndexedFS(Passage.type);
+//    	    while (snippetIt.hasNext()) {
+//    	      Passage snippet = (Passage) snippetIt.next();
+//    	      writer.printf(
+//    	              "\n\t\t\t{\n\t\t\t\t\"beginSection\": \"%s\"\n\t\t\t\t\"document\": \"%s\"\n\t\t\t\t\"endSection\": \"%s\"\n\t\t\t\t\"offsetInBeginSection\": \"%s\"\n\t\t\t\t\"offsetInEndSection\": \"%s\"\n\t\t\t\t\"text\": \"%s\"\n\t\t\t}",
+//    	              snippet.getBeginSection(),snippet.getTitle(),snippet.getEndSection(),snippet.getOffsetInBeginSection(),snippet.getOffsetInEndSection(),snippet.getText());
+//    	      if (conceptIt.hasNext())
+//    	        writer.printf(",");
+//    	    }
+//    	    writer.printf("\n\t\t],\n");
+//    	    // question id
+//    	    writer.printf("\t\t\"id\": \"" + question.getId() + "\",\n");
+//    	    // the end of the question
+//    	    writer.printf("\t},\n");
+    }
 }
