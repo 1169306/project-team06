@@ -24,9 +24,6 @@
   <delegateAnalysisEngine key="SDSnippetAnnotatorDescriptor">
       <import location="SDSnippetAnnotatorDescriptor.xml"/>
     </delegateAnalysisEngine>
-  <delegateAnalysisEngine key="OriginalQueryDescriptor">
-      <import location="OriginalQueryDescriptor.xml"/>
-    </delegateAnalysisEngine>
   </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
     <name>aeDescriptor</name>

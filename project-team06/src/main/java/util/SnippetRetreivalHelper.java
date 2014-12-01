@@ -34,7 +34,7 @@ import com.google.gson.JsonArray;
  */
 public class SnippetRetreivalHelper {
 	// The prefix for the retrieval web link
-	private static final String PREFIX_LINK = "http://localhost:30002/pmc/";
+	private static final String PREFIX_LINK = "http://metal.lti.cs.cmu.edu:30002/pmc/";
 
 	/**
 	 * Given a Reader instance to the method that returns the String instance
