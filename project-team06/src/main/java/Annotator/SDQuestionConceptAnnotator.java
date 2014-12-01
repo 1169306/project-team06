@@ -62,7 +62,7 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 	 * The process performs the main task that stores the information provided by OntologyServiceResponse 
 	 * into CAS.
 	 * 
-	 * @see org.apache.uima.analysis_component.JCasAnnotator_ImplBase#process(JCas)
+	 * @throws AnalysisEngineProcessException
 	 */
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
 		FSIterator<TOP> it = aJCas.getJFSIndexRepository().getAllIndexedFS(

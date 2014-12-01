@@ -17,11 +17,21 @@ import com.aliasi.util.ScoredObject;
 
 import edu.cmu.lti.oaqa.type.input.Question;
 
+/**
+ * 
+ * @author Victor Zhao <xinyunzh@andrew.cmu.edu>
+ *
+ */
 public class SDNERAnnotator extends JCasAnnotator_ImplBase {
 
 	private NBestChunker chunker;
 	private static final String chunkerModel = "ModelFile";
 
+	/**
+	 * initialization function
+	 * @param aContext
+	 * 	
+	 */
 	public void initialize(UimaContext aContext)
 			throws ResourceInitializationException {
 		super.initialize(aContext);
