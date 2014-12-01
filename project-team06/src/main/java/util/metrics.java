@@ -12,7 +12,7 @@ public class metrics {
 	 * 				True dataset
 	 * @param retrValue
 	 * 				Retrieval dataset 
-	 * @return
+	 * @return metrics
 	 */
 	public <T> double precision(List<T> trueValue, List<T>retrValue) {
 		// If retrValue is empty, precision is zero

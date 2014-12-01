@@ -30,8 +30,7 @@ import util.SimilarityCalculation;
 
 /**
  * This annotator produces exact answer for each question.
- * @author Victor Zhao <xinyunzh@andrew.cmu.edu>
- *
+ * @author Victor Zhao 
  */
 public class SDAnswerGenAnnotator extends JCasAnnotator_ImplBase {
     private Map<Double,String> ansMap;
