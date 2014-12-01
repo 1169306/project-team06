@@ -95,7 +95,7 @@ public class SDQuestionAnnotator extends JCasAnnotator_ImplBase {
         // If the term is not a stop word, add it as a AtomicQuery-typed annotation to CAS.
         if (!stopWords.contains(aterm)) {
           AtomicQueryConcept c = new AtomicQueryConcept(aJCas);
-          System.out.println(aterm);
+          //System.out.println(aterm);
           c.setText(aterm.trim());
           c.setQuestion(question);
           c.addToIndexes();

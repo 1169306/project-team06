@@ -1,9 +1,9 @@
 {
     "questions": [
         {
-            "body": "Which forms of cancer is the Tpl2 gene associated with?", 
-            "type": "list", 
-            "id": "515bf6d6298dcd4e51000004"
+            "body": "Is Rheumatoid Arthritis more common in men or women?", 
+            "type": "factoid", 
+            "id": "5118dd1305c10fae75000001"
         }
     ]
 }
