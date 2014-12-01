@@ -30,7 +30,9 @@ import org.apache.uima.jcas.tcas.Annotation;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceProcessException;
 import org.apache.uima.util.ProcessTrace;
+
 import util.metrics;
+import edu.cmu.lti.oaqa.type.answer.Answer;
 import edu.cmu.lti.oaqa.type.retrieval.ConceptSearchResult;
 import edu.cmu.lti.oaqa.type.retrieval.Document;
 import edu.cmu.lti.oaqa.type.retrieval.TripleSearchResult;
@@ -50,6 +52,7 @@ public class SDConsumer extends CasConsumer_ImplBase {
 	private List<Double[]> precList;
 	private List<Double[]> recList;
 	private List<Double[]> fMeasureList;
+    private List<Answer> ansList;  
 
 	public void initialize() throws ResourceInitializationException {
 		filePath = (String) getConfigParameterValue(PATH);
@@ -69,7 +72,7 @@ public class SDConsumer extends CasConsumer_ImplBase {
 		standardPath = (String) getConfigParameterValue(Standard);
 		gold = TestSet.load(getClass().getResourceAsStream(standardPath))
 				.stream().collect(toList());
-		;
+	
 		gold.stream()
 				.filter(input -> input.getBody() != null)
 				.forEach(
@@ -80,10 +83,11 @@ public class SDConsumer extends CasConsumer_ImplBase {
 		 for(TestQuestion que : gold){
 			 goldSet.put(que.getId(), que);
 		 }
-		avrPrecList = new ArrayList<Double[]>();;
-		precList = new ArrayList<Double[]>();;
-		recList = new ArrayList<Double[]>();;
-		fMeasureList = new ArrayList<Double[]>();;
+		avrPrecList = new ArrayList<Double[]>();
+		precList = new ArrayList<Double[]>();
+		recList = new ArrayList<Double[]>();
+		fMeasureList = new ArrayList<Double[]>();
+	    ansList = new ArrayList<Answer>();  
 	}
 	
 	/**
@@ -132,6 +136,13 @@ public class SDConsumer extends CasConsumer_ImplBase {
 	      TripleSearchResult trp = (TripleSearchResult) tripleIter.next();
 	      edu.cmu.lti.oaqa.type.kb.Triple temp = trp.getTriple();
 	      triMap.put(trp.getRank(),new Triple(temp.getSubject(), temp.getPredicate(), temp.getObject())); 
+	    }
+		/******* Get Answer *******/
+	    FSIterator<TOP> ansIter = jcas.getJFSIndexRepository().getAllIndexedFS(Answer.type);
+
+	    while(ansIter.hasNext()){
+	      Answer ans = (Answer) ansIter.next();
+	      ansList.add(ans);
 	    }
 	    
 	    List<String> conceptList = new ArrayList<String>(conceptMap.values());
@@ -236,6 +247,10 @@ public class SDConsumer extends CasConsumer_ImplBase {
   		System.out.print(j+1 + ":  " + gmap[j] +  "\t");
       System.out.println();
       
+      Iterator<Answer> ansIter = ansList.iterator();
+      while (ansIter.hasNext()) {
+    	  System.out.println("Answer" + ansIter.next().getRank() + "is : " + ansIter.next().getText());
+      }
     }
     
 }

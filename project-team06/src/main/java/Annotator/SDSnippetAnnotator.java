@@ -160,8 +160,8 @@ public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
 						"", new ArrayList<CandidateAnswerVariant>(),
 						doc.getTitle(), doc.getDocId(), start, end,
 						"sections.0", "sections.0", "");
-//				passage.get
 				passage.addToIndexes();
+				System.out.println("##########" + passage.getText());
 			}
 		}
 	}
