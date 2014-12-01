@@ -60,11 +60,12 @@ public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
 
 	@Override
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
-		System.out.println("Hi~Snippet!");
+		
 		FSIterator<TOP> docIter = aJCas.getJFSIndexRepository()
 				.getAllIndexedFS(Document.type);
 		// FSIterator<TOP> queryIter = aJCas.getJFSIndexRepository()
 		// .getAllIndexedFS(ComplexQueryConcept.type);
+		
 		while (docIter.hasNext()) {
 			Document doc = (Document) docIter.next();
 			String url = doc.getUri();
@@ -75,9 +76,9 @@ public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
 			String[] queryArray = query.split("\\s+");
 			// System.out.println("QueryArray is" + queryArray);
 			// Test for printing out queryArray
-			// for (String str : queryArray) {
-			// System.out.println(str);
-			// }
+//			for (String str : queryArray) {
+//				System.out.println(str);
+//			}
 			// storing query vector
 			Map<String, Integer> queryVector = new HashMap<String, Integer>();
 			// store
@@ -127,7 +128,6 @@ public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
 					System.out.println("The stopArticle is : " + stopArticle);
 					System.out.println("The query is:" + query);
 					System.out.println("The " + i + "'s sentence is:" + sentence[i]);
-
 					// store the vector
 					for (String str : words) {
 						if (docVector.get(str) != null) {

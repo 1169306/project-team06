@@ -53,6 +53,7 @@
         <node>SDAnswerGenAnnotatorDescriptor</node>
       </fixedFlow>
     </flowConstraints>
+    <typePriorities/>
     <fsIndexCollection/>
     <capabilities>
       <capability>
