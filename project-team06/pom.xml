@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>edu.cmu.lti.11791.f14.hw3</groupId>
 	<artifactId>project-team06</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>DEIIS-project</name>
 	<build>
 		<extensions>
@@ -64,7 +64,7 @@
 		<dependency>
 			<groupId>edu.cmu.lti.oaqa.bio</groupId>
 			<artifactId>bioasq-gopubmed-client</artifactId>
-			<version>0.0.3</version>
+			<version>0.0.4</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.uima</groupId>
@@ -179,7 +179,7 @@
 	<scm>
 		<connection>scm:git:git@github.com:1169306/project-team06.git</connection>
 		<developerConnection>scm:git:git@github.com:1169306/project-team06.git</developerConnection>
-		<tag>project-team06-0.0.1</tag>
+		<tag>HEAD</tag>
 	</scm>
 	<repositories>
 		<repository>
@@ -203,3 +203,4 @@
 		</snapshotRepository>
 	</distributionManagement>
 </project>
+

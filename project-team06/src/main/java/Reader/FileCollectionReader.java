@@ -6,6 +6,7 @@ import java.util.List;
 import static java.util.stream.Collectors.toList;
 import json.JsonCollectionReaderHelper;
 import json.gson.Question;
+import json.gson.QuestionType;
 import json.gson.TrainingSet;
 
 import org.apache.uima.cas.CAS;
@@ -94,8 +95,13 @@ public class FileCollectionReader extends CollectionReader_ImplBase {
 
 		// open input stream to file
 		Question curQuestion = questions.get(mCurrentIndex++);
-
-		JsonCollectionReaderHelper.addQuestionToIndex(curQuestion, "", jcas);
+//		System.out.println("~~~~~~~~~~~~~~~`Reader:" + curQuestion.getType());
+//		if(curQuestion.getType() == QuestionType.list){
+//			System.out.println("!!!!!!!!!!!!!!added:" + curQuestion.getType());
+			JsonCollectionReaderHelper.addQuestionToIndex(curQuestion, "", jcas);
+//		} else {
+//			JsonCollectionReaderHelper.addQuestionToIndex(curQuestion, "", jcas);
+//		}
 	}
 
 	/**
