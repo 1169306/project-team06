@@ -62,7 +62,7 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 	 * The process performs the main task that stores the information provided by OntologyServiceResponse 
 	 * into CAS.
 	 * 
-	 * @see org.apache.uima.analysis_component.JCasAnnotator_ImplBase#process(JCas)
+	 * @throws AnalysisEngineProcessException
 	 */
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
 		FSIterator<TOP> it = aJCas.getJFSIndexRepository().getAllIndexedFS(
@@ -131,13 +131,13 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 		         System.out.println(" > " + finding.getConcept().getLabel() + " "
 		         + finding.getConcept().getUri()+"\t Score"+finding.getScore());			
 			}*/
-			//System.out.println("Concept Size: " + combinedFindings.size());
+			System.out.println("Concept Size: " + combinedFindings.size());
 			int counter = 0;
 			int curRank = 0;
 			for (Finding finding : combinedFindings) {
 				edu.cmu.lti.oaqa.type.kb.Concept concept = new edu.cmu.lti.oaqa.type.kb.Concept(
 						aJCas);
-				System.out.println(finding);
+				//System.out.println(finding);
 				concept.setName(finding.getConcept().getLabel());
 				concept.addToIndexes();
 //				System.out.println("!!!!!!!");
@@ -151,7 +151,7 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 				result1.addToIndexes();
 				counter++;
 			}
-			System.out.println("counter is :" + counter);
+			//System.out.println("counter is :" + counter);
 		}
 		System.out.println("Concept finished");
 	}

@@ -77,7 +77,7 @@ public class SnippetRetreivalHelper {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("ReadJsonFromUrl");
+		// System.out.println("ReadJsonFromUrl");
 		BufferedReader rd = new BufferedReader(new InputStreamReader(is));
 		String jsonStr = readAllContent(rd);
 		// eliminate leading and trailing spaces in the json text
@@ -105,7 +105,7 @@ public class SnippetRetreivalHelper {
 	 */
 	public static JsonObject getJsonFromPMID(String pmid) {
 		String url = PREFIX_LINK + pmid;
-		System.out.println("getJsonFromPMID");
+		// System.out.println("getJsonFromPMID");
 		return readJsonFromUrl(url);
 	}
 

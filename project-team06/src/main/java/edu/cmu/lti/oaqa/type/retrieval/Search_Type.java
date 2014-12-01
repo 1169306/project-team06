@@ -14,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.cas.TOP_Type;
 
 /** An object that holds a query and results for a search (text search, fact search, KB search, etc.)
- * Updated by JCasGen Sun Nov 30 18:21:22 EST 2014
+ * Updated by JCasGen Mon Dec 01 12:12:36 EST 2014
  * @generated */
 public class Search_Type extends TOP_Type {
   /** @generated 

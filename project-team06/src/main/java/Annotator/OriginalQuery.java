@@ -27,17 +27,27 @@ import edu.cmu.lti.oaqa.type.retrieval.ComplexQueryConcept;
 import edu.cmu.lti.oaqa.type.retrieval.QueryOperator;
 import edu.stanford.nlp.io.EncodingPrintWriter.out;
 
+/**
+ * This annotator produces query extracted from original
+ * question without any processing.
+ * @author Victor Zhao <xinyunzh@andrew.cmu.edu>
+ *
+ */
 public class OriginalQuery extends JCasAnnotator_ImplBase {
 
 	private TokenizerFactory aTokenizerFactory;
 
+	/**
+	 * initialization function
+	 * @param aContext
+	 * 	
+	 */
 	public void initialize(UimaContext aContext)
 			throws ResourceInitializationException {
 		super.initialize(aContext);
 		System.out.println("ComplexQueryOriginalAnnotator");
 	}
 
-	@Override
 	/**
 	 * The process method will read the question-typed query from annotation with question mark 
 	 * eliminated and store the text content into AtomicQuery-typed annotation.

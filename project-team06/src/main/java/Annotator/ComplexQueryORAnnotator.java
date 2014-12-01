@@ -15,9 +15,21 @@ import edu.cmu.lti.oaqa.type.retrieval.AtomicQueryConcept;
 import edu.cmu.lti.oaqa.type.retrieval.ComplexQueryConcept;
 import edu.cmu.lti.oaqa.type.retrieval.QueryOperator;
 
+/**
+ * This complexQueryORAnnotator is used to produce OR query
+ * @author Victor Zhao <xinyunzh@andrew.cmu.edu>
+ *
+ */
 public class ComplexQueryORAnnotator extends JCasAnnotator_ImplBase {
 
-	@Override
+	  /**
+	   * This method extracts OR complex concept.
+	   * 
+	   * 
+	   * @param aJCas
+	   * 	UIMA index, provides access to data
+	   * @throws AnalysisEngineProcessException
+	   */
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
 		// TODO Auto-generated method stub
 		ArrayList<AtomicQueryConcept> atomicList = new ArrayList<AtomicQueryConcept>();

@@ -1,12 +1,1 @@
-
 Annotator
-Consumer
-Reader
-edu.cmu.lti.oaqa.type.answer
-edu.cmu.lti.oaqa.type.input
-edu.cmu.lti.oaqa.type.kb
-edu.cmu.lti.oaqa.type.nlp
-edu.cmu.lti.oaqa.type.retrieval
-json
-json.gson
-util

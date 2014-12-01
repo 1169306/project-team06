@@ -25,6 +25,8 @@ public class ComplexQueryAnnotator extends JCasAnnotator_ImplBase {
    * This method extracts atomic concepts from CAS and combines them into a white-space separated
    * string.
    * 
+   * @param aJCas
+   * 	UIMA index, provides access to data
    * @throws AnalysisEngineProcessException
    */
 	@Override

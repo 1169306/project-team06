@@ -28,16 +28,31 @@ import edu.cmu.lti.oaqa.type.retrieval.Document;
 import edu.cmu.lti.oaqa.type.retrieval.Passage;
 import util.SimilarityCalculation;
 
+/**
+ * This annotator produces exact answer for each question.
+ * @author Victor Zhao 
+ */
 public class SDAnswerGenAnnotator extends JCasAnnotator_ImplBase {
     private Map<Double,String> ansMap;
     
+	/**
+	 * initialization function
+	 * @param aContext
+	 * 	
+	 */
 	public void initialize(UimaContext aContext)
 			throws ResourceInitializationException {
 		super.initialize(aContext);
 	    ansMap = new TreeMap<Double,String>(Collections.reverseOrder());
 	}
 	
-	@Override
+	  /**
+	   * This method produces exact answer.
+	   * 
+	   * @param aJCas
+	   * 	UIMA index, provides access to data
+	   * @throws AnalysisEngineProcessException
+	   */
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
 		
 		FSIterator<TOP> passIter = aJCas.getJFSIndexRepository()
@@ -84,16 +99,30 @@ public class SDAnswerGenAnnotator extends JCasAnnotator_ImplBase {
 		}
 		Iterator<Entry<Double, String>> treMapItr = ansMap.entrySet().iterator();
 		int rank = 0;
-		while(treMapItr.hasNext()) {
+//		while(treMapItr.hasNext()) {
+//			Entry<Double, String> simiAns = treMapItr.next();
+//			Answer ans = new Answer(aJCas);
+//			ans.setText(simiAns.getValue());
+//	        ans.setRank(rank++);
+//	        ans.addToIndexes();
+//	        System.out.println("Answer" + ans.getRank() + ans.getText());
+//	        if (rank >= 5)
+//	        	break;
+//		}
+		while(treMapItr.hasNext()){	
 			Entry<Double, String> simiAns = treMapItr.next();
-			Answer ans = new Answer(aJCas);
-			ans.setText(simiAns.getValue());
-	        ans.setRank(rank++);
-	        ans.addToIndexes();
-	        System.out.println("Answer" + ans.getRank() + ans.getText());
-	        if (rank >= 5)
-	        	break;
+			if(simiAns.getKey() > 0.1){
+				Answer ans = new Answer(aJCas);
+				ans.setText("YES");
+				ans.setRank(1);
+				ans.addToIndexes();
+				return;
+			}
 		}
+		Answer ans = new Answer(aJCas);
+		ans.setText("NO");
+		ans.setRank(1);
+		ans.addToIndexes();
 	}
 
 }

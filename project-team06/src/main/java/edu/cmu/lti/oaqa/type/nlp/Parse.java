@@ -12,8 +12,8 @@ import org.apache.uima.jcas.cas.TOP;
 
 
 /** A data structure that represents various NLP annotations from a parser, e.g. lists of tokens, semantic roles, etc.
- * Updated by JCasGen Sun Nov 30 18:21:22 EST 2014
- * XML source: /Users/dongnanzhy/Documents/Git/project-team06/project-team06/src/main/resources/Descriptors/aeDescriptor.xml
+ * Updated by JCasGen Mon Dec 01 12:12:36 EST 2014
+ * XML source: /Users/victorzhao/git/project-team06/project-team06/src/main/resources/type/OAQATypes.xml
  * @generated */
 public class Parse extends TOP {
   /** @generated

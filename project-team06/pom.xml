@@ -2,8 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>edu.cmu.lti.11791.f14.project</groupId>
-	<artifactId>project-team06</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>project-team693-06</artifactId>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>DEIIS-project</name>
 	<build>
 		<extensions>
@@ -32,6 +32,11 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+			<plugin>
+   	     	 	<groupId>org.apache.maven.plugins</groupId>
+   			 		<artifactId>maven-javadoc-plugin</artifactId>
+				 	<version>2.10.1</version>
+				</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
@@ -64,7 +69,7 @@
 		<dependency>
 			<groupId>edu.cmu.lti.oaqa.bio</groupId>
 			<artifactId>bioasq-gopubmed-client</artifactId>
-			<version>0.0.3</version>
+			<version>0.0.4</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.uima</groupId>
@@ -112,11 +117,6 @@
 			<version>1.4.0</version>
 			<type>jar</type>
 			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.google.code.gson</groupId>
-			<artifactId>gson</artifactId>
-			<version>2.3</version>
 		</dependency>
 		<dependency>
 			<groupId>com.github.julman99</groupId>
@@ -177,9 +177,9 @@
 	</dependencies>
 
 	<scm>
-		<connection>scm:git:git@github.com/1169306/project-team06.git</connection>
-		<developerConnection>scm:git:git@github.com/1169306/project-team06.git</developerConnection>
-		<tag>HEAD</tag>
+		<connection>scm:git:git@github.com:victorzhao1990/project-team06.git</connection>
+		<developerConnection>scm:git:git@github.com:victorzhao1990/project-team06.git</developerConnection>
+		<tag>project-team693-06-0.0.1</tag>
 	</scm>
 	<repositories>
 		<repository>
@@ -203,4 +203,3 @@
 		</snapshotRepository>
 	</distributionManagement>
 </project>
-
