@@ -40,7 +40,7 @@ import edu.cmu.lti.oaqa.type.retrieval.QueryOperator;
 public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 	/** The GoPubMedService instance variable */
 	public GoPubMedService service;
-	private int mResultsPerPage = 30;
+	private int mResultsPerPage = 100;
 	/**
 	 * The initialize method initialize the GoPubMedService instance using a
 	 * preset profile.
@@ -100,8 +100,9 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 				for(Finding finding: result.getFindings()){
 					if(finding.getScore() > 0.1){
 						combinedFindings = Union1(combinedFindings, finding);
+						//combinedFindings = Intersect1(combinedFindings, finding);
 					}
-				}				
+				}			
 				/*for(Finding finding : combinedFindings){
 			         System.out.println(" > " + finding.getConcept().getLabel() + " "
 			         + finding.getConcept().getUri()+"\t Score"+finding.getScore());			
@@ -171,6 +172,21 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 				f3.add(afinding);
 			}
 		}
+		return f3;
+	}
+	
+	List<Finding> Intersect1(List<Finding> f1, Finding f2) {
+		HashMap<Finding, Integer> f1Map = new HashMap<Finding, Integer>();
+		Iterator<Finding> iter_f1 = f1.iterator();
+		while (iter_f1.hasNext()) {
+			Finding afinding = iter_f1.next();
+			f1Map.put(afinding, 1);
+		}
+		List<Finding> f3 = new ArrayList<Finding>();
+			if (f1Map.containsKey(f2)) {
+				f3.add(f2);
+			}
+		
 		return f3;
 	}
 

@@ -37,6 +37,7 @@ import org.apache.uima.resource.ResourceInitializationException;
 import util.GenerateQueryString;
 import util.SnippetRetreivalHelper;
 import util.TypeFactory;
+import util.SimilarityCalculation;
 import edu.cmu.lti.oaqa.type.retrieval.ComplexQueryConcept;
 import edu.cmu.lti.oaqa.type.retrieval.Document;
 import edu.cmu.lti.oaqa.type.retrieval.Passage;
@@ -139,7 +140,7 @@ public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
 							docVector.put(str, 1);
 						}
 					}
-					double similarity = computeCosineSimilarity(queryVector,
+					double similarity = SimilarityCalculation.computeCosineSimilarity(queryVector,
 							docVector);
 					System.out.println("@@@@@@ Similarity is:" + similarity);
 					similarityMap.put(i, similarity);
@@ -159,53 +160,9 @@ public class SDSnippetAnnotator extends JCasAnnotator_ImplBase {
 						"", new ArrayList<CandidateAnswerVariant>(),
 						doc.getTitle(), doc.getDocId(), start, end,
 						"sections.0", "sections.0", "");
-
 				passage.addToIndexes();
-				
+				System.out.println("##########" + passage.getText());
 			}
 		}
 	}
-
-	/**
-	 * This method is used to calculate the cosine_similarity for two input
-	 * vector, which are Query Vector and Doc Vector, respectively.
-	 * 
-	 * @param queryVector
-	 *            Query Vector
-	 * 
-	 * @param docVector
-	 *            Document Vector
-	 * 
-	 * @return cosine_similarity
-	 */
-	private double computeCosineSimilarity(Map<String, Integer> queryVector,
-			Map<String, Integer> docVector) {
-		double cosine_similarity = 0.0;
-
-		// TODO :: compute cosine similarity between two sentences
-		double qVLen, dVLen = 0;
-		qVLen = computeVectorLength(queryVector);
-		dVLen = computeVectorLength(docVector);
-		Set<Entry<String, Integer>> entrySetQV = queryVector.entrySet();
-		for (Entry<String, Integer> entryQV : entrySetQV) {
-			String commonString = entryQV.getKey();
-			if (docVector.containsKey(commonString)) {
-				cosine_similarity += entryQV.getValue()
-						* docVector.get(commonString);
-			}
-		}
-		cosine_similarity = cosine_similarity / (qVLen * dVLen);
-
-		return (double) Math.round(cosine_similarity * 10000) / 10000;
-	}
-
-	private double computeVectorLength(Map<String, Integer> vector) {
-		double vLen = 0;
-		for (Integer freq : vector.values()) {
-			vLen = freq * freq + vLen;
-		}
-		vLen = Math.sqrt(vLen);
-		return vLen;
-	}
-
 }

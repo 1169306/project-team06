@@ -38,7 +38,7 @@ import edu.cmu.lti.oaqa.type.retrieval.QueryOperator;
 public class SDQuestionDocumentAnnotator extends JCasAnnotator_ImplBase {
 	private static final String urlPrefix = "http://www.ncbi.nlm.nih.gov/pubmed/";
 	private GoPubMedService service;
-	private int mResultsPerPage = 30;
+	private int mResultsPerPage = 200;
 
 	public void initialize(UimaContext aContext)
 			throws ResourceInitializationException {
@@ -78,10 +78,13 @@ public class SDQuestionDocumentAnnotator extends JCasAnnotator_ImplBase {
 				PubMedSearchServiceResponse.Result result = service
 						.findPubMedCitations(queryText, 0, mResultsPerPage);
 				//combinedDocs = Intersect(combinedDocs, result.getDocuments());
-				combinedDocs = Union(combinedDocs, result.getDocuments());
+				
+					combinedDocs = Union(combinedDocs, result.getDocuments());
+				
 				/*
 				 * List<PubMedSearchServiceResponse.Document> resultList =
-				 * result.getDocuments(); for(int i = 0; i < resultList.size();
+				 * result.getDocuments(); 
+				 * for(int i = 0; i < resultList.size();
 				 * i++){ PubMedSearchServiceResponse.Document doc =
 				 * resultList.get(i); //System.out.println(doc.getPmid() + " " +
 				 * doc.getTitle() + " " + "http://www.ncbi.nlm.nih.gov/pubmed/"

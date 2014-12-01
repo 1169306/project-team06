@@ -11,7 +11,7 @@ import org.apache.uima.cas.impl.TypeImpl;
 import org.apache.uima.cas.Type;
 
 /** A named entity mention that identify or define the named entity concept.
- * Updated by JCasGen Sun Nov 23 23:37:20 EST 2014
+ * Updated by JCasGen Sun Nov 30 18:21:21 EST 2014
  * @generated */
 public class EntityMention_Type extends ConceptMention_Type {
   /** @generated 

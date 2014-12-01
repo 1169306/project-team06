@@ -483,6 +483,10 @@
           <string>AND</string>
           <description>"AND" asks all operator arguments must be contained in target retrieval results.</description>
         </value>
+      <value>
+          <string>OR</string>
+          <description/>
+        </value>
       </allowedValues>
     </typeDescription>
     <typeDescription>

@@ -24,6 +24,18 @@
   <delegateAnalysisEngine key="SDSnippetAnnotatorDescriptor">
       <import location="SDSnippetAnnotatorDescriptor.xml"/>
     </delegateAnalysisEngine>
+<<<<<<< HEAD
+=======
+  <delegateAnalysisEngine key="OriginalQueryDescriptor">
+      <import location="OriginalQueryDescriptor.xml"/>
+    </delegateAnalysisEngine>
+  <delegateAnalysisEngine key="ComplexQueryORAnnotatorDescriptor">
+      <import location="ComplexQueryORAnnotatorDescriptor.xml"/>
+    </delegateAnalysisEngine>
+  <delegateAnalysisEngine key="SDAnswerGenAnnotatorDescriptor">
+      <import location="SDAnswerGenAnnotatorDescriptor.xml"/>
+    </delegateAnalysisEngine>
+>>>>>>> 01e41b8cb668f5e5ab037217153528a82e287610
   </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
     <name>aeDescriptor</name>
@@ -39,8 +51,14 @@
       <node>ComplexQueryANDAnnotatorDescriptor</node>
         <node>SDQuestionConceptAnnotatorDescriptor</node>
       <node>SDQuestionDocumentAnnotatorDescriptor</node>
+<<<<<<< HEAD
         <node>SDQuestionTripleDescriptor</node>
       <node>SDSnippetAnnotatorDescriptor</node>
+=======
+      <node>SDQuestionTripleDescriptor</node>
+      <node>SDSnippetAnnotatorDescriptor</node>
+        <node>SDAnswerGenAnnotatorDescriptor</node>
+>>>>>>> 01e41b8cb668f5e5ab037217153528a82e287610
       </fixedFlow>
     </flowConstraints>
     <fsIndexCollection/>
