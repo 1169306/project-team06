@@ -174,7 +174,7 @@
 	<scm>
 		<connection>scm:git:git@github.com:victorzhao1990/project-team06.git</connection>
 		<developerConnection>scm:git:git@github.com:victorzhao1990/project-team06.git</developerConnection>
-		<tag>project-team693-06-0.0.3</tag>
+		<tag>project-team693-06-0.0.2</tag>
 	</scm>
 	<repositories>
 		<repository>
