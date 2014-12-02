@@ -182,7 +182,7 @@
 	<scm>
 		<connection>scm:git:git@github.com:victorzhao1990/project-team06.git</connection>
 		<developerConnection>scm:git:git@github.com:victorzhao1990/project-team06.git</developerConnection>
-		<tag>project-team693-06-0.0.1</tag>
+		<tag>project-team693-06-0.0.5</tag>
 	</scm>
 	<repositories>
 		<repository>
