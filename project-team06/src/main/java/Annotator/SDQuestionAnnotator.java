@@ -91,9 +91,9 @@ public class SDQuestionAnnotator extends JCasAnnotator_ImplBase {
       Iterator<String> iter_term = term.iterator();
       while (iter_term.hasNext()) {
         String aterm = iter_term.next();
-        aterm = StanfordLemmatizer.stemText(aterm);
+        aterm = StanfordLemmatizer.stemText(aterm.trim());
         // If the term is not a stop word, add it as a AtomicQuery-typed annotation to CAS.
-        if (!stopWords.contains(aterm)) {
+        if (!stopWords.contains(aterm.trim())) {
           AtomicQueryConcept c = new AtomicQueryConcept(aJCas);
           //System.out.println(aterm);
           c.setText(aterm.trim());

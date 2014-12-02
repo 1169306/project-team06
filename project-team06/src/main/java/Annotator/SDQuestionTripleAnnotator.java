@@ -24,6 +24,7 @@ import edu.cmu.lti.oaqa.type.kb.Triple;
 import edu.cmu.lti.oaqa.type.retrieval.AtomicQueryConcept;
 import edu.cmu.lti.oaqa.type.retrieval.ComplexQueryConcept;
 import edu.cmu.lti.oaqa.type.retrieval.QueryOperator;
+import edu.cmu.lti.oaqa.type.retrieval.TripleSearchResult;
 
 /**
  * The SDQuestionTripleAnnotator uses LinkedLifeDataServiceResponse service to
@@ -109,10 +110,13 @@ public class SDQuestionTripleAnnotator extends JCasAnnotator_ImplBase {
 				// relation.getPred() + " " + relation.getObj());
 
 				Triple t = new Triple(aJCas);
+				TripleSearchResult tResult = new TripleSearchResult(aJCas);
 				t.setSubject(relation.getSubj());
 				t.setPredicate(relation.getPred());
 				t.setObject(relation.getObj());
 				t.addToIndexes();
+				tResult.setTriple(t);
+				tResult.addToIndexes();
 			}
 		}
 		System.out.println("Triple finished");
