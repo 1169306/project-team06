@@ -12,7 +12,7 @@
     <configurationParameterSettings/>
     <typeSystemDescription>
       <imports>
-        <import location="../type/OAQATypes.xml"/>
+        <import location="../bioasq/type/OAQATypes.xml"/>
       </imports>
     </typeSystemDescription>
     <typePriorities/>

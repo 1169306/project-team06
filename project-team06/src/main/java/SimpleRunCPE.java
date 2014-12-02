@@ -107,8 +107,7 @@ public class SimpleRunCPE extends Thread {
   /**
    * main class.
    * 
-   * @param args
-   *          Command line arguments - see class description
+   * @param args Command line arguments - see class description
    *          
    * @throws Exception  throws when some exceptions happen         
    */
@@ -205,10 +204,8 @@ public class SimpleRunCPE extends Thread {
      * Called when the processing of a Document is completed. <br>
      * The process status can be looked at and corresponding actions taken.
      * 
-     * @param aCas
-     *          CAS corresponding to the completed processing
-     * @param aStatus
-     *          EntityProcessStatus that holds the status of all the events for aEntity
+     * @param aCas CAS corresponding to the completed processing
+     * @param aStatus EntityProcessStatus that holds the status of all the events for aEntity
      */
     public void entityProcessComplete(CAS aCas, EntityProcessStatus aStatus) {
       if (aStatus.isException()) {

@@ -3,14 +3,14 @@
     <collectionReader>
         <collectionIterator>
             <descriptor>
-                <import location="collectionReaderDescriptor.xml"/>
+                <import location="bioasq/collection/collectionReaderDescriptor.xml"/>
             </descriptor>
         </collectionIterator>
     </collectionReader>
     <casProcessors casPoolSize="3" processingUnitThreadCount="1">
     <casProcessor deployment="integrated" name="aeDescriptor">
         <descriptor>
-            <import location="aeDescriptor.xml"/>
+            <import location="Descriptors/aeDescriptor.xml"/>
         </descriptor>
             <deploymentParameters/>
         <errorHandling>
@@ -22,7 +22,7 @@
     </casProcessor>
     <casProcessor deployment="integrated" name="SDCasConsumerDescriptor">
         <descriptor>
-            <import location="SDCasConsumerDescriptor.xml"/>
+            <import location="Descriptors/SDCasConsumerDescriptor.xml"/>
         </descriptor>
             <deploymentParameters/>
         <errorHandling>
