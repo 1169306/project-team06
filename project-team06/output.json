@@ -1,0 +1,308 @@
+"questions": [
+	{
+		"body": "Is Rheumatoid Arthritis more common in men or women?",
+		"concepts": [
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001172",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001171",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014930",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001168",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D005258",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D012217",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D016387",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014933",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001170",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D010822",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D018585",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014931",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D025241",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D056653",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D011695",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D012218",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001169",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D005783",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D013167",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D016918",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D003816",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D006801",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001172",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001171",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014930",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001168",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D005258",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D012217",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D016387",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014933",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001170",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D010822",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D018585",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014931",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D025241",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D056653",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D011695",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D012218",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001169",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D005783",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D013167",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D016918",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D003816",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D006801"
+		],
+		"documents": [
+			"http://www.ncbi.nlm.nih.gov/pubmed/24107643",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23974974",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23916348",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23900228",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23873887",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23812032",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23703486",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23553100",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23526031",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23423442",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23264337",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23217568",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23006836",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22833513",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22828565",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22825589",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22717204",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22577060",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22505696",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22462416",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22455933",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22388357",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22300712",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22204900",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22108779",
+			"http://www.ncbi.nlm.nih.gov/pubmed/21881200",
+			"http://www.ncbi.nlm.nih.gov/pubmed/21834821",
+			"http://www.ncbi.nlm.nih.gov/pubmed/21619489",
+			"http://www.ncbi.nlm.nih.gov/pubmed/21459948",
+			"http://www.ncbi.nlm.nih.gov/pubmed/21453476",
+			"http://www.ncbi.nlm.nih.gov/pubmed/21360492",
+			"http://www.ncbi.nlm.nih.gov/pubmed/21199474",
+			"http://www.ncbi.nlm.nih.gov/pubmed/21132550",
+			"http://www.ncbi.nlm.nih.gov/pubmed/21029974",
+			"http://www.ncbi.nlm.nih.gov/pubmed/20853323",
+			"http://www.ncbi.nlm.nih.gov/pubmed/20845087",
+			"http://www.ncbi.nlm.nih.gov/pubmed/20734595",
+			"http://www.ncbi.nlm.nih.gov/pubmed/20685609",
+			"http://www.ncbi.nlm.nih.gov/pubmed/20682035",
+			"http://www.ncbi.nlm.nih.gov/pubmed/20676645",
+			"http://www.ncbi.nlm.nih.gov/pubmed/20542718",
+			"http://www.ncbi.nlm.nih.gov/pubmed/20470953",
+			"http://www.ncbi.nlm.nih.gov/pubmed/20452290",
+			"http://www.ncbi.nlm.nih.gov/pubmed/20307377",
+			"http://www.ncbi.nlm.nih.gov/pubmed/20109215",
+			"http://www.ncbi.nlm.nih.gov/pubmed/20022534",
+			"http://www.ncbi.nlm.nih.gov/pubmed/19962798",
+			"http://www.ncbi.nlm.nih.gov/pubmed/19808134",
+			"http://www.ncbi.nlm.nih.gov/pubmed/19406368",
+			"http://www.ncbi.nlm.nih.gov/pubmed/19595525",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24107643",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23974974",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23916348",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23900228",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23873887",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23812032",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23703486",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23553100",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23526031",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23423442",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23264337",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23217568",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23006836",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22833513",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22828565",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22825589",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22717204",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22577060",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22505696",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22462416",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22455933",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22388357",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22300712",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22204900",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22108779",
+			"http://www.ncbi.nlm.nih.gov/pubmed/21881200",
+			"http://www.ncbi.nlm.nih.gov/pubmed/21834821",
+			"http://www.ncbi.nlm.nih.gov/pubmed/21619489",
+			"http://www.ncbi.nlm.nih.gov/pubmed/21459948",
+			"http://www.ncbi.nlm.nih.gov/pubmed/21453476",
+			"http://www.ncbi.nlm.nih.gov/pubmed/21360492",
+			"http://www.ncbi.nlm.nih.gov/pubmed/21199474",
+			"http://www.ncbi.nlm.nih.gov/pubmed/21132550",
+			"http://www.ncbi.nlm.nih.gov/pubmed/21029974",
+			"http://www.ncbi.nlm.nih.gov/pubmed/20853323",
+			"http://www.ncbi.nlm.nih.gov/pubmed/20845087",
+			"http://www.ncbi.nlm.nih.gov/pubmed/20734595",
+			"http://www.ncbi.nlm.nih.gov/pubmed/20685609",
+			"http://www.ncbi.nlm.nih.gov/pubmed/20682035",
+			"http://www.ncbi.nlm.nih.gov/pubmed/20676645",
+			"http://www.ncbi.nlm.nih.gov/pubmed/20542718",
+			"http://www.ncbi.nlm.nih.gov/pubmed/20470953",
+			"http://www.ncbi.nlm.nih.gov/pubmed/20452290",
+			"http://www.ncbi.nlm.nih.gov/pubmed/20307377",
+			"http://www.ncbi.nlm.nih.gov/pubmed/20109215",
+			"http://www.ncbi.nlm.nih.gov/pubmed/20022534",
+			"http://www.ncbi.nlm.nih.gov/pubmed/19962798",
+			"http://www.ncbi.nlm.nih.gov/pubmed/19808134",
+			"http://www.ncbi.nlm.nih.gov/pubmed/19406368",
+			"http://www.ncbi.nlm.nih.gov/pubmed/19595525",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438341",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438340",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438339",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438338",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438337",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438336",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438333",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438332",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438331",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438330",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438329",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438328",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438327",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438324",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438317",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438316",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438314",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438313",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438311",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438308",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438307",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438304",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438302",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438299",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438298",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438296",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438295",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438291",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438289",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438288",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438287",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438286",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438283",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438280",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438277",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438273",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438272",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438271",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438269",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438260",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438259",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438258",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438254",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438247",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438244",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438243",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438241",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438238",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438235",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438232"
+		],
+		"exact_answer": [
+			"Yes"
+		],
+		"id": "5118dd1305c10fae75000001",
+
+		"triples": [
+			{
+				"beginSection": "sections.0"
+				"document": "What is the prevalence of musculoskeletal problems in the elderly population in developed countries? A systematic critical literature review."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "797"
+				"offsetInEndSection": "164"
+				"text": " The WHO has specifically identified four major disabling MSK conditions: osteoarthritis (OA), rheumatoid arthritis (RA), osteoporosis (OP), and back pain (BP) [4]"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Sex-specific differences in effect size estimates at established complex trait loci."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "183"
+				"text": "Introduction The prevalence, course and severity of many common traits and diseases, including autoimmune diseases,1 cardiovascular diseases2 and asthma3 differ between men and women"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Usage of skin care products and risk of rheumatoid arthritis: results from the Swedish EIRA study."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "1501"
+				"offsetInEndSection": "318"
+				"text": " It has not been established whether similar mechanisms - that is, polyarthritis induced by simple adjuvants - are operative also in human arthritis, although case reports on arthritis development after adjuvant exposures suggested that rodents and humans might both react to adjuvants with arthritis development [17]"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Treatment of forefoot problems in older people: study protocol for a randomised clinical trial comparing podiatric treatment to standardised shoe advice."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "85"
+				"text": "Background Pain and discomfort due to foot problems are common and increase with age"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Risk of osteoporotic fracture in a large population-based cohort of patients with rheumatoid arthritis."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "236"
+				"text": "Introduction Rheumatoid arthritis (RA) is the most common form of inflammatory arthritis in adults and is characterized by chronic, progressive, systemic inflammation leading to substantial pain, disability, and other morbidities [1-3]"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "What rheumatologists in the United States think of complementary and alternative medicine: results of a national survey."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "192"
+				"offsetInEndSection": "70"
+				"text": " The odds ratio for ever-use of CAM among adults with arthritis was 1"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "What is the prevalence of musculoskeletal problems in the elderly population in developed countries? A systematic critical literature review."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "797"
+				"offsetInEndSection": "164"
+				"text": " The WHO has specifically identified four major disabling MSK conditions: osteoarthritis (OA), rheumatoid arthritis (RA), osteoporosis (OP), and back pain (BP) [4]"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Sex-specific differences in effect size estimates at established complex trait loci."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "183"
+				"text": "Introduction The prevalence, course and severity of many common traits and diseases, including autoimmune diseases,1 cardiovascular diseases2 and asthma3 differ between men and women"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Usage of skin care products and risk of rheumatoid arthritis: results from the Swedish EIRA study."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "1501"
+				"offsetInEndSection": "318"
+				"text": " It has not been established whether similar mechanisms - that is, polyarthritis induced by simple adjuvants - are operative also in human arthritis, although case reports on arthritis development after adjuvant exposures suggested that rodents and humans might both react to adjuvants with arthritis development [17]"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Treatment of forefoot problems in older people: study protocol for a randomised clinical trial comparing podiatric treatment to standardised shoe advice."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "85"
+				"text": "Background Pain and discomfort due to foot problems are common and increase with age"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Risk of osteoporotic fracture in a large population-based cohort of patients with rheumatoid arthritis."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "236"
+				"text": "Introduction Rheumatoid arthritis (RA) is the most common form of inflammatory arthritis in adults and is characterized by chronic, progressive, systemic inflammation leading to substantial pain, disability, and other morbidities [1-3]"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "What rheumatologists in the United States think of complementary and alternative medicine: results of a national survey."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "192"
+				"offsetInEndSection": "70"
+				"text": " The odds ratio for ever-use of CAM among adults with arthritis was 1"
+			}
+		],
+
+		"type": "yesno"
+	}
+]}

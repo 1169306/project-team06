@@ -40,7 +40,7 @@ import edu.cmu.lti.oaqa.type.retrieval.QueryOperator;
 public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 	/** The GoPubMedService instance variable */
 	public GoPubMedService service;
-	private int mResultsPerPage = 100;
+	private int mResultsPerPage = 50;
 	/**
 	 * The initialize method initialize the GoPubMedService instance using a
 	 * preset profile.

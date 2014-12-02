@@ -35,7 +35,7 @@ import edu.cmu.lti.oaqa.type.retrieval.TripleSearchResult;
  */
 public class SDQuestionTripleAnnotator extends JCasAnnotator_ImplBase {
 	private GoPubMedService service;
-	private int mResultsPerPage = 100;
+	private int mResultsPerPage = 50;
 
 	public void initialize(UimaContext aContext)
 			throws ResourceInitializationException {
