@@ -3,37 +3,37 @@
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
   <primitive>false</primitive>  
   <delegateAnalysisEngineSpecifiers>
-    <delegateAnalysisEngine key="SDQuestionConceptAnnotatorDescriptor">
-      <import location="SDQuestionConceptAnnotatorDescriptor.xml"/>
+    <delegateAnalysisEngine key="ComplexQueryANDAnnotatorDescriptor">
+      <import location="ComplexQueryANDAnnotatorDescriptor.xml"/>
     </delegateAnalysisEngine>
-    <delegateAnalysisEngine key="SDQuestionDocumentAnnotatorDescriptor">
-      <import location="SDQuestionDocumentAnnotatorDescriptor.xml"/>
+    <delegateAnalysisEngine key="ComplexQueryAnnotatorDescriptor">
+      <import location="ComplexQueryAnnotatorDescriptor.xml"/>
     </delegateAnalysisEngine>
-  <delegateAnalysisEngine key="SDQuestionTripleDescriptor">
-      <import location="SDQuestionTripleDescriptor.xml"/>
+    <delegateAnalysisEngine key="ComplexQueryORAnnotatorDescriptor">
+      <import location="ComplexQueryORAnnotatorDescriptor.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="OriginalQueryDescriptor">
+      <import location="OriginalQueryDescriptor.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="SDAnswerGenAnnotatorDescriptor">
+      <import location="SDAnswerGenAnnotatorDescriptor.xml"/>
     </delegateAnalysisEngine>
     <delegateAnalysisEngine key="SDQuestionAnnotatorDescriptor">
       <import location="SDQuestionAnnotatorDescriptor.xml"/>
     </delegateAnalysisEngine>
-  <delegateAnalysisEngine key="ComplexQueryAnnotatorDescriptor">
-      <import location="ComplexQueryAnnotatorDescriptor.xml"/>
-    </delegateAnalysisEngine>
-    <delegateAnalysisEngine key="ComplexQueryANDAnnotatorDescriptor">
-      <import location="ComplexQueryANDAnnotatorDescriptor.xml"/>
-    </delegateAnalysisEngine>
-  <delegateAnalysisEngine key="SDSnippetAnnotatorDescriptor">
+    <delegateAnalysisEngine key="SDSnippetAnnotatorDescriptor">
       <import location="SDSnippetAnnotatorDescriptor.xml"/>
     </delegateAnalysisEngine>
-  <delegateAnalysisEngine key="OriginalQueryDescriptor">
-      <import location="OriginalQueryDescriptor.xml"/>
+    <delegateAnalysisEngine key="SDQuestionConceptAnnotatorDescriptor">
+      <import location="../bioasq/concepts/SDQuestionConceptAnnotatorDescriptor.xml"/>
     </delegateAnalysisEngine>
-  <delegateAnalysisEngine key="ComplexQueryORAnnotatorDescriptor">
-      <import location="ComplexQueryORAnnotatorDescriptor.xml"/>
+    <delegateAnalysisEngine key="SDQuestionDocumentAnnotatorDescriptor">
+      <import location="../bioasq/documents/SDQuestionDocumentAnnotatorDescriptor.xml"/>
     </delegateAnalysisEngine>
-  <delegateAnalysisEngine key="SDAnswerGenAnnotatorDescriptor">
-      <import location="SDAnswerGenAnnotatorDescriptor.xml"/>
+    <delegateAnalysisEngine key="SDQuestionTripleDescriptor">
+      <import location="../bioasq/triple/SDQuestionTripleDescriptor.xml"/>
     </delegateAnalysisEngine>
-  </delegateAnalysisEngineSpecifiers>
+    </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
     <name>aeDescriptor</name>
     <description/>
@@ -45,15 +45,14 @@
       <fixedFlow>
         <node>SDQuestionAnnotatorDescriptor</node>
         <node>ComplexQueryAnnotatorDescriptor</node>
-      <node>ComplexQueryANDAnnotatorDescriptor</node>
+        <node>ComplexQueryANDAnnotatorDescriptor</node>
         <node>SDQuestionConceptAnnotatorDescriptor</node>
-      <node>SDQuestionDocumentAnnotatorDescriptor</node>
+        <node>SDQuestionDocumentAnnotatorDescriptor</node>
         <node>SDQuestionTripleDescriptor</node>
-      <node>SDSnippetAnnotatorDescriptor</node>
+        <node>SDSnippetAnnotatorDescriptor</node>
         <node>SDAnswerGenAnnotatorDescriptor</node>
       </fixedFlow>
     </flowConstraints>
-    <typePriorities/>
     <fsIndexCollection/>
     <capabilities>
       <capability>
