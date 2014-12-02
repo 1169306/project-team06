@@ -67,7 +67,7 @@ public class SDConsumer extends CasConsumer_ImplBase {
 		}
 		try {
 			writer = new BufferedWriter(new FileWriter(new File(filePath)));
-			;
+			
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -168,6 +168,9 @@ public class SDConsumer extends CasConsumer_ImplBase {
 		while (tripleIter.hasNext()) {
 			TripleSearchResult trp = (TripleSearchResult) tripleIter.next();
 			edu.cmu.lti.oaqa.type.kb.Triple temp = trp.getTriple();
+			System.out.println("o: " + temp.getSubject() + "\n" + "pred: " + temp.getPredicate() +"\n" 
+					+ "s: " + temp.getObject());
+			
 			triMap.put(
 					trp.getRank(),
 					new Triple(temp.getSubject(), temp.getPredicate(), temp
