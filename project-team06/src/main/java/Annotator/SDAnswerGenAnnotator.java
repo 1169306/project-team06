@@ -113,14 +113,14 @@ public class SDAnswerGenAnnotator extends JCasAnnotator_ImplBase {
 			Entry<Double, String> simiAns = treMapItr.next();
 			if(simiAns.getKey() > 0.1){
 				Answer ans = new Answer(aJCas);
-				ans.setText("YES");
+				ans.setText("Yes");
 				ans.setRank(1);
 				ans.addToIndexes();
 				return;
 			}
 		}
 		Answer ans = new Answer(aJCas);
-		ans.setText("NO");
+		ans.setText("No");
 		ans.setRank(1);
 		ans.addToIndexes();
 	}
