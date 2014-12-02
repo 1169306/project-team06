@@ -91,56 +91,17 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 			try {
 				OntologyServiceResponse.Result result = service
 						.findMeshEntitiesPaged(queryText, 0, mResultsPerPage);
-				/*for(Finding finding : result.getFindings()){
-			         System.out.println(" > " + finding.getConcept().getLabel() + " "
-			         + finding.getConcept().getUri()+"\t Score"+finding.getScore());
-					
-				}*/
-				//combinedFindings = Intersect(combinedFindings, result.getFindings());
-				for(Finding finding: result.getFindings()){
-					if(finding.getScore() > 0.1){
-						combinedFindings = Union1(combinedFindings, finding);
-						//combinedFindings = Intersect1(combinedFindings, finding);
-					}
-				}			
-				/*for(Finding finding : combinedFindings){
-			         System.out.println(" > " + finding.getConcept().getLabel() + " "
-			         + finding.getConcept().getUri()+"\t Score"+finding.getScore());			
-				}*/
-				/*
-				 * int curRank = 0; for (Finding finding : result.getFindings())
-				 * { edu.cmu.lti.oaqa.type.kb.Concept concept = new
-				 * edu.cmu.lti.oaqa.type.kb.Concept( aJCas);
-				 * concept.setName(finding.getConcept().getLabel());
-				 * //System.out.println(finding.getConcept().getLabel());
-				 * concept.addToIndexes();
-				 * 
-				 * ConceptSearchResult result1 = new ConceptSearchResult(aJCas);
-				 * result1.setConcept(concept);
-				 * result1.setUri(finding.getConcept().getUri());
-				 * result1.setScore(finding.getScore());
-				 * result1.setText(finding.getConcept().getLabel());
-				 * result1.setRank(curRank++);
-				 * result1.setQueryString(queryText); result1.addToIndexes(); }
-				 */
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			
-			/*for(Finding finding : combinedFindings){
-		         System.out.println(" > " + finding.getConcept().getLabel() + " "
-		         + finding.getConcept().getUri()+"\t Score"+finding.getScore());			
-			}*/
 			System.out.println("Concept Size: " + combinedFindings.size());
 			int counter = 0;
 			int curRank = 0;
 			for (Finding finding : combinedFindings) {
 				edu.cmu.lti.oaqa.type.kb.Concept concept = new edu.cmu.lti.oaqa.type.kb.Concept(
 						aJCas);
-				//System.out.println(finding);
 				concept.setName(finding.getConcept().getLabel());
 				concept.addToIndexes();
-//				System.out.println("!!!!!!!");
 				ConceptSearchResult result1 = new ConceptSearchResult(aJCas);
 				result1.setConcept(concept);
 				result1.setUri(finding.getConcept().getUri());
@@ -151,11 +112,16 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 				result1.addToIndexes();
 				counter++;
 			}
-			//System.out.println("counter is :" + counter);
 		}
 		System.out.println("Concept finished");
 	}
-
+	
+	/**
+	 * The helper function that will intersect two finding List
+	 * @param f1 one of the finding list
+	 * @param f2 the other one of the finding list
+	 * @return
+	 */
 	List<Finding> Intersect(List<Finding> f1, List<Finding> f2) {
 		HashMap<Finding, Integer> f1Map = new HashMap<Finding, Integer>();
 		Iterator<Finding> iter_f1 = f1.iterator();
@@ -175,6 +141,12 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 		return f3;
 	}
 	
+	/**
+	 * The helper function that will intersect two finding List
+	 * @param f1 one of the finding list
+	 * @param f2 the other one of the finding list
+	 * @return
+	 */
 	List<Finding> Intersect1(List<Finding> f1, Finding f2) {
 		HashMap<Finding, Integer> f1Map = new HashMap<Finding, Integer>();
 		Iterator<Finding> iter_f1 = f1.iterator();
@@ -189,7 +161,13 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 		
 		return f3;
 	}
-
+	
+	/**
+	 * The helper function that will union two finding List
+	 * @param f1 one of the finding list
+	 * @param f2 the other one of the finding list
+	 * @return
+	 */
 	List<Finding> Union(List<Finding> f1, List<Finding> f2) {
 		HashMap<Finding, Integer> f1Map = new HashMap<Finding, Integer>();
 		Iterator<Finding> iter_f1 = f1.iterator();
@@ -208,6 +186,12 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 		return f1;
 	}
 	
+	/**
+	 * The helper function that will union two finding List
+	 * @param f1 one of the finding list
+	 * @param f2 the other one of the finding list
+	 * @return
+	 */
 	List<Finding> Union1(List<Finding> f1, Finding f2) {
 		HashMap<Finding, Integer> f1Map = new HashMap<Finding, Integer>();
 		Iterator<Finding> iter_f1 = f1.iterator();
