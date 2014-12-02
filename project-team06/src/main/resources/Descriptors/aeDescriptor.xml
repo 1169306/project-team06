@@ -51,10 +51,11 @@
         <node>ComplexQueryANDAnnotatorDescriptor</node>
         <node>SDQuestionConceptAnnotatorDescriptor</node>
         <node>QueryExtensionDescriptor</node>
-        <node>ComplexQueryAnnotatorDescriptor</node>
-        <node>ComplexQueryANDAnnotatorDescriptor</node>
+        <node>ComplexQueryORAnnotatorDescriptor</node>
         <node>SDQuestionDocumentAnnotatorDescriptor</node>
-      <node>SDQuestionTripleDescriptor</node>
+        <node>SDQuestionTripleDescriptor</node>
+      <node>SDSnippetAnnotatorDescriptor</node>
+      <node>SDAnswerGenAnnotatorDescriptor</node>
       </fixedFlow>
     </flowConstraints>
     <fsIndexCollection/>
