@@ -1,9 +1,9 @@
 {
     "questions": [
         {
-            "body": "Is Rheumatoid Arthritis more common in men or women?", 
-            "type": "factoid", 
-            "id": "5118dd1305c10fae75000001"
+            "body": "Is Mammaprint approved by the United States Food and Drug Administration?", 
+            "type": "yesno", 
+            "id": "51487821d24251bc0500002f"
         }
     ]
 }
