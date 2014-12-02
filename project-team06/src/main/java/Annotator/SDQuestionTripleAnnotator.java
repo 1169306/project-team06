@@ -72,43 +72,17 @@ public class SDQuestionTripleAnnotator extends JCasAnnotator_ImplBase {
 				LinkedLifeDataServiceResponse.Result result = service
 						.findLinkedLifeDataEntitiesPaged(queryText, 0,
 								mResultsPerPage);
-				//combinedEntities = Intersect(combinedEntities, result.getEntities());
 				combinedEntities = Union(combinedEntities, result.getEntities());
-				/*
-				 * List<LinkedLifeDataServiceResponse.Entity> entities = result
-				 * .getEntities(); // System.out.println(entities.size()); for
-				 * (int i = 0; i < entities.size(); i++) {
-				 * LinkedLifeDataServiceResponse.Entity en = entities.get(i);
-				 * LinkedLifeDataServiceResponse.Relation relation = en
-				 * .getRelations().get(0); //
-				 * System.out.println(relation.getSubj() + "  " + //
-				 * relation.getPred() + " " + relation.getObj());
-				 * 
-				 * Triple t = new Triple(aJCas);
-				 * t.setSubject(relation.getSubj());
-				 * t.setPredicate(relation.getPred());
-				 * t.setObject(relation.getObj()); t.addToIndexes(); }
-				 */
-
 			} catch (IOException e) {
 
 				e.printStackTrace();
 			}
-			
-			/*for(Entity aentity : combinedEntities){
-		         System.out.println(" > " + aentity.getRelations().get(0).getSubj() + " "
-		         + aentity.getRelations().get(0).getPred()+" "+aentity.getRelations().get(0).getObj());			
-			}*/
-			
 			System.out.println("Triple Size: " + combinedEntities.size());
 			for (int i = 0; i < combinedEntities.size(); i++) {
 				LinkedLifeDataServiceResponse.Entity en = combinedEntities
 						.get(i);
 				LinkedLifeDataServiceResponse.Relation relation = en
 						.getRelations().get(0);
-				// System.out.println(relation.getSubj() + "  " +
-				// relation.getPred() + " " + relation.getObj());
-
 				Triple t = new Triple(aJCas);
 				TripleSearchResult tResult = new TripleSearchResult(aJCas);
 				t.setSubject(relation.getSubj());
@@ -121,7 +95,13 @@ public class SDQuestionTripleAnnotator extends JCasAnnotator_ImplBase {
 		}
 		System.out.println("Triple finished");
 	}
-
+	
+	/**
+	 * The helper function that will intersect two document List
+	 * @param E1 one of the entity list
+	 * @param E2 the other one of the entity list
+	 * @return
+	 */
 	List<LinkedLifeDataServiceResponse.Entity> Intersect(
 			List<LinkedLifeDataServiceResponse.Entity> E1,
 			List<LinkedLifeDataServiceResponse.Entity> E2) {
@@ -142,7 +122,13 @@ public class SDQuestionTripleAnnotator extends JCasAnnotator_ImplBase {
 		}
 		return E3;
 	}
-
+	
+	/**
+	 * The helper function that will union two document List
+	 * @param E1 one of the entity list
+	 * @param E2 the other one of the entity list
+	 * @return
+	 */
 	List<LinkedLifeDataServiceResponse.Entity> Union(
 			List<LinkedLifeDataServiceResponse.Entity> E1,
 			List<LinkedLifeDataServiceResponse.Entity> E2) {

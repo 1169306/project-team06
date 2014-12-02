@@ -77,43 +77,17 @@ public class SDQuestionDocumentAnnotator extends JCasAnnotator_ImplBase {
 			try {
 				PubMedSearchServiceResponse.Result result = service
 						.findPubMedCitations(queryText, 0, mResultsPerPage);
-				//combinedDocs = Intersect(combinedDocs, result.getDocuments());
 				
 					combinedDocs = Union(combinedDocs, result.getDocuments());
 				
-				/*
-				 * List<PubMedSearchServiceResponse.Document> resultList =
-				 * result.getDocuments(); 
-				 * for(int i = 0; i < resultList.size();
-				 * i++){ PubMedSearchServiceResponse.Document doc =
-				 * resultList.get(i); //System.out.println(doc.getPmid() + " " +
-				 * doc.getTitle() + " " + "http://www.ncbi.nlm.nih.gov/pubmed/"
-				 * + doc.getPmid());
-				 * 
-				 * edu.cmu.lti.oaqa.type.retrieval.Document retrievdedDoc = new
-				 * edu.cmu.lti.oaqa.type.retrieval.Document(aJCas);
-				 * retrievdedDoc.setUri(urlPrefix + doc.getPmid());
-				 * retrievdedDoc.setRank(i);
-				 * retrievdedDoc.setDocId(doc.getPmid());
-				 * retrievdedDoc.setTitle(doc.getTitle());
-				 * retrievdedDoc.addToIndexes(); }
-				 */
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
-			/*for(Document adoc : combinedDocs){
-		         System.out.println(" > " + adoc.getPmid() + " "
-		         + adoc.getTitle());			
-			}*/
-			
 			System.out.println("Docs Size: " + combinedDocs.size());
 			for (int i = 0; i < combinedDocs.size(); i++) {
 				PubMedSearchServiceResponse.Document doc = combinedDocs.get(i);
-				// System.out.println(doc.getPmid() + " " + doc.getTitle() + " "
-				// + "http://www.ncbi.nlm.nih.gov/pubmed/" + doc.getPmid());
-
 				edu.cmu.lti.oaqa.type.retrieval.Document retrievdedDoc = new edu.cmu.lti.oaqa.type.retrieval.Document(
 						aJCas);
 				retrievdedDoc.setUri(urlPrefix + doc.getPmid());
@@ -126,7 +100,13 @@ public class SDQuestionDocumentAnnotator extends JCasAnnotator_ImplBase {
 		}
 		System.out.println("Document finished");
 	}
-
+	
+	/**
+	 * The helper function that will intersect two document List
+	 * @param D1 one of the document list
+	 * @param D2 the other one of the document list
+	 * @return
+	 */
 	List<PubMedSearchServiceResponse.Document> Intersect(
 			List<PubMedSearchServiceResponse.Document> D1,
 			List<PubMedSearchServiceResponse.Document> D2) {
@@ -147,7 +127,13 @@ public class SDQuestionDocumentAnnotator extends JCasAnnotator_ImplBase {
 		}
 		return D3;
 	}
-
+	
+	/**
+	 * The helper function that will union two document List
+	 * @param D1 one of the document list
+	 * @param D2 the other one of the document list
+	 * @return
+	 */
 	List<PubMedSearchServiceResponse.Document> Union(
 			List<PubMedSearchServiceResponse.Document> D1,
 			List<PubMedSearchServiceResponse.Document> D2) {
