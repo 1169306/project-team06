@@ -168,8 +168,8 @@ public class SDConsumer extends CasConsumer_ImplBase {
 		while (tripleIter.hasNext()) {
 			TripleSearchResult trp = (TripleSearchResult) tripleIter.next();
 			edu.cmu.lti.oaqa.type.kb.Triple temp = trp.getTriple();
-			System.out.println("o: " + temp.getSubject() + "\n" + "pred: " + temp.getPredicate() +"\n" 
-					+ "s: " + temp.getObject());
+			//System.out.println("o: " + temp.getSubject() + "\n" + "pred: " + temp.getPredicate() +"\n" 
+			//		+ "s: " + temp.getObject());
 			
 			triMap.put(
 					trp.getRank(),

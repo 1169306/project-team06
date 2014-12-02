@@ -73,6 +73,7 @@ public class SDQuestionDocumentAnnotator extends JCasAnnotator_ImplBase {
 					index++;
 				}
 			}
+			System.out.println("QueryText in Doc: " + queryText);
 			List<PubMedSearchServiceResponse.Document> combinedDocs = new ArrayList<PubMedSearchServiceResponse.Document>();
 			try {
 				PubMedSearchServiceResponse.Result result = service

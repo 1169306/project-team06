@@ -91,16 +91,22 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 			try {
 				OntologyServiceResponse.Result result = service
 						.findMeshEntitiesPaged(queryText, 0, mResultsPerPage);
+				for(Finding finding: result.getFindings()){
+					if(finding.getScore() > 0.1){
+						combinedFindings = Union1(combinedFindings, finding);
+						//combinedFindings = Intersect1(combinedFindings, finding);
+					}
+				}
 			} catch (IOException e) {
 				e.printStackTrace();
-			}
+			}			
 			System.out.println("Concept Size: " + combinedFindings.size());
-			int counter = 0;
 			int curRank = 0;
 			for (Finding finding : combinedFindings) {
 				edu.cmu.lti.oaqa.type.kb.Concept concept = new edu.cmu.lti.oaqa.type.kb.Concept(
 						aJCas);
 				concept.setName(finding.getConcept().getLabel());
+				System.out.println("Concept: " + concept.getName());
 				concept.addToIndexes();
 				ConceptSearchResult result1 = new ConceptSearchResult(aJCas);
 				result1.setConcept(concept);
@@ -110,7 +116,6 @@ public class SDQuestionConceptAnnotator extends JCasAnnotator_ImplBase {
 				result1.setRank(curRank++);
 				result1.setQueryString(queryText);
 				result1.addToIndexes();
-				counter++;
 			}
 		}
 		System.out.println("Concept finished");

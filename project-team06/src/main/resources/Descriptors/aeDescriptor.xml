@@ -33,7 +33,10 @@
     <delegateAnalysisEngine key="SDQuestionTripleDescriptor">
       <import location="../bioasq/triple/SDQuestionTripleDescriptor.xml"/>
     </delegateAnalysisEngine>
-    </delegateAnalysisEngineSpecifiers>
+    <delegateAnalysisEngine key="QueryExtensionDescriptor">
+      <import location="QueryExtensionDescriptor.xml"/>
+    </delegateAnalysisEngine>
+  </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
     <name>aeDescriptor</name>
     <description/>
@@ -47,10 +50,11 @@
         <node>ComplexQueryAnnotatorDescriptor</node>
         <node>ComplexQueryANDAnnotatorDescriptor</node>
         <node>SDQuestionConceptAnnotatorDescriptor</node>
+        <node>QueryExtensionDescriptor</node>
+        <node>ComplexQueryAnnotatorDescriptor</node>
+        <node>ComplexQueryANDAnnotatorDescriptor</node>
         <node>SDQuestionDocumentAnnotatorDescriptor</node>
-        <node>SDQuestionTripleDescriptor</node>
-        <node>SDSnippetAnnotatorDescriptor</node>
-        <node>SDAnswerGenAnnotatorDescriptor</node>
+      <node>SDQuestionTripleDescriptor</node>
       </fixedFlow>
     </flowConstraints>
     <fsIndexCollection/>
