@@ -19,7 +19,7 @@
       <nameValuePair>
         <name>InputFile</name>
         <value>
-          <string>/questionSample.json</string>
+          <string>/input/questions.json</string>
         </value>
       </nameValuePair>
     </configurationParameterSettings>

@@ -1,0 +1,950 @@
+"questions": [
+	{
+		"body": "Are there any DNMT3 proteins present in plants?",
+		"concepts": [
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D011506",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D013205",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D011506",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D013205"
+		],
+		"documents": [
+			"http://www.ncbi.nlm.nih.gov/pubmed/24327140",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24123478",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23894490",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23852726",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23836914",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23688924",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23626723",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23484688",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23159436",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22995292",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22972351",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22642896",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23552838",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22122805",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22088914",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22081970",
+			"http://www.ncbi.nlm.nih.gov/pubmed/21695170",
+			"http://www.ncbi.nlm.nih.gov/pubmed/21666679",
+			"http://www.ncbi.nlm.nih.gov/pubmed/21541319",
+			"http://www.ncbi.nlm.nih.gov/pubmed/21507354",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24327140",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24123478",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23894490",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23852726",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23836914",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23688924",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23626723",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23484688",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23159436",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22995292",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22972351",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22642896",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23552838",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22122805",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22088914",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22081970",
+			"http://www.ncbi.nlm.nih.gov/pubmed/21695170",
+			"http://www.ncbi.nlm.nih.gov/pubmed/21666679",
+			"http://www.ncbi.nlm.nih.gov/pubmed/21541319",
+			"http://www.ncbi.nlm.nih.gov/pubmed/21507354",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464508",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464500",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464381",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464377",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464371",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464370",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464367",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464366",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464365",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464364",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464363",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464362",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464361",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464275",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464168",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464146",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464135",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464122",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464110",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464034"
+		],
+		"exact_answer": [
+			"Yes"
+		],
+		"id": "511a16f9df1ebcce7d000005",
+
+		"triples": [
+			{
+				"beginSection": "sections.0"
+				"document": "Inactive DNMT3B splice variants modulate de novo DNA methylation."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "803"
+				"offsetInEndSection": "171"
+				"text": " In addition to these three active enzymes, a catalytically inactive DNMT3 variant, the DNMT3-Like protein, DNMT3L, plays an essential role in de novo DNA methylation [6]"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "An alkylphenol mix promotes seminoma derived cell proliferation through an ERalpha36-mediated mechanism."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "2966"
+				"offsetInEndSection": "117"
+				"text": "1% for the nuclear receptor ERα66 and 50% for the transmembrane g-protein coupled estrogen receptor (GPER) [9], [16]"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Epigenetic control of metastasis-associated protein 1 gene expression by hepatitis B virus X protein during hepatocarcinogenesis."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "3176"
+				"offsetInEndSection": "329"
+				"text": "17 HBx also induces hypermethylation of the promoters of genes such as insulin-like growth factor-binding protein-3 (IGFBP-3), p16INK4A, retinoic acid receptor-β2 (RAR-β2), ankyrin repeat-containing, SH3 domain-containing, and proline-rich region-containing protein 1 (ASPP1), and ASPP2 by recruiting DNMT1, DNMT3a1, and DNMT3a2"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "The oncoprotein EVI1 and the DNA methyltransferase Dnmt3 co-operate in binding and de novo methylation of target DNA."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "300"
+				"offsetInEndSection": "142"
+				"text": " In mouse and man the gene encodes a nuclear protein of 1051 amino acids with two domains of seven and three repeats of the zinc finger motif"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "ATRX ADD domain links an atypical histone methylation recognition mechanism to human mental-retardation syndrome."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "1325"
+				"offsetInEndSection": "212"
+				"text": " The ATR-X syndrome-associated missense mutations are found predominantly in two discrete regions of ATRX protein, the N-terminal ADD (ADDATRX) and the C-terminal ATP-dependent chromatin-remodeling domain13 (Fig"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Diet and cell size both affect queen-worker differentiation through DNA methylation in honey bees (Apis mellifera, Apidae)."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "2239"
+				"offsetInEndSection": "99"
+				"text": " Queen and worker larvae have very different activated genes [9], as well as protein profiles [10]"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Inactive DNMT3B splice variants modulate de novo DNA methylation."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "803"
+				"offsetInEndSection": "171"
+				"text": " In addition to these three active enzymes, a catalytically inactive DNMT3 variant, the DNMT3-Like protein, DNMT3L, plays an essential role in de novo DNA methylation [6]"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "An alkylphenol mix promotes seminoma derived cell proliferation through an ERalpha36-mediated mechanism."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "2966"
+				"offsetInEndSection": "117"
+				"text": "1% for the nuclear receptor ERα66 and 50% for the transmembrane g-protein coupled estrogen receptor (GPER) [9], [16]"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Epigenetic control of metastasis-associated protein 1 gene expression by hepatitis B virus X protein during hepatocarcinogenesis."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "3176"
+				"offsetInEndSection": "329"
+				"text": "17 HBx also induces hypermethylation of the promoters of genes such as insulin-like growth factor-binding protein-3 (IGFBP-3), p16INK4A, retinoic acid receptor-β2 (RAR-β2), ankyrin repeat-containing, SH3 domain-containing, and proline-rich region-containing protein 1 (ASPP1), and ASPP2 by recruiting DNMT1, DNMT3a1, and DNMT3a2"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "The oncoprotein EVI1 and the DNA methyltransferase Dnmt3 co-operate in binding and de novo methylation of target DNA."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "300"
+				"offsetInEndSection": "142"
+				"text": " In mouse and man the gene encodes a nuclear protein of 1051 amino acids with two domains of seven and three repeats of the zinc finger motif"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "ATRX ADD domain links an atypical histone methylation recognition mechanism to human mental-retardation syndrome."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "1325"
+				"offsetInEndSection": "212"
+				"text": " The ATR-X syndrome-associated missense mutations are found predominantly in two discrete regions of ATRX protein, the N-terminal ADD (ADDATRX) and the C-terminal ATP-dependent chromatin-remodeling domain13 (Fig"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Diet and cell size both affect queen-worker differentiation through DNA methylation in honey bees (Apis mellifera, Apidae)."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "2239"
+				"offsetInEndSection": "99"
+				"text": " Queen and worker larvae have very different activated genes [9], as well as protein profiles [10]"
+			}
+		],
+
+		"type": "yesno"
+	}
+	{
+		"body": "Is thrombophilia related to increased risk of miscarriage?",
+		"concepts": [
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D012306",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D012307",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D058958",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D012309",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D012308",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D011154",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D016017",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D018570",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D040242",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020379",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D047568",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D018566",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D006305",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020414",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D061366",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D040343",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D012306",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D012307",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D058958",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D012309",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D012308",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D011154",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D016017",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D018570",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D040242",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020379",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D047568",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D018566",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D006305",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020414",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D061366",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D040343"
+		],
+		"documents": [
+			"http://www.ncbi.nlm.nih.gov/pubmed/23782635",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24325166",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24325165",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24325163",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24325162",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24325161",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24325160",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24325159",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24325158",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24325157",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24325156",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24289943",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24289937",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24259384",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24283285",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24283281",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24283279",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24251703",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24322818",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24322814",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23782635",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24325166",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24325165",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24325163",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24325162",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24325161",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24325160",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24325159",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24325158",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24325157",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24325156",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24289943",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24289937",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24259384",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24283285",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24283281",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24283279",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24251703",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24322818",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24322814",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464516",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464505",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464501",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464496",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464495",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464492",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464486",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464478",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464474",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464467",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464465",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464464",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464448",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464447",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464446",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464437",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464436",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464435",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464433",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464426"
+		],
+		"exact_answer": [
+			"Yes"
+		],
+		"id": "513cdc38bee46bd34c000007",
+
+		"triples": [
+		],
+
+		"type": "yesno"
+	}
+	{
+		"body": "Is Mammaprint approved by the United States Food and Drug Administration?",
+		"concepts": [
+		],
+		"documents": [
+			"http://www.ncbi.nlm.nih.gov/pubmed/24250234",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24155765",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24138841",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24088296",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23992641",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23912957",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23910573",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23885731",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23820017",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23756626",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23722312",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23687790",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23682826",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23643803",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23589849",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23573359",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23462680",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23411384",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23371464",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23347730",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24250234",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24155765",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24138841",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24088296",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23992641",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23912957",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23910573",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23885731",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23820017",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23756626",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23722312",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23687790",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23682826",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23643803",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23589849",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23573359",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23462680",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23411384",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23371464",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23347730",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24250234",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24155765",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24138841",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24088296",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23992641",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23912957",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23910573",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23885731",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23820017",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23756626",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23722312",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23687790",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23682826",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23643803",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23589849",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23573359",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23462680",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23411384",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23371464",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23347730"
+		],
+		"exact_answer": [
+			"Yes"
+		],
+		"id": "51487821d24251bc0500002f",
+
+		"triples": [
+			{
+				"beginSection": "sections.0"
+				"document": "Molecular profiling for breast cancer: a comprehensive review."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "88"
+				"text": "Introduction We have arrived at an important juncture in the treatment of breast cancer"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Genomic profiling shows increased glucose metabolism in luminal B breast cancer."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "232"
+				"text": "We had previously reported the usefulness of 18F-fluorodeoxyglucose positron emission tomography (FDG-PET) for predicting the pathological complete response (pCR) of primary breast cancer in the neoadjuvant chemotherapy setting [1]"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Estrogen receptor splice variants as a potential source of false-positive estrogen receptor status in breast cancer diagnostics."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "121"
+				"text": "Introduction The female hormone estradiol (E2) is a potent mitogen for estrogen receptor α (ERα)-positive breast cancers"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "BreastMark: an integrated approach to mining publicly available transcriptomic datasets relating to breast cancer outcome."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "305"
+				"text": "Introduction Breast cancer is a complex heterogeneous disease which has traditionally been subclassified depending, amongst other factors, on the expression of different receptor proteins, such as estrogen receptor (ER), progesterone receptor (PR), and human epidermal growth factor receptor 2 (HER2) [1]"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Multigene assays and molecular markers in breast cancer: systematic review of health economic analyses."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "164"
+				"text": "Introduction Breast cancer places a substantial burden on healthcare providers and is associated with significant mortality and reduced quality of life (QoL) [1–5]"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "A simple and reproducible breast cancer prognostic test."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "158"
+				"text": "Background Currently, a number of molecular-based prognostic and predictive tests for breast cancer are offered as laboratory services for clinical use [1,2]"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "A prospective evaluation of a breast cancer prognosis signature in the observational RASTER study."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "84"
+				"text": "Over the last two decades breast cancer mortality has declined in Western countries"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Molecular profiling for breast cancer: a comprehensive review."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "88"
+				"text": "Introduction We have arrived at an important juncture in the treatment of breast cancer"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Genomic profiling shows increased glucose metabolism in luminal B breast cancer."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "232"
+				"text": "We had previously reported the usefulness of 18F-fluorodeoxyglucose positron emission tomography (FDG-PET) for predicting the pathological complete response (pCR) of primary breast cancer in the neoadjuvant chemotherapy setting [1]"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Estrogen receptor splice variants as a potential source of false-positive estrogen receptor status in breast cancer diagnostics."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "121"
+				"text": "Introduction The female hormone estradiol (E2) is a potent mitogen for estrogen receptor α (ERα)-positive breast cancers"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "BreastMark: an integrated approach to mining publicly available transcriptomic datasets relating to breast cancer outcome."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "305"
+				"text": "Introduction Breast cancer is a complex heterogeneous disease which has traditionally been subclassified depending, amongst other factors, on the expression of different receptor proteins, such as estrogen receptor (ER), progesterone receptor (PR), and human epidermal growth factor receptor 2 (HER2) [1]"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Multigene assays and molecular markers in breast cancer: systematic review of health economic analyses."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "164"
+				"text": "Introduction Breast cancer places a substantial burden on healthcare providers and is associated with significant mortality and reduced quality of life (QoL) [1–5]"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "A simple and reproducible breast cancer prognostic test."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "158"
+				"text": "Background Currently, a number of molecular-based prognostic and predictive tests for breast cancer are offered as laboratory services for clinical use [1,2]"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "A prospective evaluation of a breast cancer prognosis signature in the observational RASTER study."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "84"
+				"text": "Over the last two decades breast cancer mortality has declined in Western countries"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Molecular profiling for breast cancer: a comprehensive review."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "88"
+				"text": "Introduction We have arrived at an important juncture in the treatment of breast cancer"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Genomic profiling shows increased glucose metabolism in luminal B breast cancer."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "232"
+				"text": "We had previously reported the usefulness of 18F-fluorodeoxyglucose positron emission tomography (FDG-PET) for predicting the pathological complete response (pCR) of primary breast cancer in the neoadjuvant chemotherapy setting [1]"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Estrogen receptor splice variants as a potential source of false-positive estrogen receptor status in breast cancer diagnostics."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "121"
+				"text": "Introduction The female hormone estradiol (E2) is a potent mitogen for estrogen receptor α (ERα)-positive breast cancers"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "BreastMark: an integrated approach to mining publicly available transcriptomic datasets relating to breast cancer outcome."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "305"
+				"text": "Introduction Breast cancer is a complex heterogeneous disease which has traditionally been subclassified depending, amongst other factors, on the expression of different receptor proteins, such as estrogen receptor (ER), progesterone receptor (PR), and human epidermal growth factor receptor 2 (HER2) [1]"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Multigene assays and molecular markers in breast cancer: systematic review of health economic analyses."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "164"
+				"text": "Introduction Breast cancer places a substantial burden on healthcare providers and is associated with significant mortality and reduced quality of life (QoL) [1–5]"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "A simple and reproducible breast cancer prognostic test."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "158"
+				"text": "Background Currently, a number of molecular-based prognostic and predictive tests for breast cancer are offered as laboratory services for clinical use [1,2]"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "A prospective evaluation of a breast cancer prognosis signature in the observational RASTER study."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "84"
+				"text": "Over the last two decades breast cancer mortality has declined in Western countries"
+			}
+		],
+
+		"type": "yesno"
+	}
+	{
+		"body": "Does the Oncotype DX test work with paraffin embedded tissues?",
+		"concepts": [
+		],
+		"documents": [
+			"http://www.ncbi.nlm.nih.gov/pubmed/24304542",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24261318",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24250234",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24164299",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24138841",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24103217",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24060333",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24035531",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23974828",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23942918",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23909545",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23899493",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23884597",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23820017",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23816962",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23801158",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23774991",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23743933",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23722312",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23719261",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24304542",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24261318",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24250234",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24164299",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24138841",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24103217",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24060333",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24035531",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23974828",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23942918",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23909545",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23899493",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23884597",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23820017",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23816962",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23801158",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23774991",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23743933",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23722312",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23719261",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25440089",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25439987",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25431237",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25405934",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25381828",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25288020",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25274406",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25262341",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25254601",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25243360",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25240289",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25213317",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25190451",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25129366",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25091650",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25048969",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24992175",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24989938",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24970679",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24948666"
+		],
+		"exact_answer": [
+			"Yes"
+		],
+		"id": "514a0f0ad24251bc05000052",
+
+		"triples": [
+			{
+				"beginSection": "sections.0"
+				"document": "Prognostic discrimination using a 70-gene signature among patients with estrogen receptor-positive breast cancer and an intermediate 21-gene recurrence score."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "2"
+				"text": "1"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Molecular profiling for breast cancer: a comprehensive review."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "88"
+				"text": "Introduction We have arrived at an important juncture in the treatment of breast cancer"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Analytical validation of the Oncotype DX prostate cancer assay - a clinical RT-PCR assay optimized for prostate needle biopsies."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "189"
+				"text": "Background Prostate cancer is one of the most common malignancies in men with an estimated 250,000 new cases being diagnosed in the US in 2012, mostly as a consequence of PSA screening [1]"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Proliferation and estrogen signaling can distinguish patients at risk for early versus late relapse among estrogen receptor positive breast cancers."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "168"
+				"text": "Introduction A sizable risk of late recurrence exists in estrogen receptor (ER)-positive breast cancers after completion of 5 years of adjuvant tamoxifen therapy [1,2]"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "BreastMark: an integrated approach to mining publicly available transcriptomic datasets relating to breast cancer outcome."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "4769"
+				"offsetInEndSection": "151"
+				"text": " We evaluated our approach using two commercially available gene expression-based prognostic tests in breast cancer, namely oncotype DX and MammaPrint"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "The impact of the 21-gene Recurrence Score assay on clinical decision-making in node-positive (up to 3 positive nodes) estrogen receptor-positive breast cancer patients."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "20"
+				"text": "Introduction The St"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Multigene assays and molecular markers in breast cancer: systematic review of health economic analyses."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "164"
+				"text": "Introduction Breast cancer places a substantial burden on healthcare providers and is associated with significant mortality and reduced quality of life (QoL) [1–5]"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Prognostic discrimination using a 70-gene signature among patients with estrogen receptor-positive breast cancer and an intermediate 21-gene recurrence score."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "2"
+				"text": "1"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Molecular profiling for breast cancer: a comprehensive review."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "88"
+				"text": "Introduction We have arrived at an important juncture in the treatment of breast cancer"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Analytical validation of the Oncotype DX prostate cancer assay - a clinical RT-PCR assay optimized for prostate needle biopsies."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "189"
+				"text": "Background Prostate cancer is one of the most common malignancies in men with an estimated 250,000 new cases being diagnosed in the US in 2012, mostly as a consequence of PSA screening [1]"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Proliferation and estrogen signaling can distinguish patients at risk for early versus late relapse among estrogen receptor positive breast cancers."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "168"
+				"text": "Introduction A sizable risk of late recurrence exists in estrogen receptor (ER)-positive breast cancers after completion of 5 years of adjuvant tamoxifen therapy [1,2]"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "BreastMark: an integrated approach to mining publicly available transcriptomic datasets relating to breast cancer outcome."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "4769"
+				"offsetInEndSection": "151"
+				"text": " We evaluated our approach using two commercially available gene expression-based prognostic tests in breast cancer, namely oncotype DX and MammaPrint"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "The impact of the 21-gene Recurrence Score assay on clinical decision-making in node-positive (up to 3 positive nodes) estrogen receptor-positive breast cancer patients."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "20"
+				"text": "Introduction The St"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Multigene assays and molecular markers in breast cancer: systematic review of health economic analyses."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "164"
+				"text": "Introduction Breast cancer places a substantial burden on healthcare providers and is associated with significant mortality and reduced quality of life (QoL) [1–5]"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Societal cost-effectiveness analysis of the 21-gene assay in estrogen-receptor-positive, lymph-node-negative early-stage breast cancer in Japan."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "132"
+				"text": "Background Breast cancer is the most common cancer among Japanese women, with approximately 40,000 women diagnosed every year [1–3]"
+			}
+		],
+
+		"type": "yesno"
+	}
+	{
+		"body": "Is depression associated with poor prognosis of brain tumor patients?",
+		"concepts": [
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001921",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001927",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001932",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001930",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020300",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001931",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D059906",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001933",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001926",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D002532",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001923",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D004660",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020766",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001922",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001929",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020520",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020767",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D058256",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D002545",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D002534",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020665",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001924",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D050812",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D058245",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D002548",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020712",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D012249",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020019",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020765",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D002546",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D063132",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001928",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D036123",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D002561",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D054463",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020295",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020208",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D002551",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020774",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020214",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D002543",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D016380",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020201",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D046690",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D059907",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D052276",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001812",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020785",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020521",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020097",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001921",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001927",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001932",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001930",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020300",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001931",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D059906",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001933",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001926",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D002532",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001923",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D004660",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020766",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001922",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001929",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020520",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020767",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D058256",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D002545",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D002534",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020665",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001924",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D050812",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D058245",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D002548",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020712",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D012249",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020019",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020765",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D002546",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D063132",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001928",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D036123",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D002561",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D054463",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020295",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020208",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D002551",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020774",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020214",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D002543",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D016380",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020201",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D046690",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D059907",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D052276",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001812",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020785",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020521",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D020097"
+		],
+		"documents": [
+			"http://www.ncbi.nlm.nih.gov/pubmed/23782635",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24322018",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24322013",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24321154",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24321153",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24321151",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24321147",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24235330",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24235327",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24303859",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24328030",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24328025",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24327964",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24327958",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24327957",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24327955",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24327953",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24327950",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24327949",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24327787",
+			"http://www.ncbi.nlm.nih.gov/pubmed/23782635",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24322018",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24322013",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24321154",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24321153",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24321151",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24321147",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24235330",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24235327",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24303859",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24328030",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24328025",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24327964",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24327958",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24327957",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24327955",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24327953",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24327950",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24327949",
+			"http://www.ncbi.nlm.nih.gov/pubmed/24327787",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464513",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464500",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464496",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464483",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464466",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464444",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464433",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464398",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464374",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464373",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464358",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464357",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464354",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464346",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464343",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464274",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464263",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464261",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464260",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25464241"
+		],
+		"exact_answer": [
+			"Yes"
+		],
+		"id": "514cc8dcd24251bc05000066",
+
+		"triples": [
+			{
+				"beginSection": "sections.0"
+				"document": "Chronic traumatic encephalopathy and suicide: a systematic review."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "260"
+				"offsetInEndSection": "199"
+				"text": " More recently, the term chronic traumatic encephalopathy (CTE) has been introduced to describe progressive neuropathological and clinical manifestations associated with traumatic brain injury (TBI)"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Liver recurrence in early endometrial cancer with focal myometrial invasion."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "447"
+				"offsetInEndSection": "246"
+				"text": " Endometrial cancer spreads by direct extension, transtubal dissemination, lymphatic dissemination, and hematogenous spread, the latter of which most commonly results in lung metastasis, but liver, brain, and bone are also less commonly involved"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Alteration of cytokine production during visceral larva migrans by Toxascaris leonina in mice."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "172"
+				"text": "Most roundworms, which infect only 1 or 2 specific hosts, live in the intestine of their definitive host, and are generally well adapted to the immune system of their host"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Chronic traumatic encephalopathy and suicide: a systematic review."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "260"
+				"offsetInEndSection": "199"
+				"text": " More recently, the term chronic traumatic encephalopathy (CTE) has been introduced to describe progressive neuropathological and clinical manifestations associated with traumatic brain injury (TBI)"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Liver recurrence in early endometrial cancer with focal myometrial invasion."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "447"
+				"offsetInEndSection": "246"
+				"text": " Endometrial cancer spreads by direct extension, transtubal dissemination, lymphatic dissemination, and hematogenous spread, the latter of which most commonly results in lung metastasis, but liver, brain, and bone are also less commonly involved"
+			},
+			{
+				"beginSection": "sections.0"
+				"document": "Alteration of cytokine production during visceral larva migrans by Toxascaris leonina in mice."
+				"endSection": "sections.0"
+				"offsetInBeginSection": "0"
+				"offsetInEndSection": "172"
+				"text": "Most roundworms, which infect only 1 or 2 specific hosts, live in the intestine of their definitive host, and are generally well adapted to the immune system of their host"
+			}
+		],
+
+		"type": "yesno"
+	}
+]}
