@@ -1,306 +1,414 @@
 "questions": [
 	{
-		"body": "Is Rheumatoid Arthritis more common in men or women?",
+		"body": "Are there any DNMT3 proteins present in plants?",
 		"concepts": [
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001172",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001171",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014930",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001168",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D005258",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D012217",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D016387",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014933",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001170",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D010822",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D018585",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014931",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D025241",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D056653",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D011695",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D012218",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001169",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D005783",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D013167",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D016918",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D003816",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D006801",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001172",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001171",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014930",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001168",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D005258",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D012217",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D016387",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014933",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001170",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D010822",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D018585",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014931",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D025241",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D056653",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D011695",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D012218",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001169",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D005783",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D013167",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D016918",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D003816",
-			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D006801"
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D010940",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D017951",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D010944",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D007746",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D045142",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014674",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D000938",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D055315",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001946",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D053830",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D010935",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D009306",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D059828",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D010942",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D011506",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D013205",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D052179",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D017343",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D010941",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D018744",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D010940",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D017951",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D010944",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D007746",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D045142",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014674",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D000938",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D055315",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D001946",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D053830",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D010935",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D009306",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D059828",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D010942",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D011506",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D013205",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D052179",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D017343",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D010941",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D018744"
 		],
 		"documents": [
-			"http://www.ncbi.nlm.nih.gov/pubmed/24107643",
-			"http://www.ncbi.nlm.nih.gov/pubmed/23974974",
-			"http://www.ncbi.nlm.nih.gov/pubmed/23916348",
-			"http://www.ncbi.nlm.nih.gov/pubmed/23900228",
-			"http://www.ncbi.nlm.nih.gov/pubmed/23873887",
-			"http://www.ncbi.nlm.nih.gov/pubmed/23812032",
-			"http://www.ncbi.nlm.nih.gov/pubmed/23703486",
-			"http://www.ncbi.nlm.nih.gov/pubmed/23553100",
-			"http://www.ncbi.nlm.nih.gov/pubmed/23526031",
-			"http://www.ncbi.nlm.nih.gov/pubmed/23423442",
-			"http://www.ncbi.nlm.nih.gov/pubmed/23264337",
-			"http://www.ncbi.nlm.nih.gov/pubmed/23217568",
-			"http://www.ncbi.nlm.nih.gov/pubmed/23006836",
-			"http://www.ncbi.nlm.nih.gov/pubmed/22833513",
-			"http://www.ncbi.nlm.nih.gov/pubmed/22828565",
-			"http://www.ncbi.nlm.nih.gov/pubmed/22825589",
-			"http://www.ncbi.nlm.nih.gov/pubmed/22717204",
-			"http://www.ncbi.nlm.nih.gov/pubmed/22577060",
-			"http://www.ncbi.nlm.nih.gov/pubmed/22505696",
-			"http://www.ncbi.nlm.nih.gov/pubmed/22462416",
-			"http://www.ncbi.nlm.nih.gov/pubmed/22455933",
-			"http://www.ncbi.nlm.nih.gov/pubmed/22388357",
-			"http://www.ncbi.nlm.nih.gov/pubmed/22300712",
-			"http://www.ncbi.nlm.nih.gov/pubmed/22204900",
-			"http://www.ncbi.nlm.nih.gov/pubmed/22108779",
-			"http://www.ncbi.nlm.nih.gov/pubmed/21881200",
-			"http://www.ncbi.nlm.nih.gov/pubmed/21834821",
-			"http://www.ncbi.nlm.nih.gov/pubmed/21619489",
-			"http://www.ncbi.nlm.nih.gov/pubmed/21459948",
-			"http://www.ncbi.nlm.nih.gov/pubmed/21453476",
-			"http://www.ncbi.nlm.nih.gov/pubmed/21360492",
-			"http://www.ncbi.nlm.nih.gov/pubmed/21199474",
-			"http://www.ncbi.nlm.nih.gov/pubmed/21132550",
-			"http://www.ncbi.nlm.nih.gov/pubmed/21029974",
-			"http://www.ncbi.nlm.nih.gov/pubmed/20853323",
-			"http://www.ncbi.nlm.nih.gov/pubmed/20845087",
-			"http://www.ncbi.nlm.nih.gov/pubmed/20734595",
-			"http://www.ncbi.nlm.nih.gov/pubmed/20685609",
-			"http://www.ncbi.nlm.nih.gov/pubmed/20682035",
-			"http://www.ncbi.nlm.nih.gov/pubmed/20676645",
-			"http://www.ncbi.nlm.nih.gov/pubmed/20542718",
-			"http://www.ncbi.nlm.nih.gov/pubmed/20470953",
-			"http://www.ncbi.nlm.nih.gov/pubmed/20452290",
-			"http://www.ncbi.nlm.nih.gov/pubmed/20307377",
-			"http://www.ncbi.nlm.nih.gov/pubmed/20109215",
-			"http://www.ncbi.nlm.nih.gov/pubmed/20022534",
-			"http://www.ncbi.nlm.nih.gov/pubmed/19962798",
-			"http://www.ncbi.nlm.nih.gov/pubmed/19808134",
-			"http://www.ncbi.nlm.nih.gov/pubmed/19406368",
-			"http://www.ncbi.nlm.nih.gov/pubmed/19595525",
-			"http://www.ncbi.nlm.nih.gov/pubmed/24107643",
-			"http://www.ncbi.nlm.nih.gov/pubmed/23974974",
-			"http://www.ncbi.nlm.nih.gov/pubmed/23916348",
-			"http://www.ncbi.nlm.nih.gov/pubmed/23900228",
-			"http://www.ncbi.nlm.nih.gov/pubmed/23873887",
-			"http://www.ncbi.nlm.nih.gov/pubmed/23812032",
-			"http://www.ncbi.nlm.nih.gov/pubmed/23703486",
-			"http://www.ncbi.nlm.nih.gov/pubmed/23553100",
-			"http://www.ncbi.nlm.nih.gov/pubmed/23526031",
-			"http://www.ncbi.nlm.nih.gov/pubmed/23423442",
-			"http://www.ncbi.nlm.nih.gov/pubmed/23264337",
-			"http://www.ncbi.nlm.nih.gov/pubmed/23217568",
-			"http://www.ncbi.nlm.nih.gov/pubmed/23006836",
-			"http://www.ncbi.nlm.nih.gov/pubmed/22833513",
-			"http://www.ncbi.nlm.nih.gov/pubmed/22828565",
-			"http://www.ncbi.nlm.nih.gov/pubmed/22825589",
-			"http://www.ncbi.nlm.nih.gov/pubmed/22717204",
-			"http://www.ncbi.nlm.nih.gov/pubmed/22577060",
-			"http://www.ncbi.nlm.nih.gov/pubmed/22505696",
-			"http://www.ncbi.nlm.nih.gov/pubmed/22462416",
-			"http://www.ncbi.nlm.nih.gov/pubmed/22455933",
-			"http://www.ncbi.nlm.nih.gov/pubmed/22388357",
-			"http://www.ncbi.nlm.nih.gov/pubmed/22300712",
-			"http://www.ncbi.nlm.nih.gov/pubmed/22204900",
-			"http://www.ncbi.nlm.nih.gov/pubmed/22108779",
-			"http://www.ncbi.nlm.nih.gov/pubmed/21881200",
-			"http://www.ncbi.nlm.nih.gov/pubmed/21834821",
-			"http://www.ncbi.nlm.nih.gov/pubmed/21619489",
-			"http://www.ncbi.nlm.nih.gov/pubmed/21459948",
-			"http://www.ncbi.nlm.nih.gov/pubmed/21453476",
-			"http://www.ncbi.nlm.nih.gov/pubmed/21360492",
-			"http://www.ncbi.nlm.nih.gov/pubmed/21199474",
-			"http://www.ncbi.nlm.nih.gov/pubmed/21132550",
-			"http://www.ncbi.nlm.nih.gov/pubmed/21029974",
-			"http://www.ncbi.nlm.nih.gov/pubmed/20853323",
-			"http://www.ncbi.nlm.nih.gov/pubmed/20845087",
-			"http://www.ncbi.nlm.nih.gov/pubmed/20734595",
-			"http://www.ncbi.nlm.nih.gov/pubmed/20685609",
-			"http://www.ncbi.nlm.nih.gov/pubmed/20682035",
-			"http://www.ncbi.nlm.nih.gov/pubmed/20676645",
-			"http://www.ncbi.nlm.nih.gov/pubmed/20542718",
-			"http://www.ncbi.nlm.nih.gov/pubmed/20470953",
-			"http://www.ncbi.nlm.nih.gov/pubmed/20452290",
-			"http://www.ncbi.nlm.nih.gov/pubmed/20307377",
-			"http://www.ncbi.nlm.nih.gov/pubmed/20109215",
-			"http://www.ncbi.nlm.nih.gov/pubmed/20022534",
-			"http://www.ncbi.nlm.nih.gov/pubmed/19962798",
-			"http://www.ncbi.nlm.nih.gov/pubmed/19808134",
-			"http://www.ncbi.nlm.nih.gov/pubmed/19406368",
-			"http://www.ncbi.nlm.nih.gov/pubmed/19595525",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22081970",
+			"http://www.ncbi.nlm.nih.gov/pubmed/15946751",
+			"http://www.ncbi.nlm.nih.gov/pubmed/22081970",
+			"http://www.ncbi.nlm.nih.gov/pubmed/15946751",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438341",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438333",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438331",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438330",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438328",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438327",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438323",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438322",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438321",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438317",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438310",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438306",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438305",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438304",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438302",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438298",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438295",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438293",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438292",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438291",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438289",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438288",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438287",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438286",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438285",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438281",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438280",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438279",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438278",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438276",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438274",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438271",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438259",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438258",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438256",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438251",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438250",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438249",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438248",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438247",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438246",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438245",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438244",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438243",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438242",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438241",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438239",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438235",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438234",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438231"
+		],
+		"exact_answer": [
+			"No"
+		],
+		"id": "511a16f9df1ebcce7d000005",
+
+		"triples": [
+		],
+
+		"type": "yesno"
+	}
+	{
+		"body": "Is thrombophilia related to increased risk of miscarriage?",
+		"concepts": [
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D000022",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D019851",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D012306",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D000026",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D012307",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D011158",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D058958",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D018471",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D012309",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D012308",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D000022",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D019851",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D012306",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D000026",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D012307",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D011158",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D058958",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D018471",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D012309",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D012308"
+		],
+		"documents": [
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438328",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438325",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438324",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438316",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438313",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438309",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438307",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438284",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438283",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438278",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438276",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438273",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438258",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438254",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438251",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438247",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438240",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438233",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438232",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438230",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438229",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438221",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438218",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438216",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438214",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438202",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438199",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438195",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438194",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438192",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438191",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438190",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438184",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438178",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438174",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438172",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438170",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438169",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438167",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438162",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438149",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438147",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438144",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438141",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438140",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438139",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438138",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438136",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438135",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438132"
+		],
+		"exact_answer": [
+			"No"
+		],
+		"id": "513cdc38bee46bd34c000007",
+
+		"triples": [
+		],
+
+		"type": "yesno"
+	}
+	{
+		"body": "Is Mammaprint approved by the United States Food and Drug Administration?",
+		"concepts": [
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014486",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D017277",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D018795",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014493",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014481",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014482",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014489",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014488",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D019131",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014487",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D018557",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D000287",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D000280",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D000279",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D000284",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D000282",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D000283",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D018565",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D004334",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D000285",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D009934",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D000288",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D000286",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D015144",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D015206",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D000278",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D004333",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D015205",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D009511",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D015146",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D000281",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D005502",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D059250",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D054545",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D006285",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014483",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D003257",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D016885",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D059030",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D037041",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014767",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014486",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D017277",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D018795",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014493",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014481",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014482",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014489",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014488",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D019131",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014487",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D018557",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D000287",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D000280",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D000279",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D000284",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D000282",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D000283",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D018565",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D004334",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D000285",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D009934",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D000288",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D000286",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D015144",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D015206",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D000278",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D004333",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D015205",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D009511",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D015146",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D000281",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D005502",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D059250",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D054545",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D006285",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014483",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D003257",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D016885",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D059030",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D037041",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014767"
+		],
+		"documents": [
 			"http://www.ncbi.nlm.nih.gov/pubmed/25438341",
 			"http://www.ncbi.nlm.nih.gov/pubmed/25438340",
 			"http://www.ncbi.nlm.nih.gov/pubmed/25438339",
 			"http://www.ncbi.nlm.nih.gov/pubmed/25438338",
 			"http://www.ncbi.nlm.nih.gov/pubmed/25438337",
 			"http://www.ncbi.nlm.nih.gov/pubmed/25438336",
-			"http://www.ncbi.nlm.nih.gov/pubmed/25438333",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438335",
 			"http://www.ncbi.nlm.nih.gov/pubmed/25438332",
 			"http://www.ncbi.nlm.nih.gov/pubmed/25438331",
 			"http://www.ncbi.nlm.nih.gov/pubmed/25438330",
 			"http://www.ncbi.nlm.nih.gov/pubmed/25438329",
 			"http://www.ncbi.nlm.nih.gov/pubmed/25438328",
 			"http://www.ncbi.nlm.nih.gov/pubmed/25438327",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438326",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438325",
 			"http://www.ncbi.nlm.nih.gov/pubmed/25438324",
-			"http://www.ncbi.nlm.nih.gov/pubmed/25438317",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438321",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438319",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438318",
 			"http://www.ncbi.nlm.nih.gov/pubmed/25438316",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438315",
 			"http://www.ncbi.nlm.nih.gov/pubmed/25438314",
-			"http://www.ncbi.nlm.nih.gov/pubmed/25438313",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438312",
 			"http://www.ncbi.nlm.nih.gov/pubmed/25438311",
-			"http://www.ncbi.nlm.nih.gov/pubmed/25438308",
-			"http://www.ncbi.nlm.nih.gov/pubmed/25438307",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438310",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438309",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438306",
 			"http://www.ncbi.nlm.nih.gov/pubmed/25438304",
 			"http://www.ncbi.nlm.nih.gov/pubmed/25438302",
-			"http://www.ncbi.nlm.nih.gov/pubmed/25438299",
-			"http://www.ncbi.nlm.nih.gov/pubmed/25438298",
-			"http://www.ncbi.nlm.nih.gov/pubmed/25438296",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438301",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438297",
 			"http://www.ncbi.nlm.nih.gov/pubmed/25438295",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438294",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438293",
 			"http://www.ncbi.nlm.nih.gov/pubmed/25438291",
-			"http://www.ncbi.nlm.nih.gov/pubmed/25438289",
 			"http://www.ncbi.nlm.nih.gov/pubmed/25438288",
 			"http://www.ncbi.nlm.nih.gov/pubmed/25438287",
 			"http://www.ncbi.nlm.nih.gov/pubmed/25438286",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438285",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438284",
 			"http://www.ncbi.nlm.nih.gov/pubmed/25438283",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438282",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438281",
 			"http://www.ncbi.nlm.nih.gov/pubmed/25438280",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438279",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438278",
 			"http://www.ncbi.nlm.nih.gov/pubmed/25438277",
-			"http://www.ncbi.nlm.nih.gov/pubmed/25438273",
-			"http://www.ncbi.nlm.nih.gov/pubmed/25438272",
-			"http://www.ncbi.nlm.nih.gov/pubmed/25438271",
-			"http://www.ncbi.nlm.nih.gov/pubmed/25438269",
-			"http://www.ncbi.nlm.nih.gov/pubmed/25438260",
-			"http://www.ncbi.nlm.nih.gov/pubmed/25438259",
-			"http://www.ncbi.nlm.nih.gov/pubmed/25438258",
-			"http://www.ncbi.nlm.nih.gov/pubmed/25438254",
-			"http://www.ncbi.nlm.nih.gov/pubmed/25438247",
-			"http://www.ncbi.nlm.nih.gov/pubmed/25438244",
-			"http://www.ncbi.nlm.nih.gov/pubmed/25438243",
-			"http://www.ncbi.nlm.nih.gov/pubmed/25438241",
-			"http://www.ncbi.nlm.nih.gov/pubmed/25438238",
-			"http://www.ncbi.nlm.nih.gov/pubmed/25438235",
-			"http://www.ncbi.nlm.nih.gov/pubmed/25438232"
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438276",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438275",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438274"
 		],
 		"exact_answer": [
-			"Yes"
+			"No"
 		],
-		"id": "5118dd1305c10fae75000001",
+		"id": "51487821d24251bc0500002f",
 
 		"triples": [
-			{
-				"beginSection": "sections.0"
-				"document": "What is the prevalence of musculoskeletal problems in the elderly population in developed countries? A systematic critical literature review."
-				"endSection": "sections.0"
-				"offsetInBeginSection": "797"
-				"offsetInEndSection": "164"
-				"text": " The WHO has specifically identified four major disabling MSK conditions: osteoarthritis (OA), rheumatoid arthritis (RA), osteoporosis (OP), and back pain (BP) [4]"
-			},
-			{
-				"beginSection": "sections.0"
-				"document": "Sex-specific differences in effect size estimates at established complex trait loci."
-				"endSection": "sections.0"
-				"offsetInBeginSection": "0"
-				"offsetInEndSection": "183"
-				"text": "Introduction The prevalence, course and severity of many common traits and diseases, including autoimmune diseases,1 cardiovascular diseases2 and asthma3 differ between men and women"
-			},
-			{
-				"beginSection": "sections.0"
-				"document": "Usage of skin care products and risk of rheumatoid arthritis: results from the Swedish EIRA study."
-				"endSection": "sections.0"
-				"offsetInBeginSection": "1501"
-				"offsetInEndSection": "318"
-				"text": " It has not been established whether similar mechanisms - that is, polyarthritis induced by simple adjuvants - are operative also in human arthritis, although case reports on arthritis development after adjuvant exposures suggested that rodents and humans might both react to adjuvants with arthritis development [17]"
-			},
-			{
-				"beginSection": "sections.0"
-				"document": "Treatment of forefoot problems in older people: study protocol for a randomised clinical trial comparing podiatric treatment to standardised shoe advice."
-				"endSection": "sections.0"
-				"offsetInBeginSection": "0"
-				"offsetInEndSection": "85"
-				"text": "Background Pain and discomfort due to foot problems are common and increase with age"
-			},
-			{
-				"beginSection": "sections.0"
-				"document": "Risk of osteoporotic fracture in a large population-based cohort of patients with rheumatoid arthritis."
-				"endSection": "sections.0"
-				"offsetInBeginSection": "0"
-				"offsetInEndSection": "236"
-				"text": "Introduction Rheumatoid arthritis (RA) is the most common form of inflammatory arthritis in adults and is characterized by chronic, progressive, systemic inflammation leading to substantial pain, disability, and other morbidities [1-3]"
-			},
-			{
-				"beginSection": "sections.0"
-				"document": "What rheumatologists in the United States think of complementary and alternative medicine: results of a national survey."
-				"endSection": "sections.0"
-				"offsetInBeginSection": "192"
-				"offsetInEndSection": "70"
-				"text": " The odds ratio for ever-use of CAM among adults with arthritis was 1"
-			},
-			{
-				"beginSection": "sections.0"
-				"document": "What is the prevalence of musculoskeletal problems in the elderly population in developed countries? A systematic critical literature review."
-				"endSection": "sections.0"
-				"offsetInBeginSection": "797"
-				"offsetInEndSection": "164"
-				"text": " The WHO has specifically identified four major disabling MSK conditions: osteoarthritis (OA), rheumatoid arthritis (RA), osteoporosis (OP), and back pain (BP) [4]"
-			},
-			{
-				"beginSection": "sections.0"
-				"document": "Sex-specific differences in effect size estimates at established complex trait loci."
-				"endSection": "sections.0"
-				"offsetInBeginSection": "0"
-				"offsetInEndSection": "183"
-				"text": "Introduction The prevalence, course and severity of many common traits and diseases, including autoimmune diseases,1 cardiovascular diseases2 and asthma3 differ between men and women"
-			},
-			{
-				"beginSection": "sections.0"
-				"document": "Usage of skin care products and risk of rheumatoid arthritis: results from the Swedish EIRA study."
-				"endSection": "sections.0"
-				"offsetInBeginSection": "1501"
-				"offsetInEndSection": "318"
-				"text": " It has not been established whether similar mechanisms - that is, polyarthritis induced by simple adjuvants - are operative also in human arthritis, although case reports on arthritis development after adjuvant exposures suggested that rodents and humans might both react to adjuvants with arthritis development [17]"
-			},
-			{
-				"beginSection": "sections.0"
-				"document": "Treatment of forefoot problems in older people: study protocol for a randomised clinical trial comparing podiatric treatment to standardised shoe advice."
-				"endSection": "sections.0"
-				"offsetInBeginSection": "0"
-				"offsetInEndSection": "85"
-				"text": "Background Pain and discomfort due to foot problems are common and increase with age"
-			},
-			{
-				"beginSection": "sections.0"
-				"document": "Risk of osteoporotic fracture in a large population-based cohort of patients with rheumatoid arthritis."
-				"endSection": "sections.0"
-				"offsetInBeginSection": "0"
-				"offsetInEndSection": "236"
-				"text": "Introduction Rheumatoid arthritis (RA) is the most common form of inflammatory arthritis in adults and is characterized by chronic, progressive, systemic inflammation leading to substantial pain, disability, and other morbidities [1-3]"
-			},
-			{
-				"beginSection": "sections.0"
-				"document": "What rheumatologists in the United States think of complementary and alternative medicine: results of a national survey."
-				"endSection": "sections.0"
-				"offsetInBeginSection": "192"
-				"offsetInEndSection": "70"
-				"text": " The odds ratio for ever-use of CAM among adults with arthritis was 1"
-			}
+		],
+
+		"type": "yesno"
+	}
+	{
+		"body": "Does the Oncotype DX test work with paraffin embedded tissues?",
+		"concepts": [
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D010232",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014937",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D010232",
+			"http://www.nlm.nih.gov/cgi/mesh/2014/MB_cgi?field=uid&exact=Find+Exact+Term&term=D014937"
+		],
+		"documents": [
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438330",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438329",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438327",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438310",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438305",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438302",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438279",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438258",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438255",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438244",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438235",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438196",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438185",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438173",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438161",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438149",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438138",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438131",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438128",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438126",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438125",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438118",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438101",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438099",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438094",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438093",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438086",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438083",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438073",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438045",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438039",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438035",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438032",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438030",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438027",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438016",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25438007",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25437955",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25437950",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25437930",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25437924",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25437916",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25437913",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25437904",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25437897",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25437890",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25437877",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25437865",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25437861",
+			"http://www.ncbi.nlm.nih.gov/pubmed/25437849"
+		],
+		"exact_answer": [
+			"No"
+		],
+		"id": "514a0f0ad24251bc05000052",
+
+		"triples": [
 		],
 
 		"type": "yesno"

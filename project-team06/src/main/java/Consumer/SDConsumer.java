@@ -216,12 +216,12 @@ public class SDConsumer extends CasConsumer_ImplBase {
 			Answer ans = (Answer) ansIter.next();
 			answer = ans.getText();
 		}		
-		if (exactAns.equals("Yes") || exactAns.equals("No")) {
+//		if (exactAns.equals("Yes") || exactAns.equals("No")) {
 			numOfQues++;
 			if (exactAns.equals(answer)) {
 				numOfCorrect++;
 			}
-		}
+//		}
 		try {
 			Boolean flag = true;
 			if(!ansIter.hasNext()){
@@ -279,7 +279,7 @@ public class SDConsumer extends CasConsumer_ImplBase {
 		
 		printPerformance();
 
-		double result = (double) numOfQues/numOfCorrect;
+		double result = (double) numOfCorrect/8;
 		System.out.println("The final correctness of answer is:   " + result);
 	}
 	
