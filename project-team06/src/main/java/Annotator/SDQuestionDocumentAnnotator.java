@@ -38,7 +38,7 @@ import edu.cmu.lti.oaqa.type.retrieval.QueryOperator;
 public class SDQuestionDocumentAnnotator extends JCasAnnotator_ImplBase {
 	private static final String urlPrefix = "http://www.ncbi.nlm.nih.gov/pubmed/";
 	private GoPubMedService service;
-	private int mResultsPerPage = 50;
+	private int mResultsPerPage = 10;
 
 	public void initialize(UimaContext aContext)
 			throws ResourceInitializationException {

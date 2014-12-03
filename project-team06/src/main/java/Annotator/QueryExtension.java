@@ -69,19 +69,25 @@ public class QueryExtension extends JCasAnnotator_ImplBase {
 			ConceptSearchResult.type);
     while (it_concept.hasNext()) {
     	ConceptSearchResult conceptResult = (ConceptSearchResult) it_concept.next();
-    	String text = conceptResult.getText().replace(",", "");
-    	List<String> term = tokenize0(text);   	
-    	Iterator<String> iter_term = term.iterator();
-        while (iter_term.hasNext()) {
-          String aterm = iter_term.next();
-          aterm = StanfordLemmatizer.stemText(aterm.trim());
-          if (!original.contains(aterm.trim())) {
-        	  original.add(aterm.trim());
-        	  AtomicQueryConcept c = new AtomicQueryConcept(aJCas);
-        	  c.setText(aterm.trim());
-              c.addToIndexes();
-          }
-        }
+    	if(!original.contains(conceptResult.getText().trim())){
+    		original.add(conceptResult.getText().trim());
+    		AtomicQueryConcept c = new AtomicQueryConcept(aJCas);
+    		c.setText(conceptResult.getText().trim());
+    		c.addToIndexes();
+    	}
+//    	String text = conceptResult.getText().replace(",", "");
+//    	List<String> term = tokenize0(text);   	
+//    	Iterator<String> iter_term = term.iterator();
+//        while (iter_term.hasNext()) {
+//          String aterm = iter_term.next();
+//          aterm = StanfordLemmatizer.stemText(aterm.trim());
+//          if (!original.contains(aterm.trim())) {
+//        	  original.add(aterm.trim());
+//        	  AtomicQueryConcept c = new AtomicQueryConcept(aJCas);
+//        	  c.setText(aterm.trim());
+//              c.addToIndexes();
+//          }
+//        }
     }
   }
   /**
